@@ -1,0 +1,109 @@
+{
+ "chart": "small-multiples-bar",
+ "kicker": "Eighty charts...",
+ "title": "EACH WAVE by FAMILY",
+ "line": "The five biggest families, *one panel per wave*.",
+ "source": "catalog/charts.json",
+ "data": [
+  {
+   "panel": "Wave 1",
+   "label": "Change over time",
+   "value": 4
+  },
+  {
+   "panel": "Wave 1",
+   "label": "Magnitude",
+   "value": 2
+  },
+  {
+   "panel": "Wave 1",
+   "label": "Part-to-whole",
+   "value": 4
+  },
+  {
+   "panel": "Wave 1",
+   "label": "Distribution",
+   "value": 4
+  },
+  {
+   "panel": "Wave 1",
+   "label": "Spatial",
+   "value": 0
+  },
+  {
+   "panel": "Wave 2",
+   "label": "Change over time",
+   "value": 8
+  },
+  {
+   "panel": "Wave 2",
+   "label": "Magnitude",
+   "value": 6
+  },
+  {
+   "panel": "Wave 2",
+   "label": "Part-to-whole",
+   "value": 2
+  },
+  {
+   "panel": "Wave 2",
+   "label": "Distribution",
+   "value": 1
+  },
+  {
+   "panel": "Wave 2",
+   "label": "Spatial",
+   "value": 0
+  },
+  {
+   "panel": "Wave 3",
+   "label": "Change over time",
+   "value": 3
+  },
+  {
+   "panel": "Wave 3",
+   "label": "Magnitude",
+   "value": 4
+  },
+  {
+   "panel": "Wave 3",
+   "label": "Part-to-whole",
+   "value": 5
+  },
+  {
+   "panel": "Wave 3",
+   "label": "Distribution",
+   "value": 4
+  },
+  {
+   "panel": "Wave 3",
+   "label": "Spatial",
+   "value": 0
+  },
+  {
+   "panel": "Wave 4",
+   "label": "Change over time",
+   "value": 0
+  },
+  {
+   "panel": "Wave 4",
+   "label": "Magnitude",
+   "value": 0
+  },
+  {
+   "panel": "Wave 4",
+   "label": "Part-to-whole",
+   "value": 0
+  },
+  {
+   "panel": "Wave 4",
+   "label": "Distribution",
+   "value": 0
+  },
+  {
+   "panel": "Wave 4",
+   "label": "Spatial",
+   "value": 9
+  }
+ ]
+}

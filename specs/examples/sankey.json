@@ -1,0 +1,59 @@
+{
+ "chart": "sankey",
+ "kicker": "Where they come from...",
+ "title": "EIGHTY CHARTS, THREE ROADS",
+ "line": "Each chart from where it started, *through its wave, to done*.",
+ "source": "catalog/charts.json",
+ "data": [
+  {
+   "source": "FT built it",
+   "target": "Wave 1",
+   "value": 21
+  },
+  {
+   "source": "Wave 1",
+   "target": "Built",
+   "value": 26
+  },
+  {
+   "source": "The Storyteller",
+   "target": "Wave 1",
+   "value": 4
+  },
+  {
+   "source": "FT listed it",
+   "target": "Wave 1",
+   "value": 1
+  },
+  {
+   "source": "FT built it",
+   "target": "Wave 2",
+   "value": 27
+  },
+  {
+   "source": "Wave 2",
+   "target": "Built",
+   "value": 27
+  },
+  {
+   "source": "FT listed it",
+   "target": "Wave 3",
+   "value": 19
+  },
+  {
+   "source": "Wave 3",
+   "target": "Built",
+   "value": 19
+  },
+  {
+   "source": "FT listed it",
+   "target": "Wave 4",
+   "value": 9
+  },
+  {
+   "source": "Wave 4",
+   "target": "Built",
+   "value": 9
+  }
+ ]
+}

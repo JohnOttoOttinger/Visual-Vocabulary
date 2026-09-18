@@ -1,0 +1,45 @@
+{
+ "chart": "bullet",
+ "kicker": "How far along...",
+ "title": "BUILT per WAVE",
+ "line": "Charts built in each wave, *against the charts it holds*.",
+ "source": "catalog/charts.json",
+ "data": [
+  {
+   "label": "Wave 1",
+   "value": 26,
+   "target": 26,
+   "ranges": [
+    13,
+    26
+   ]
+  },
+  {
+   "label": "Wave 2",
+   "value": 27,
+   "target": 27,
+   "ranges": [
+    14,
+    27
+   ]
+  },
+  {
+   "label": "Wave 3",
+   "value": 19,
+   "target": 19,
+   "ranges": [
+    10,
+    19
+   ]
+  },
+  {
+   "label": "Wave 4",
+   "value": 9,
+   "target": 9,
+   "ranges": [
+    4,
+    9
+   ]
+  }
+ ]
+}

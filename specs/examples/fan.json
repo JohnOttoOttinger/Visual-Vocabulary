@@ -1,0 +1,69 @@
+{
+ "chart": "fan",
+ "kicker": "Slides so far...",
+ "title": "FOUR MORE STORIES",
+ "line": "Slides drafted so far, *and where four more stories could take it*.",
+ "source": "Marketing/Stories/*/draft; the fan spans the fewest to the most slides per story",
+ "data": [
+  {
+   "label": "trump-balloon",
+   "value": 7
+  },
+  {
+   "label": "inflatables",
+   "value": 11
+  },
+  {
+   "label": "experience-gardens",
+   "value": 20
+  },
+  {
+   "label": "sidehatch",
+   "value": 26
+  },
+  {
+   "label": "babbling-with-baobabs",
+   "value": 32
+  },
+  {
+   "label": "bab-arrives",
+   "value": 39
+  },
+  {
+   "label": "sweaty-cabbage",
+   "value": 42
+  },
+  {
+   "label": "a-wall-is-an-argument",
+   "value": 47
+  },
+  {
+   "label": "top-5-caricatures",
+   "value": 55
+  },
+  {
+   "label": "next 1",
+   "value": 61.1,
+   "low": 58,
+   "high": 64
+  },
+  {
+   "label": "next 2",
+   "value": 67.2,
+   "low": 61,
+   "high": 73
+  },
+  {
+   "label": "next 3",
+   "value": 73.3,
+   "low": 64,
+   "high": 82
+  },
+  {
+   "label": "next 4",
+   "value": 79.4,
+   "low": 67,
+   "high": 91
+  }
+ ]
+}

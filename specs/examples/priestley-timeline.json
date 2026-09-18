@@ -1,0 +1,59 @@
+{
+ "chart": "priestley-timeline",
+ "kicker": "Who was there when...",
+ "title": "TEN HANDS, THREE YEARS",
+ "line": "Each regular from first change *to last*.",
+ "source": "git log of reference/ft-2021, 2015 to 2017",
+ "data": [
+  {
+   "label": "Bob Haslett",
+   "start": "2015-10-08",
+   "end": "2017-07-17"
+  },
+  {
+   "label": "Tom Pearson",
+   "start": "2015-09-18",
+   "end": "2017-05-02"
+  },
+  {
+   "label": "Alan Smith",
+   "start": "2015-09-29",
+   "end": "2017-07-14"
+  },
+  {
+   "label": "Steve Bernard",
+   "start": "2015-09-22",
+   "end": "2017-06-21"
+  },
+  {
+   "label": "Billy Ehrenberg",
+   "start": "2017-01-09",
+   "end": "2017-01-12"
+  },
+  {
+   "label": "johnburnmurdoch",
+   "start": "2016-04-05",
+   "end": "2016-06-01"
+  },
+  {
+   "label": "Martin Stabe",
+   "start": "2016-01-06",
+   "end": "2016-03-16"
+  },
+  {
+   "label": "Caroline Nevitt",
+   "start": "2016-04-14",
+   "end": "2016-04-21"
+  },
+  {
+   "label": "liz-faunce",
+   "start": "2016-06-30",
+   "end": "2016-07-13"
+  },
+  {
+   "label": "Jane Pong",
+   "start": "2017-07-04",
+   "end": "2017-07-04"
+  }
+ ]
+}

@@ -1,0 +1,308 @@
+{
+ "chart": "dot-density-map",
+ "kicker": "Where the people are...",
+ "title": "ONE DOT, TEN THOUSAND PEOPLE",
+ "line": "Everyone in a city of 20,000 or more, *each dot gathered round its city*.",
+ "source": "Natural Earth, 2019 population estimates",
+ "options": {
+  "focus": "australia",
+  "per": 10000
+ },
+ "data": [
+  {
+   "label": "Sydney",
+   "country": "Australia",
+   "value": 4630000
+  },
+  {
+   "label": "Melbourne",
+   "country": "Australia",
+   "value": 4170000
+  },
+  {
+   "label": "Brisbane",
+   "country": "Australia",
+   "value": 1860000
+  },
+  {
+   "label": "Perth",
+   "country": "Australia",
+   "value": 1532000
+  },
+  {
+   "label": "Adelaide",
+   "country": "Australia",
+   "value": 1145000
+  },
+  {
+   "label": "Newcastle",
+   "country": "Australia",
+   "value": 540796
+  },
+  {
+   "label": "Gold Coast",
+   "country": "Australia",
+   "value": 527660
+  },
+  {
+   "label": "Cranbourne",
+   "country": "Australia",
+   "value": 460491
+  },
+  {
+   "label": "Canberra",
+   "country": "Australia",
+   "value": 327700
+  },
+  {
+   "label": "Wollongong",
+   "country": "Australia",
+   "value": 260914
+  },
+  {
+   "label": "Geelong",
+   "country": "Australia",
+   "value": 160991
+  },
+  {
+   "label": "Cairns",
+   "country": "Australia",
+   "value": 154225
+  },
+  {
+   "label": "Townsville",
+   "country": "Australia",
+   "value": 138954
+  },
+  {
+   "label": "Albury",
+   "country": "Australia",
+   "value": 104258
+  },
+  {
+   "label": "Nowra",
+   "country": "Australia",
+   "value": 94781
+  },
+  {
+   "label": "Darwin",
+   "country": "Australia",
+   "value": 93080
+  },
+  {
+   "label": "Toowoomba",
+   "country": "Australia",
+   "value": 92800
+  },
+  {
+   "label": "Ballarat",
+   "country": "Australia",
+   "value": 85109
+  },
+  {
+   "label": "Bendigo",
+   "country": "Australia",
+   "value": 81657
+  },
+  {
+   "label": "Hobart",
+   "country": "Australia",
+   "value": 80870
+  },
+  {
+   "label": "Mackay",
+   "country": "Australia",
+   "value": 75922
+  },
+  {
+   "label": "Mandurah",
+   "country": "Australia",
+   "value": 73356
+  },
+  {
+   "label": "Launceston",
+   "country": "Australia",
+   "value": 72458
+  },
+  {
+   "label": "Sunshine Coast",
+   "country": "Australia",
+   "value": 71043
+  },
+  {
+   "label": "Rockhampton",
+   "country": "Australia",
+   "value": 65850
+  },
+  {
+   "label": "Coffs Harbour",
+   "country": "Australia",
+   "value": 62978
+  },
+  {
+   "label": "Wagga Wagga",
+   "country": "Australia",
+   "value": 55381
+  },
+  {
+   "label": "Bundaberg",
+   "country": "Australia",
+   "value": 52472
+  },
+  {
+   "label": "Port Macquarie",
+   "country": "Australia",
+   "value": 48547
+  },
+  {
+   "label": "Mildura",
+   "country": "Australia",
+   "value": 47867
+  },
+  {
+   "label": "Taree",
+   "country": "Australia",
+   "value": 44182
+  },
+  {
+   "label": "Orange",
+   "country": "Australia",
+   "value": 39329
+  },
+  {
+   "label": "Caloundra",
+   "country": "Australia",
+   "value": 38706
+  },
+  {
+   "label": "Tamworth",
+   "country": "Australia",
+   "value": 38551
+  },
+  {
+   "label": "Kalgoorlie",
+   "country": "Australia",
+   "value": 36852
+  },
+  {
+   "label": "Shepparton",
+   "country": "Australia",
+   "value": 33550
+  },
+  {
+   "label": "Mount Isa",
+   "country": "Australia",
+   "value": 33200
+  },
+  {
+   "label": "Tweed Heads",
+   "country": "Australia",
+   "value": 33065
+  },
+  {
+   "label": "Queanbeyan",
+   "country": "Australia",
+   "value": 32602
+  },
+  {
+   "label": "Melton",
+   "country": "Australia",
+   "value": 32368
+  },
+  {
+   "label": "Dubbo",
+   "country": "Australia",
+   "value": 31574
+  },
+  {
+   "label": "Caboolture",
+   "country": "Australia",
+   "value": 31513
+  },
+  {
+   "label": "Lismore",
+   "country": "Australia",
+   "value": 31430
+  },
+  {
+   "label": "Gladstone",
+   "country": "Australia",
+   "value": 30489
+  },
+  {
+   "label": "Warrnambool",
+   "country": "Australia",
+   "value": 29928
+  },
+  {
+   "label": "Sunbury",
+   "country": "Australia",
+   "value": 29925
+  },
+  {
+   "label": "Alice Springs",
+   "country": "Australia",
+   "value": 27710
+  },
+  {
+   "label": "Geraldton",
+   "country": "Australia",
+   "value": 27258
+  },
+  {
+   "label": "Bunbury",
+   "country": "Australia",
+   "value": 26998
+  },
+  {
+   "label": "Albany",
+   "country": "Australia",
+   "value": 26445
+  },
+  {
+   "label": "Hervey Bay",
+   "country": "Australia",
+   "value": 25114
+  },
+  {
+   "label": "Mount Gambier",
+   "country": "Australia",
+   "value": 23209
+  },
+  {
+   "label": "Armidale",
+   "country": "Australia",
+   "value": 22673
+  },
+  {
+   "label": "Whyalla",
+   "country": "Australia",
+   "value": 22559
+  },
+  {
+   "label": "Sale",
+   "country": "Australia",
+   "value": 22486
+  },
+  {
+   "label": "Katoomba",
+   "country": "Australia",
+   "value": 22076
+  },
+  {
+   "label": "Goulburn",
+   "country": "Australia",
+   "value": 20940
+  },
+  {
+   "label": "Maryborough",
+   "country": "Australia",
+   "value": 20678
+  },
+  {
+   "label": "Kwinana",
+   "country": "Australia",
+   "value": 20086
+  }
+ ]
+}

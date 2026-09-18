@@ -1,0 +1,45 @@
+{
+ "chart": "bar-diverging",
+ "kicker": "Pictures in, slides out...",
+ "title": "MORE or FEWER",
+ "line": "Slides drafted less pictures dropped in, *story by story*.",
+ "source": "Marketing/Stories/*/draft",
+ "data": [
+  {
+   "label": "trump-balloon",
+   "value": -1
+  },
+  {
+   "label": "inflatables",
+   "value": -4
+  },
+  {
+   "label": "experience-gardens",
+   "value": 1
+  },
+  {
+   "label": "sidehatch",
+   "value": 0
+  },
+  {
+   "label": "babbling-with-baobabs",
+   "value": 1
+  },
+  {
+   "label": "bab-arrives",
+   "value": 1
+  },
+  {
+   "label": "sweaty-cabbage",
+   "value": 1
+  },
+  {
+   "label": "a-wall-is-an-argument",
+   "value": 1
+  },
+  {
+   "label": "top-5-caricatures",
+   "value": 1
+  }
+ ]
+}

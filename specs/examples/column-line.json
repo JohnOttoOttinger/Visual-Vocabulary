@@ -1,0 +1,58 @@
+{
+ "chart": "column-line",
+ "kicker": "How the FT built it...",
+ "title": "BUSY, then SPREAD",
+ "line": "Changes each quarter, *and changes per person*.",
+ "source": "git log of reference/ft-2021",
+ "axes": [
+  "Changes",
+  "Changes per person"
+ ],
+ "data": [
+  {
+   "label": "2015 Q3",
+   "value": 75,
+   "value2": 25.0
+  },
+  {
+   "label": "Q4",
+   "value": 83,
+   "value2": 16.6
+  },
+  {
+   "label": "2016 Q1",
+   "value": 17,
+   "value2": 3.4
+  },
+  {
+   "label": "Q2",
+   "value": 479,
+   "value2": 79.8
+  },
+  {
+   "label": "Q3",
+   "value": 239,
+   "value2": 47.8
+  },
+  {
+   "label": "Q4",
+   "value": 211,
+   "value2": 42.2
+  },
+  {
+   "label": "2017 Q1",
+   "value": 167,
+   "value2": 23.9
+  },
+  {
+   "label": "Q2",
+   "value": 84,
+   "value2": 9.3
+  },
+  {
+   "label": "Q3",
+   "value": 11,
+   "value2": 3.7
+  }
+ ]
+}

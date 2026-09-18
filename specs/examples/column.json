@@ -1,0 +1,25 @@
+{
+ "chart": "column",
+ "kicker": "Who built the FT set...",
+ "title": "IN the ORDER THEY JOINED",
+ "line": "Changes by each regular hand, *first to arrive on the left*.",
+ "source": "git log of reference/ft-2021, 2015 to 2017",
+ "data": [
+  {
+   "label": "Tom Pearson",
+   "value": 189
+  },
+  {
+   "label": "Steve Bernard",
+   "value": 86
+  },
+  {
+   "label": "Alan Smith",
+   "value": 111
+  },
+  {
+   "label": "Bob Haslett",
+   "value": 935
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "chart": "line",
+ "kicker": "Slides drafted so far...",
+ "title": "FIFTY-FIVE SLIDES",
+ "line": "Slides drafted, *a running total by story*.",
+ "source": "Marketing/Stories/*/draft, in the order drafted",
+ "data": [
+  {
+   "label": "16 Sep",
+   "value": 7
+  },
+  {
+   "label": "",
+   "value": 11
+  },
+  {
+   "label": "17 Sep",
+   "value": 20
+  },
+  {
+   "label": "",
+   "value": 26
+  },
+  {
+   "label": "",
+   "value": 32
+  },
+  {
+   "label": "",
+   "value": 39
+  },
+  {
+   "label": "",
+   "value": 42
+  },
+  {
+   "label": "",
+   "value": 47
+  },
+  {
+   "label": "18 Sep",
+   "value": 55,
+   "note": "nine stories, running total"
+  }
+ ]
+}

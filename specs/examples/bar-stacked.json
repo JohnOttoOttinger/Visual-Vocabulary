@@ -1,0 +1,85 @@
+{
+ "chart": "bar-stacked",
+ "kicker": "Eighty charts...",
+ "title": "EACH FAMILY by WAVE",
+ "line": "Every family's charts, *stacked by when they get drawn*.",
+ "source": "catalog/charts.json",
+ "series": [
+  "Wave 1",
+  "Wave 2",
+  "Wave 3",
+  "Wave 4"
+ ],
+ "data": [
+  {
+   "label": "Change over time",
+   "Wave 1": 4,
+   "Wave 2": 8,
+   "Wave 3": 3,
+   "Wave 4": 0
+  },
+  {
+   "label": "Magnitude",
+   "Wave 1": 2,
+   "Wave 2": 6,
+   "Wave 3": 4,
+   "Wave 4": 0
+  },
+  {
+   "label": "Part-to-whole",
+   "Wave 1": 4,
+   "Wave 2": 2,
+   "Wave 3": 5,
+   "Wave 4": 0
+  },
+  {
+   "label": "Distribution",
+   "Wave 1": 4,
+   "Wave 2": 1,
+   "Wave 3": 4,
+   "Wave 4": 0
+  },
+  {
+   "label": "Spatial",
+   "Wave 1": 0,
+   "Wave 2": 0,
+   "Wave 3": 0,
+   "Wave 4": 9
+  },
+  {
+   "label": "Ranking",
+   "Wave 1": 6,
+   "Wave 2": 0,
+   "Wave 3": 1,
+   "Wave 4": 0
+  },
+  {
+   "label": "Correlation",
+   "Wave 1": 2,
+   "Wave 2": 4,
+   "Wave 3": 0,
+   "Wave 4": 0
+  },
+  {
+   "label": "Deviation",
+   "Wave 1": 1,
+   "Wave 2": 4,
+   "Wave 3": 1,
+   "Wave 4": 0
+  },
+  {
+   "label": "Flow",
+   "Wave 1": 2,
+   "Wave 2": 2,
+   "Wave 3": 1,
+   "Wave 4": 0
+  },
+  {
+   "label": "Comparison",
+   "Wave 1": 1,
+   "Wave 2": 0,
+   "Wave 3": 0,
+   "Wave 4": 0
+  }
+ ]
+}

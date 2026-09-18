@@ -1,0 +1,45 @@
+{
+ "chart": "lollipop-v",
+ "kicker": "The FT's poster...",
+ "title": "CHARTS by FAMILY",
+ "line": "Every chart on the FT's poster, *the biggest family first*.",
+ "source": "reference/ft-2021/chartTypes.csv",
+ "data": [
+  {
+   "label": "Deviation",
+   "value": 4
+  },
+  {
+   "label": "Correlation",
+   "value": 5
+  },
+  {
+   "label": "Change over time",
+   "value": 12
+  },
+  {
+   "label": "Ranking",
+   "value": 8
+  },
+  {
+   "label": "Distribution",
+   "value": 8
+  },
+  {
+   "label": "Part-to-whole",
+   "value": 11
+  },
+  {
+   "label": "Magnitude",
+   "value": 12
+  },
+  {
+   "label": "Spatial",
+   "value": 8
+  },
+  {
+   "label": "Flow",
+   "value": 4
+  }
+ ]
+}

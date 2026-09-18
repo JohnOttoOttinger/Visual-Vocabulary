@@ -1,0 +1,58 @@
+{
+ "chart": "line-two-panel",
+ "kicker": "How the FT built it...",
+ "title": "CHANGES and PEOPLE",
+ "line": "Changes each quarter, *and how many hands made them*.",
+ "source": "git log of reference/ft-2021",
+ "series": [
+  "Changes",
+  "People"
+ ],
+ "data": [
+  {
+   "label": "2015 Q3",
+   "Changes": 75,
+   "People": 3
+  },
+  {
+   "label": "Q4",
+   "Changes": 83,
+   "People": 5
+  },
+  {
+   "label": "2016 Q1",
+   "Changes": 17,
+   "People": 5
+  },
+  {
+   "label": "Q2",
+   "Changes": 479,
+   "People": 6
+  },
+  {
+   "label": "Q3",
+   "Changes": 239,
+   "People": 5
+  },
+  {
+   "label": "Q4",
+   "Changes": 211,
+   "People": 5
+  },
+  {
+   "label": "2017 Q1",
+   "Changes": 167,
+   "People": 7
+  },
+  {
+   "label": "Q2",
+   "Changes": 84,
+   "People": 9
+  },
+  {
+   "label": "Q3",
+   "Changes": 11,
+   "People": 3
+  }
+ ]
+}

@@ -1,0 +1,373 @@
+{
+ "chart": "candlestick",
+ "kicker": "Week by week...",
+ "title": "THE WORKING WEEK, 2016",
+ "line": "Each week's Monday and Friday, *its busiest and quietest day*.",
+ "source": "git log of reference/ft-2021, 2016, weekdays",
+ "data": [
+  {
+   "label": "Jan",
+   "open": 0,
+   "close": 0,
+   "high": 2,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 0,
+   "high": 0,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 0,
+   "high": 0,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 0,
+   "high": 0,
+   "low": 0
+  },
+  {
+   "label": "Feb",
+   "open": 0,
+   "close": 0,
+   "high": 1,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 1,
+   "high": 1,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 0,
+   "high": 0,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 0,
+   "high": 0,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 2,
+   "high": 2,
+   "low": 0
+  },
+  {
+   "label": "Mar",
+   "open": 0,
+   "close": 0,
+   "high": 0,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 4,
+   "close": 0,
+   "high": 4,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 0,
+   "high": 0,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 6,
+   "high": 6,
+   "low": 0
+  },
+  {
+   "label": "Apr",
+   "open": 6,
+   "close": 6,
+   "high": 11,
+   "low": 3
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 17,
+   "high": 17,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 11,
+   "close": 11,
+   "high": 13,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 19,
+   "close": 7,
+   "high": 19,
+   "low": 0
+  },
+  {
+   "label": "May",
+   "open": 0,
+   "close": 20,
+   "high": 20,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 15,
+   "close": 18,
+   "high": 24,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 8,
+   "close": 9,
+   "high": 17,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 5,
+   "close": 7,
+   "high": 12,
+   "low": 2
+  },
+  {
+   "label": "",
+   "open": 1,
+   "close": 18,
+   "high": 18,
+   "low": 0
+  },
+  {
+   "label": "Jun",
+   "open": 0,
+   "close": 0,
+   "high": 7,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 0,
+   "high": 0,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 2,
+   "close": 0,
+   "high": 6,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 16,
+   "high": 46,
+   "low": 0
+  },
+  {
+   "label": "Jul",
+   "open": 0,
+   "close": 0,
+   "high": 0,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 5,
+   "high": 5,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 30,
+   "high": 30,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 3,
+   "close": 1,
+   "high": 5,
+   "low": 0
+  },
+  {
+   "label": "Aug",
+   "open": 0,
+   "close": 8,
+   "high": 13,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 2,
+   "close": 6,
+   "high": 10,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 9,
+   "high": 12,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 2,
+   "close": 25,
+   "high": 25,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 9,
+   "high": 27,
+   "low": 0
+  },
+  {
+   "label": "Sep",
+   "open": 0,
+   "close": 0,
+   "high": 4,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 0,
+   "high": 0,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 0,
+   "high": 3,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 0,
+   "high": 0,
+   "low": 0
+  },
+  {
+   "label": "Oct",
+   "open": 1,
+   "close": 4,
+   "high": 26,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 33,
+   "close": 19,
+   "high": 33,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 10,
+   "close": 5,
+   "high": 10,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 5,
+   "close": 1,
+   "high": 5,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 3,
+   "close": 25,
+   "high": 25,
+   "low": 0
+  },
+  {
+   "label": "Nov",
+   "open": 6,
+   "close": 5,
+   "high": 7,
+   "low": 2
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 4,
+   "high": 4,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 0,
+   "high": 0,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 0,
+   "high": 5,
+   "low": 0
+  },
+  {
+   "label": "Dec",
+   "open": 0,
+   "close": 0,
+   "high": 2,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 1,
+   "close": 0,
+   "high": 4,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 2,
+   "close": 0,
+   "high": 2,
+   "low": 0
+  },
+  {
+   "label": "",
+   "open": 0,
+   "close": 0,
+   "high": 0,
+   "low": 0
+  }
+ ]
+}

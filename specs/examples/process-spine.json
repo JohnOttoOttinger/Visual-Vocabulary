@@ -1,0 +1,29 @@
+{
+ "chart": "process-spine",
+ "kicker": "From numbers to a story...",
+ "title": "the DATA STORY PROCESS",
+ "line": "Five stages, *from raw table to final deck*.",
+ "insight": "Infographic story",
+ "data": [
+  [
+   "Zeros and ones",
+   "The raw table, before anyone has looked."
+  ],
+  [
+   "Data analysis",
+   "Find the microstories: gaps, overlaps, superlatives."
+  ],
+  [
+   "Infographic story",
+   "One insight per slide, in the right order."
+  ],
+  [
+   "The deck",
+   "PowerPoint in the workshop; a carousel here."
+  ],
+  [
+   "Final presentation",
+   "Context, insight, call-to-action."
+  ]
+ ]
+}

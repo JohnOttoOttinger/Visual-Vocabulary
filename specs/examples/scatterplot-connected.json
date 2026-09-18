@@ -1,0 +1,58 @@
+{
+ "chart": "scatterplot-connected",
+ "kicker": "More hands, more changes?",
+ "title": "the PATH of the FT SET",
+ "line": "Each quarter a point: *people across, changes up*.",
+ "source": "git log of reference/ft-2021",
+ "axes": [
+  "People",
+  "Changes"
+ ],
+ "data": [
+  {
+   "label": "2015 Q3",
+   "value": 3,
+   "value2": 75
+  },
+  {
+   "label": "2015 Q4",
+   "value": 5,
+   "value2": 83
+  },
+  {
+   "label": "2016 Q1",
+   "value": 5,
+   "value2": 17
+  },
+  {
+   "label": "2016 Q2",
+   "value": 6,
+   "value2": 479
+  },
+  {
+   "label": "2016 Q3",
+   "value": 5,
+   "value2": 239
+  },
+  {
+   "label": "2016 Q4",
+   "value": 5,
+   "value2": 211
+  },
+  {
+   "label": "2017 Q1",
+   "value": 7,
+   "value2": 167
+  },
+  {
+   "label": "2017 Q2",
+   "value": 9,
+   "value2": 84
+  },
+  {
+   "label": "2017 Q3",
+   "value": 3,
+   "value2": 11
+  }
+ ]
+}

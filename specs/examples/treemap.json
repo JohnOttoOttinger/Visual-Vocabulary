@@ -1,0 +1,49 @@
+{
+ "chart": "treemap",
+ "kicker": "Eighty charts...",
+ "title": "the LIBRARY by FAMILY",
+ "line": "Every chart in the catalogue, *sized by its family*.",
+ "source": "catalog/charts.json",
+ "data": [
+  {
+   "label": "Change over time",
+   "value": 15
+  },
+  {
+   "label": "Magnitude",
+   "value": 12
+  },
+  {
+   "label": "Part-to-whole",
+   "value": 11
+  },
+  {
+   "label": "Distribution",
+   "value": 9
+  },
+  {
+   "label": "Spatial",
+   "value": 9
+  },
+  {
+   "label": "Ranking",
+   "value": 7
+  },
+  {
+   "label": "Correlation",
+   "value": 6
+  },
+  {
+   "label": "Deviation",
+   "value": 6
+  },
+  {
+   "label": "Flow",
+   "value": 5
+  },
+  {
+   "label": "Comparison",
+   "value": 1
+  }
+ ]
+}

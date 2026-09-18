@@ -1,0 +1,67 @@
+{
+ "chart": "bubble",
+ "kicker": "Listed, built, written...",
+ "title": "the FT's FAMILIES",
+ "line": "Charts listed across, *built up*, sized by lines of code.",
+ "source": "chartTypes.csv and reference/ft-2021/*/*.js",
+ "axes": [
+  "Listed",
+  "Built"
+ ],
+ "data": [
+  {
+   "label": "Deviation",
+   "value": 4,
+   "value2": 3,
+   "size": 907
+  },
+  {
+   "label": "Correlation",
+   "value": 5,
+   "value2": 5,
+   "size": 1728
+  },
+  {
+   "label": "Change over time",
+   "value": 12,
+   "value2": 8,
+   "size": 3564
+  },
+  {
+   "label": "Ranking",
+   "value": 8,
+   "value2": 6,
+   "size": 1464
+  },
+  {
+   "label": "Distribution",
+   "value": 8,
+   "value2": 4,
+   "size": 814
+  },
+  {
+   "label": "Part-to-whole",
+   "value": 11,
+   "value2": 6,
+   "size": 1050
+  },
+  {
+   "label": "Magnitude",
+   "value": 12,
+   "value2": 8,
+   "size": 1860
+  },
+  {
+   "label": "Spatial",
+   "value": 8,
+   "value2": 0,
+   "size": 310
+  },
+  {
+   "label": "Flow",
+   "value": 4,
+   "value2": 2,
+   "size": 838
+  }
+ ]
+}

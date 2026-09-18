@@ -1,0 +1,49 @@
+{
+ "chart": "radar",
+ "kicker": "When each hand worked...",
+ "title": "THE WEEK of THREE HANDS",
+ "line": "Each person's changes by day of the week, *as shares of their own week*.",
+ "source": "git log of reference/ft-2021, 2015 to 2017",
+ "series": [
+  "Mon",
+  "Tue",
+  "Wed",
+  "Thu",
+  "Fri",
+  "Sat",
+  "Sun"
+ ],
+ "unit": "%",
+ "data": [
+  {
+   "label": "Bob Haslett",
+   "Mon": 11,
+   "Tue": 0,
+   "Wed": 26,
+   "Thu": 30,
+   "Fri": 32,
+   "Sat": 0,
+   "Sun": 0
+  },
+  {
+   "label": "Tom Pearson",
+   "Mon": 18,
+   "Tue": 19,
+   "Wed": 17,
+   "Thu": 16,
+   "Fri": 30,
+   "Sat": 0,
+   "Sun": 0
+  },
+  {
+   "label": "Alan Smith",
+   "Mon": 17,
+   "Tue": 22,
+   "Wed": 12,
+   "Thu": 10,
+   "Fri": 38,
+   "Sat": 0,
+   "Sun": 2
+  }
+ ]
+}

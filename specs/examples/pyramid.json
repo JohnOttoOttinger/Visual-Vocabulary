@@ -1,0 +1,73 @@
+{
+ "chart": "pyramid",
+ "kicker": "Two years of the FT set...",
+ "title": "2016 against 2017",
+ "line": "Changes in each month, *the busy year on the left*.",
+ "source": "git log of reference/ft-2021",
+ "axes": [
+  "2016",
+  "2017"
+ ],
+ "data": [
+  {
+   "label": "Jan",
+   "value": 4,
+   "value2": 58
+  },
+  {
+   "label": "Feb",
+   "value": 3,
+   "value2": 62
+  },
+  {
+   "label": "Mar",
+   "value": 10,
+   "value2": 47
+  },
+  {
+   "label": "Apr",
+   "value": 164,
+   "value2": 43
+  },
+  {
+   "label": "May",
+   "value": 180,
+   "value2": 32
+  },
+  {
+   "label": "Jun",
+   "value": 135,
+   "value2": 9
+  },
+  {
+   "label": "Jul",
+   "value": 70,
+   "value2": 11
+  },
+  {
+   "label": "Aug",
+   "value": 143,
+   "value2": 0
+  },
+  {
+   "label": "Sep",
+   "value": 26,
+   "value2": 0
+  },
+  {
+   "label": "Oct",
+   "value": 126,
+   "value2": 0
+  },
+  {
+   "label": "Nov",
+   "value": 69,
+   "value2": 0
+  },
+  {
+   "label": "Dec",
+   "value": 16,
+   "value2": 0
+  }
+ ]
+}

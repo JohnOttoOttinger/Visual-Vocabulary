@@ -1,0 +1,78 @@
+{
+ "chart": "area",
+ "kicker": "Who built it...",
+ "title": "FOUR HANDS on the FT SET",
+ "line": "Changes to date, *stacked by who made them*.",
+ "source": "git log of reference/ft-2021, usernames merged with names",
+ "series": [
+  "Bob Haslett",
+  "Tom Pearson",
+  "Alan Smith",
+  "Everyone else"
+ ],
+ "data": [
+  {
+   "label": "2015 Q3",
+   "Bob Haslett": 0,
+   "Tom Pearson": 65,
+   "Alan Smith": 2,
+   "Everyone else": 8
+  },
+  {
+   "label": "Q4",
+   "Bob Haslett": 6,
+   "Tom Pearson": 123,
+   "Alan Smith": 15,
+   "Everyone else": 14
+  },
+  {
+   "label": "2016 Q1",
+   "Bob Haslett": 6,
+   "Tom Pearson": 127,
+   "Alan Smith": 17,
+   "Everyone else": 25
+  },
+  {
+   "label": "Q2",
+   "Bob Haslett": 453,
+   "Tom Pearson": 127,
+   "Alan Smith": 37,
+   "Everyone else": 37
+  },
+  {
+   "label": "Q3",
+   "Bob Haslett": 672,
+   "Tom Pearson": 127,
+   "Alan Smith": 51,
+   "Everyone else": 43
+  },
+  {
+   "label": "Q4",
+   "Bob Haslett": 805,
+   "Tom Pearson": 132,
+   "Alan Smith": 95,
+   "Everyone else": 72
+  },
+  {
+   "label": "2017 Q1",
+   "Bob Haslett": 876,
+   "Tom Pearson": 173,
+   "Alan Smith": 100,
+   "Everyone else": 122
+  },
+  {
+   "label": "Q2",
+   "Bob Haslett": 932,
+   "Tom Pearson": 189,
+   "Alan Smith": 105,
+   "Everyone else": 129
+  },
+  {
+   "label": "Q3",
+   "Bob Haslett": 935,
+   "Tom Pearson": 189,
+   "Alan Smith": 111,
+   "Everyone else": 131
+  }
+ ]
+}

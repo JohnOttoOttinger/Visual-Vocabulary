@@ -1,0 +1,58 @@
+{
+ "chart": "spine",
+ "kicker": "What the FT drew...",
+ "title": "BUILT or ONLY DRAWN",
+ "line": "Each family on the FT's poster, *as shares of what it listed*.",
+ "source": "reference/ft-2021/chartTypes.csv",
+ "axes": [
+  "Built",
+  "Never built"
+ ],
+ "data": [
+  {
+   "label": "Deviation",
+   "value": 3,
+   "value2": 1
+  },
+  {
+   "label": "Correlation",
+   "value": 5,
+   "value2": 0
+  },
+  {
+   "label": "Change over time",
+   "value": 8,
+   "value2": 4
+  },
+  {
+   "label": "Ranking",
+   "value": 6,
+   "value2": 2
+  },
+  {
+   "label": "Distribution",
+   "value": 4,
+   "value2": 4
+  },
+  {
+   "label": "Part-to-whole",
+   "value": 6,
+   "value2": 5
+  },
+  {
+   "label": "Magnitude",
+   "value": 8,
+   "value2": 4
+  },
+  {
+   "label": "Spatial",
+   "value": 0,
+   "value2": 8
+  },
+  {
+   "label": "Flow",
+   "value": 2,
+   "value2": 2
+  }
+ ]
+}

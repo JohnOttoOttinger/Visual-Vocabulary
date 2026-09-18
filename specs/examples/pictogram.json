@@ -1,0 +1,45 @@
+{
+ "chart": "pictogram",
+ "kicker": "What went in...",
+ "title": "PICTURES per STORY",
+ "line": "One square for each picture dropped in, *story by story*.",
+ "source": "Marketing/Stories/*",
+ "data": [
+  {
+   "label": "trump-balloon",
+   "value": 8
+  },
+  {
+   "label": "inflatables",
+   "value": 8
+  },
+  {
+   "label": "experience-gardens",
+   "value": 8
+  },
+  {
+   "label": "sidehatch",
+   "value": 6
+  },
+  {
+   "label": "babbling-with-baobabs",
+   "value": 5
+  },
+  {
+   "label": "bab-arrives",
+   "value": 6
+  },
+  {
+   "label": "sweaty-cabbage",
+   "value": 2
+  },
+  {
+   "label": "a-wall-is-an-argument",
+   "value": 4
+  },
+  {
+   "label": "top-5-caricatures",
+   "value": 7
+  }
+ ]
+}

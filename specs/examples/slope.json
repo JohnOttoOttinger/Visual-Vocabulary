@@ -1,0 +1,58 @@
+{
+ "chart": "slope",
+ "kicker": "From the FT to us...",
+ "title": "WHAT GETS DRAWN",
+ "line": "Charts the FT built, *against what the library will draw*.",
+ "source": "chartTypes.csv and catalog/charts.json",
+ "axes": [
+  "FT built",
+  "Library"
+ ],
+ "data": [
+  {
+   "label": "Deviation",
+   "value": 3,
+   "value2": 6
+  },
+  {
+   "label": "Correlation",
+   "value": 5,
+   "value2": 6
+  },
+  {
+   "label": "Change over time",
+   "value": 8,
+   "value2": 15
+  },
+  {
+   "label": "Ranking",
+   "value": 6,
+   "value2": 7
+  },
+  {
+   "label": "Distribution",
+   "value": 4,
+   "value2": 9
+  },
+  {
+   "label": "Part-to-whole",
+   "value": 6,
+   "value2": 11
+  },
+  {
+   "label": "Magnitude",
+   "value": 8,
+   "value2": 12
+  },
+  {
+   "label": "Spatial",
+   "value": 0,
+   "value2": 9
+  },
+  {
+   "label": "Flow",
+   "value": 2,
+   "value2": 5
+  }
+ ]
+}

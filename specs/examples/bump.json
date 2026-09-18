@@ -1,0 +1,68 @@
+{
+ "chart": "bump",
+ "kicker": "Which family leads...",
+ "title": "THE FAMILIES, RANKED",
+ "line": "Each family's place by count, *from poster to library*.",
+ "source": "chartTypes.csv and catalog/charts.json",
+ "series": [
+  "Poster",
+  "FT built",
+  "Library"
+ ],
+ "data": [
+  {
+   "label": "Deviation",
+   "Poster": 4,
+   "FT built": 3,
+   "Library": 6
+  },
+  {
+   "label": "Correlation",
+   "Poster": 5,
+   "FT built": 5,
+   "Library": 6
+  },
+  {
+   "label": "Change over time",
+   "Poster": 12,
+   "FT built": 8,
+   "Library": 15
+  },
+  {
+   "label": "Ranking",
+   "Poster": 8,
+   "FT built": 6,
+   "Library": 7
+  },
+  {
+   "label": "Distribution",
+   "Poster": 8,
+   "FT built": 4,
+   "Library": 9
+  },
+  {
+   "label": "Part-to-whole",
+   "Poster": 11,
+   "FT built": 6,
+   "Library": 11
+  },
+  {
+   "label": "Magnitude",
+   "Poster": 12,
+   "FT built": 8,
+   "Library": 12
+  },
+  {
+   "label": "Spatial",
+   "Poster": 8,
+   "FT built": 0,
+   "Library": 9
+  },
+  {
+   "label": "Flow",
+   "Poster": 4,
+   "FT built": 2,
+   "Library": 5
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "chart": "dumbbell",
+ "kicker": "Pictures against slides...",
+ "title": "HOW FAR APART",
+ "line": "Each story runs *from pictures in to slides out*.",
+ "axes": [
+  "Pictures",
+  "Slides"
+ ],
+ "data": [
+  {
+   "label": "trump-balloon",
+   "value": 8,
+   "value2": 7,
+   "note": "bulletin, the first posted"
+  },
+  {
+   "label": "inflatables",
+   "value": 8,
+   "value2": 4,
+   "note": "gallery: 8 pictures, 2 grids"
+  },
+  {
+   "label": "experience-gardens",
+   "value": 8,
+   "value2": 9,
+   "note": "list"
+  },
+  {
+   "label": "sidehatch",
+   "value": 6,
+   "value2": 6,
+   "note": "walkthrough"
+  },
+  {
+   "label": "babbling-with-baobabs",
+   "value": 5,
+   "value2": 6,
+   "note": "conversation"
+  },
+  {
+   "label": "bab-arrives",
+   "value": 6,
+   "value2": 7,
+   "note": "build"
+  },
+  {
+   "label": "sweaty-cabbage",
+   "value": 2,
+   "value2": 3,
+   "note": "single"
+  },
+  {
+   "label": "a-wall-is-an-argument",
+   "value": 4,
+   "value2": 5,
+   "note": "argument"
+  },
+  {
+   "label": "top-5-caricatures",
+   "value": 7,
+   "value2": 8,
+   "note": "list, Top 5s"
+  }
+ ]
+}

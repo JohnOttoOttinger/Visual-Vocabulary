@@ -1,0 +1,54 @@
+{
+ "chart": "beeswarm",
+ "kicker": "Slides per picture...",
+ "title": "the ODD ONE OUT",
+ "line": "Slides per picture, *one story on its own*.",
+ "insight": "inflatables",
+ "data": [
+  {
+   "label": "trump-balloon",
+   "value": 0.88,
+   "note": "bulletin, the first posted"
+  },
+  {
+   "label": "inflatables",
+   "value": 0.5,
+   "note": "gallery: 8 pictures, 2 grids"
+  },
+  {
+   "label": "experience-gardens",
+   "value": 1.12,
+   "note": "list"
+  },
+  {
+   "label": "sidehatch",
+   "value": 1.0,
+   "note": "walkthrough"
+  },
+  {
+   "label": "babbling-with-baobabs",
+   "value": 1.2,
+   "note": "conversation"
+  },
+  {
+   "label": "bab-arrives",
+   "value": 1.17,
+   "note": "build"
+  },
+  {
+   "label": "sweaty-cabbage",
+   "value": 1.5,
+   "note": "single"
+  },
+  {
+   "label": "a-wall-is-an-argument",
+   "value": 1.25,
+   "note": "argument"
+  },
+  {
+   "label": "top-5-caricatures",
+   "value": 1.14,
+   "note": "list, Top 5s"
+  }
+ ]
+}

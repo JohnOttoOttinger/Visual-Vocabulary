@@ -1,0 +1,49 @@
+{
+ "chart": "lollipop-h",
+ "kicker": "The heavy lifters...",
+ "title": "the LONGEST FT TEMPLATES",
+ "line": "Lines of code in each FT chart, *the longest first*.",
+ "source": "reference/ft-2021/*/*.js",
+ "data": [
+  {
+   "label": "line-dual-axis",
+   "value": 508
+  },
+  {
+   "label": "line-moving-average",
+   "value": 494
+  },
+  {
+   "label": "sankey",
+   "value": 493
+  },
+  {
+   "label": "line",
+   "value": 446
+  },
+  {
+   "label": "line-interday",
+   "value": 388
+  },
+  {
+   "label": "waterfall",
+   "value": 345
+  },
+  {
+   "label": "bump",
+   "value": 334
+  },
+  {
+   "label": "scatterplot-line-date",
+   "value": 327
+  },
+  {
+   "label": "calendar-heat-map",
+   "value": 325
+  },
+  {
+   "label": "bubble",
+   "value": 320
+  }
+ ]
+}

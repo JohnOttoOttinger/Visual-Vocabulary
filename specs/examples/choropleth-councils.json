@@ -1,0 +1,335 @@
+{
+ "charts": [
+  {
+   "chart": "choropleth",
+   "kicker": "Close in...",
+   "title": "VICTORIA'S COUNCILS by SIZE",
+   "line": "Every council by its area in square kilometres, *the biggest in the far north-west*.",
+   "source": "ABS boundaries (ASGS 2021, councils 2025)",
+   "unit": " km²",
+   "options": {
+    "focus": "Victoria",
+    "layer": "councils"
+   },
+   "data": [
+    {
+     "label": "Alpine",
+     "value": 4788
+    },
+    {
+     "label": "Ararat",
+     "value": 4211
+    },
+    {
+     "label": "Ballarat",
+     "value": 739
+    },
+    {
+     "label": "Banyule",
+     "value": 63
+    },
+    {
+     "label": "Bass Coast",
+     "value": 866
+    },
+    {
+     "label": "Baw Baw",
+     "value": 4028
+    },
+    {
+     "label": "Bayside (Vic.)",
+     "value": 37
+    },
+    {
+     "label": "Benalla",
+     "value": 2353
+    },
+    {
+     "label": "Boroondara",
+     "value": 60
+    },
+    {
+     "label": "Brimbank",
+     "value": 123
+    },
+    {
+     "label": "Buloke",
+     "value": 7998
+    },
+    {
+     "label": "Campaspe",
+     "value": 4519
+    },
+    {
+     "label": "Cardinia",
+     "value": 1283
+    },
+    {
+     "label": "Casey",
+     "value": 409
+    },
+    {
+     "label": "Central Goldfields",
+     "value": 1533
+    },
+    {
+     "label": "Colac Otway",
+     "value": 3437
+    },
+    {
+     "label": "Corangamite",
+     "value": 4407
+    },
+    {
+     "label": "Darebin",
+     "value": 53
+    },
+    {
+     "label": "East Gippsland",
+     "value": 20940
+    },
+    {
+     "label": "Frankston",
+     "value": 130
+    },
+    {
+     "label": "Gannawarra",
+     "value": 3738
+    },
+    {
+     "label": "Glen Eira",
+     "value": 39
+    },
+    {
+     "label": "Glenelg",
+     "value": 6219
+    },
+    {
+     "label": "Golden Plains",
+     "value": 2703
+    },
+    {
+     "label": "Greater Bendigo",
+     "value": 3000
+    },
+    {
+     "label": "Greater Dandenong",
+     "value": 130
+    },
+    {
+     "label": "Greater Geelong",
+     "value": 1248
+    },
+    {
+     "label": "Greater Shepparton",
+     "value": 2422
+    },
+    {
+     "label": "Hepburn",
+     "value": 1473
+    },
+    {
+     "label": "Hindmarsh",
+     "value": 7524
+    },
+    {
+     "label": "Hobsons Bay",
+     "value": 64
+    },
+    {
+     "label": "Horsham",
+     "value": 4267
+    },
+    {
+     "label": "Hume",
+     "value": 504
+    },
+    {
+     "label": "Indigo",
+     "value": 2040
+    },
+    {
+     "label": "Kingston (Vic.)",
+     "value": 91
+    },
+    {
+     "label": "Knox",
+     "value": 114
+    },
+    {
+     "label": "Latrobe (Vic.)",
+     "value": 1426
+    },
+    {
+     "label": "Loddon",
+     "value": 6696
+    },
+    {
+     "label": "Macedon Ranges",
+     "value": 1748
+    },
+    {
+     "label": "Manningham",
+     "value": 113
+    },
+    {
+     "label": "Mansfield",
+     "value": 3844
+    },
+    {
+     "label": "Maribyrnong",
+     "value": 31
+    },
+    {
+     "label": "Maroondah",
+     "value": 61
+    },
+    {
+     "label": "Melbourne",
+     "value": 38
+    },
+    {
+     "label": "Melton",
+     "value": 528
+    },
+    {
+     "label": "Merri-bek",
+     "value": 51
+    },
+    {
+     "label": "Mildura",
+     "value": 22082
+    },
+    {
+     "label": "Mitchell",
+     "value": 2862
+    },
+    {
+     "label": "Moira",
+     "value": 4046
+    },
+    {
+     "label": "Monash",
+     "value": 81
+    },
+    {
+     "label": "Moonee Valley",
+     "value": 43
+    },
+    {
+     "label": "Moorabool",
+     "value": 2111
+    },
+    {
+     "label": "Mornington Peninsula",
+     "value": 724
+    },
+    {
+     "label": "Mount Alexander",
+     "value": 1530
+    },
+    {
+     "label": "Moyne",
+     "value": 5482
+    },
+    {
+     "label": "Murrindindi",
+     "value": 3880
+    },
+    {
+     "label": "Nillumbik",
+     "value": 432
+    },
+    {
+     "label": "Northern Grampians",
+     "value": 5730
+    },
+    {
+     "label": "Port Phillip",
+     "value": 21
+    },
+    {
+     "label": "Pyrenees",
+     "value": 3435
+    },
+    {
+     "label": "Queenscliffe",
+     "value": 9
+    },
+    {
+     "label": "South Gippsland",
+     "value": 3296
+    },
+    {
+     "label": "Southern Grampians",
+     "value": 6654
+    },
+    {
+     "label": "Stonnington",
+     "value": 26
+    },
+    {
+     "label": "Strathbogie",
+     "value": 3303
+    },
+    {
+     "label": "Surf Coast",
+     "value": 1553
+    },
+    {
+     "label": "Swan Hill",
+     "value": 6116
+    },
+    {
+     "label": "Towong",
+     "value": 6675
+    },
+    {
+     "label": "Wangaratta",
+     "value": 3645
+    },
+    {
+     "label": "Warrnambool",
+     "value": 121
+    },
+    {
+     "label": "Wellington",
+     "value": 10817
+    },
+    {
+     "label": "West Wimmera",
+     "value": 9109
+    },
+    {
+     "label": "Whitehorse",
+     "value": 64
+    },
+    {
+     "label": "Whittlesea",
+     "value": 490
+    },
+    {
+     "label": "Wodonga",
+     "value": 433
+    },
+    {
+     "label": "Wyndham",
+     "value": 542
+    },
+    {
+     "label": "Yarra",
+     "value": 20
+    },
+    {
+     "label": "Yarra Ranges",
+     "value": 2468
+    },
+    {
+     "label": "Yarriambiack",
+     "value": 7326
+    }
+   ],
+   "name": "choropleth-councils-1"
+  }
+ ]
+}

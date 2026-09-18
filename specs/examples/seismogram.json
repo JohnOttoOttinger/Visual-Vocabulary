@@ -1,0 +1,1473 @@
+{
+ "chart": "seismogram",
+ "kicker": "Every day of 2016...",
+ "title": "THE BIG DAYS",
+ "line": "Changes on each day of the year, *one spike per day*.",
+ "source": "git log of reference/ft-2021, 2016",
+ "data": [
+  {
+   "label": "1 Jan",
+   "value": 0
+  },
+  {
+   "label": "2 Jan",
+   "value": 0
+  },
+  {
+   "label": "3 Jan",
+   "value": 0
+  },
+  {
+   "label": "4 Jan",
+   "value": 0
+  },
+  {
+   "label": "5 Jan",
+   "value": 2
+  },
+  {
+   "label": "6 Jan",
+   "value": 2
+  },
+  {
+   "label": "7 Jan",
+   "value": 0
+  },
+  {
+   "label": "8 Jan",
+   "value": 0
+  },
+  {
+   "label": "9 Jan",
+   "value": 0
+  },
+  {
+   "label": "10 Jan",
+   "value": 0
+  },
+  {
+   "label": "11 Jan",
+   "value": 0
+  },
+  {
+   "label": "12 Jan",
+   "value": 0
+  },
+  {
+   "label": "13 Jan",
+   "value": 0
+  },
+  {
+   "label": "14 Jan",
+   "value": 0
+  },
+  {
+   "label": "15 Jan",
+   "value": 0
+  },
+  {
+   "label": "16 Jan",
+   "value": 0
+  },
+  {
+   "label": "17 Jan",
+   "value": 0
+  },
+  {
+   "label": "18 Jan",
+   "value": 0
+  },
+  {
+   "label": "19 Jan",
+   "value": 0
+  },
+  {
+   "label": "20 Jan",
+   "value": 0
+  },
+  {
+   "label": "21 Jan",
+   "value": 0
+  },
+  {
+   "label": "22 Jan",
+   "value": 0
+  },
+  {
+   "label": "23 Jan",
+   "value": 0
+  },
+  {
+   "label": "24 Jan",
+   "value": 0
+  },
+  {
+   "label": "25 Jan",
+   "value": 0
+  },
+  {
+   "label": "26 Jan",
+   "value": 0
+  },
+  {
+   "label": "27 Jan",
+   "value": 0
+  },
+  {
+   "label": "28 Jan",
+   "value": 0
+  },
+  {
+   "label": "29 Jan",
+   "value": 0
+  },
+  {
+   "label": "30 Jan",
+   "value": 0
+  },
+  {
+   "label": "31 Jan",
+   "value": 0
+  },
+  {
+   "label": "1 Feb",
+   "value": 0
+  },
+  {
+   "label": "2 Feb",
+   "value": 0
+  },
+  {
+   "label": "3 Feb",
+   "value": 0
+  },
+  {
+   "label": "4 Feb",
+   "value": 1
+  },
+  {
+   "label": "5 Feb",
+   "value": 0
+  },
+  {
+   "label": "6 Feb",
+   "value": 0
+  },
+  {
+   "label": "7 Feb",
+   "value": 0
+  },
+  {
+   "label": "8 Feb",
+   "value": 0
+  },
+  {
+   "label": "9 Feb",
+   "value": 0
+  },
+  {
+   "label": "10 Feb",
+   "value": 0
+  },
+  {
+   "label": "11 Feb",
+   "value": 0
+  },
+  {
+   "label": "12 Feb",
+   "value": 1
+  },
+  {
+   "label": "13 Feb",
+   "value": 1
+  },
+  {
+   "label": "14 Feb",
+   "value": 0
+  },
+  {
+   "label": "15 Feb",
+   "value": 0
+  },
+  {
+   "label": "16 Feb",
+   "value": 0
+  },
+  {
+   "label": "17 Feb",
+   "value": 0
+  },
+  {
+   "label": "18 Feb",
+   "value": 0
+  },
+  {
+   "label": "19 Feb",
+   "value": 0
+  },
+  {
+   "label": "20 Feb",
+   "value": 0
+  },
+  {
+   "label": "21 Feb",
+   "value": 0
+  },
+  {
+   "label": "22 Feb",
+   "value": 0
+  },
+  {
+   "label": "23 Feb",
+   "value": 0
+  },
+  {
+   "label": "24 Feb",
+   "value": 0
+  },
+  {
+   "label": "25 Feb",
+   "value": 0
+  },
+  {
+   "label": "26 Feb",
+   "value": 0
+  },
+  {
+   "label": "27 Feb",
+   "value": 0
+  },
+  {
+   "label": "28 Feb",
+   "value": 0
+  },
+  {
+   "label": "29 Feb",
+   "value": 0
+  },
+  {
+   "label": "1 Mar",
+   "value": 1
+  },
+  {
+   "label": "2 Mar",
+   "value": 0
+  },
+  {
+   "label": "3 Mar",
+   "value": 2
+  },
+  {
+   "label": "4 Mar",
+   "value": 2
+  },
+  {
+   "label": "5 Mar",
+   "value": 0
+  },
+  {
+   "label": "6 Mar",
+   "value": 0
+  },
+  {
+   "label": "7 Mar",
+   "value": 0
+  },
+  {
+   "label": "8 Mar",
+   "value": 0
+  },
+  {
+   "label": "9 Mar",
+   "value": 0
+  },
+  {
+   "label": "10 Mar",
+   "value": 0
+  },
+  {
+   "label": "11 Mar",
+   "value": 0
+  },
+  {
+   "label": "12 Mar",
+   "value": 0
+  },
+  {
+   "label": "13 Mar",
+   "value": 0
+  },
+  {
+   "label": "14 Mar",
+   "value": 4
+  },
+  {
+   "label": "15 Mar",
+   "value": 0
+  },
+  {
+   "label": "16 Mar",
+   "value": 1
+  },
+  {
+   "label": "17 Mar",
+   "value": 0
+  },
+  {
+   "label": "18 Mar",
+   "value": 0
+  },
+  {
+   "label": "19 Mar",
+   "value": 0
+  },
+  {
+   "label": "20 Mar",
+   "value": 0
+  },
+  {
+   "label": "21 Mar",
+   "value": 0
+  },
+  {
+   "label": "22 Mar",
+   "value": 0
+  },
+  {
+   "label": "23 Mar",
+   "value": 0
+  },
+  {
+   "label": "24 Mar",
+   "value": 0
+  },
+  {
+   "label": "25 Mar",
+   "value": 0
+  },
+  {
+   "label": "26 Mar",
+   "value": 0
+  },
+  {
+   "label": "27 Mar",
+   "value": 0
+  },
+  {
+   "label": "28 Mar",
+   "value": 0
+  },
+  {
+   "label": "29 Mar",
+   "value": 0
+  },
+  {
+   "label": "30 Mar",
+   "value": 0
+  },
+  {
+   "label": "31 Mar",
+   "value": 0
+  },
+  {
+   "label": "1 Apr",
+   "value": 6
+  },
+  {
+   "label": "2 Apr",
+   "value": 0
+  },
+  {
+   "label": "3 Apr",
+   "value": 0
+  },
+  {
+   "label": "4 Apr",
+   "value": 6
+  },
+  {
+   "label": "5 Apr",
+   "value": 3
+  },
+  {
+   "label": "6 Apr",
+   "value": 11
+  },
+  {
+   "label": "7 Apr",
+   "value": 3
+  },
+  {
+   "label": "8 Apr",
+   "value": 6
+  },
+  {
+   "label": "9 Apr",
+   "value": 0
+  },
+  {
+   "label": "10 Apr",
+   "value": 0
+  },
+  {
+   "label": "11 Apr",
+   "value": 0
+  },
+  {
+   "label": "12 Apr",
+   "value": 0
+  },
+  {
+   "label": "13 Apr",
+   "value": 1
+  },
+  {
+   "label": "14 Apr",
+   "value": 12
+  },
+  {
+   "label": "15 Apr",
+   "value": 17
+  },
+  {
+   "label": "16 Apr",
+   "value": 0
+  },
+  {
+   "label": "17 Apr",
+   "value": 0
+  },
+  {
+   "label": "18 Apr",
+   "value": 11
+  },
+  {
+   "label": "19 Apr",
+   "value": 0
+  },
+  {
+   "label": "20 Apr",
+   "value": 12
+  },
+  {
+   "label": "21 Apr",
+   "value": 13
+  },
+  {
+   "label": "22 Apr",
+   "value": 11
+  },
+  {
+   "label": "23 Apr",
+   "value": 0
+  },
+  {
+   "label": "24 Apr",
+   "value": 0
+  },
+  {
+   "label": "25 Apr",
+   "value": 19
+  },
+  {
+   "label": "26 Apr",
+   "value": 0
+  },
+  {
+   "label": "27 Apr",
+   "value": 15
+  },
+  {
+   "label": "28 Apr",
+   "value": 11
+  },
+  {
+   "label": "29 Apr",
+   "value": 7
+  },
+  {
+   "label": "30 Apr",
+   "value": 0
+  },
+  {
+   "label": "1 May",
+   "value": 0
+  },
+  {
+   "label": "2 May",
+   "value": 0
+  },
+  {
+   "label": "3 May",
+   "value": 0
+  },
+  {
+   "label": "4 May",
+   "value": 0
+  },
+  {
+   "label": "5 May",
+   "value": 8
+  },
+  {
+   "label": "6 May",
+   "value": 20
+  },
+  {
+   "label": "7 May",
+   "value": 0
+  },
+  {
+   "label": "8 May",
+   "value": 0
+  },
+  {
+   "label": "9 May",
+   "value": 15
+  },
+  {
+   "label": "10 May",
+   "value": 0
+  },
+  {
+   "label": "11 May",
+   "value": 24
+  },
+  {
+   "label": "12 May",
+   "value": 23
+  },
+  {
+   "label": "13 May",
+   "value": 18
+  },
+  {
+   "label": "14 May",
+   "value": 0
+  },
+  {
+   "label": "15 May",
+   "value": 0
+  },
+  {
+   "label": "16 May",
+   "value": 8
+  },
+  {
+   "label": "17 May",
+   "value": 0
+  },
+  {
+   "label": "18 May",
+   "value": 7
+  },
+  {
+   "label": "19 May",
+   "value": 17
+  },
+  {
+   "label": "20 May",
+   "value": 9
+  },
+  {
+   "label": "21 May",
+   "value": 0
+  },
+  {
+   "label": "22 May",
+   "value": 0
+  },
+  {
+   "label": "23 May",
+   "value": 5
+  },
+  {
+   "label": "24 May",
+   "value": 2
+  },
+  {
+   "label": "25 May",
+   "value": 12
+  },
+  {
+   "label": "26 May",
+   "value": 4
+  },
+  {
+   "label": "27 May",
+   "value": 7
+  },
+  {
+   "label": "28 May",
+   "value": 0
+  },
+  {
+   "label": "29 May",
+   "value": 0
+  },
+  {
+   "label": "30 May",
+   "value": 1
+  },
+  {
+   "label": "31 May",
+   "value": 0
+  },
+  {
+   "label": "1 Jun",
+   "value": 5
+  },
+  {
+   "label": "2 Jun",
+   "value": 10
+  },
+  {
+   "label": "3 Jun",
+   "value": 18
+  },
+  {
+   "label": "4 Jun",
+   "value": 0
+  },
+  {
+   "label": "5 Jun",
+   "value": 0
+  },
+  {
+   "label": "6 Jun",
+   "value": 0
+  },
+  {
+   "label": "7 Jun",
+   "value": 0
+  },
+  {
+   "label": "8 Jun",
+   "value": 4
+  },
+  {
+   "label": "9 Jun",
+   "value": 7
+  },
+  {
+   "label": "10 Jun",
+   "value": 0
+  },
+  {
+   "label": "11 Jun",
+   "value": 0
+  },
+  {
+   "label": "12 Jun",
+   "value": 0
+  },
+  {
+   "label": "13 Jun",
+   "value": 0
+  },
+  {
+   "label": "14 Jun",
+   "value": 0
+  },
+  {
+   "label": "15 Jun",
+   "value": 0
+  },
+  {
+   "label": "16 Jun",
+   "value": 0
+  },
+  {
+   "label": "17 Jun",
+   "value": 0
+  },
+  {
+   "label": "18 Jun",
+   "value": 0
+  },
+  {
+   "label": "19 Jun",
+   "value": 0
+  },
+  {
+   "label": "20 Jun",
+   "value": 2
+  },
+  {
+   "label": "21 Jun",
+   "value": 0
+  },
+  {
+   "label": "22 Jun",
+   "value": 6
+  },
+  {
+   "label": "23 Jun",
+   "value": 0
+  },
+  {
+   "label": "24 Jun",
+   "value": 0
+  },
+  {
+   "label": "25 Jun",
+   "value": 0
+  },
+  {
+   "label": "26 Jun",
+   "value": 0
+  },
+  {
+   "label": "27 Jun",
+   "value": 0
+  },
+  {
+   "label": "28 Jun",
+   "value": 2
+  },
+  {
+   "label": "29 Jun",
+   "value": 46
+  },
+  {
+   "label": "30 Jun",
+   "value": 35
+  },
+  {
+   "label": "1 Jul",
+   "value": 16
+  },
+  {
+   "label": "2 Jul",
+   "value": 0
+  },
+  {
+   "label": "3 Jul",
+   "value": 0
+  },
+  {
+   "label": "4 Jul",
+   "value": 0
+  },
+  {
+   "label": "5 Jul",
+   "value": 0
+  },
+  {
+   "label": "6 Jul",
+   "value": 0
+  },
+  {
+   "label": "7 Jul",
+   "value": 0
+  },
+  {
+   "label": "8 Jul",
+   "value": 0
+  },
+  {
+   "label": "9 Jul",
+   "value": 0
+  },
+  {
+   "label": "10 Jul",
+   "value": 0
+  },
+  {
+   "label": "11 Jul",
+   "value": 0
+  },
+  {
+   "label": "12 Jul",
+   "value": 0
+  },
+  {
+   "label": "13 Jul",
+   "value": 4
+  },
+  {
+   "label": "14 Jul",
+   "value": 0
+  },
+  {
+   "label": "15 Jul",
+   "value": 5
+  },
+  {
+   "label": "16 Jul",
+   "value": 0
+  },
+  {
+   "label": "17 Jul",
+   "value": 0
+  },
+  {
+   "label": "18 Jul",
+   "value": 0
+  },
+  {
+   "label": "19 Jul",
+   "value": 2
+  },
+  {
+   "label": "20 Jul",
+   "value": 4
+  },
+  {
+   "label": "21 Jul",
+   "value": 0
+  },
+  {
+   "label": "22 Jul",
+   "value": 30
+  },
+  {
+   "label": "23 Jul",
+   "value": 0
+  },
+  {
+   "label": "24 Jul",
+   "value": 0
+  },
+  {
+   "label": "25 Jul",
+   "value": 3
+  },
+  {
+   "label": "26 Jul",
+   "value": 0
+  },
+  {
+   "label": "27 Jul",
+   "value": 5
+  },
+  {
+   "label": "28 Jul",
+   "value": 0
+  },
+  {
+   "label": "29 Jul",
+   "value": 1
+  },
+  {
+   "label": "30 Jul",
+   "value": 0
+  },
+  {
+   "label": "31 Jul",
+   "value": 0
+  },
+  {
+   "label": "1 Aug",
+   "value": 0
+  },
+  {
+   "label": "2 Aug",
+   "value": 0
+  },
+  {
+   "label": "3 Aug",
+   "value": 13
+  },
+  {
+   "label": "4 Aug",
+   "value": 6
+  },
+  {
+   "label": "5 Aug",
+   "value": 8
+  },
+  {
+   "label": "6 Aug",
+   "value": 0
+  },
+  {
+   "label": "7 Aug",
+   "value": 0
+  },
+  {
+   "label": "8 Aug",
+   "value": 2
+  },
+  {
+   "label": "9 Aug",
+   "value": 0
+  },
+  {
+   "label": "10 Aug",
+   "value": 9
+  },
+  {
+   "label": "11 Aug",
+   "value": 10
+  },
+  {
+   "label": "12 Aug",
+   "value": 6
+  },
+  {
+   "label": "13 Aug",
+   "value": 0
+  },
+  {
+   "label": "14 Aug",
+   "value": 0
+  },
+  {
+   "label": "15 Aug",
+   "value": 0
+  },
+  {
+   "label": "16 Aug",
+   "value": 0
+  },
+  {
+   "label": "17 Aug",
+   "value": 5
+  },
+  {
+   "label": "18 Aug",
+   "value": 12
+  },
+  {
+   "label": "19 Aug",
+   "value": 9
+  },
+  {
+   "label": "20 Aug",
+   "value": 0
+  },
+  {
+   "label": "21 Aug",
+   "value": 0
+  },
+  {
+   "label": "22 Aug",
+   "value": 2
+  },
+  {
+   "label": "23 Aug",
+   "value": 0
+  },
+  {
+   "label": "24 Aug",
+   "value": 5
+  },
+  {
+   "label": "25 Aug",
+   "value": 4
+  },
+  {
+   "label": "26 Aug",
+   "value": 25
+  },
+  {
+   "label": "27 Aug",
+   "value": 0
+  },
+  {
+   "label": "28 Aug",
+   "value": 0
+  },
+  {
+   "label": "29 Aug",
+   "value": 0
+  },
+  {
+   "label": "30 Aug",
+   "value": 0
+  },
+  {
+   "label": "31 Aug",
+   "value": 27
+  },
+  {
+   "label": "1 Sep",
+   "value": 10
+  },
+  {
+   "label": "2 Sep",
+   "value": 9
+  },
+  {
+   "label": "3 Sep",
+   "value": 0
+  },
+  {
+   "label": "4 Sep",
+   "value": 0
+  },
+  {
+   "label": "5 Sep",
+   "value": 0
+  },
+  {
+   "label": "6 Sep",
+   "value": 4
+  },
+  {
+   "label": "7 Sep",
+   "value": 0
+  },
+  {
+   "label": "8 Sep",
+   "value": 0
+  },
+  {
+   "label": "9 Sep",
+   "value": 0
+  },
+  {
+   "label": "10 Sep",
+   "value": 0
+  },
+  {
+   "label": "11 Sep",
+   "value": 0
+  },
+  {
+   "label": "12 Sep",
+   "value": 0
+  },
+  {
+   "label": "13 Sep",
+   "value": 0
+  },
+  {
+   "label": "14 Sep",
+   "value": 0
+  },
+  {
+   "label": "15 Sep",
+   "value": 0
+  },
+  {
+   "label": "16 Sep",
+   "value": 0
+  },
+  {
+   "label": "17 Sep",
+   "value": 0
+  },
+  {
+   "label": "18 Sep",
+   "value": 0
+  },
+  {
+   "label": "19 Sep",
+   "value": 0
+  },
+  {
+   "label": "20 Sep",
+   "value": 0
+  },
+  {
+   "label": "21 Sep",
+   "value": 3
+  },
+  {
+   "label": "22 Sep",
+   "value": 0
+  },
+  {
+   "label": "23 Sep",
+   "value": 0
+  },
+  {
+   "label": "24 Sep",
+   "value": 0
+  },
+  {
+   "label": "25 Sep",
+   "value": 0
+  },
+  {
+   "label": "26 Sep",
+   "value": 0
+  },
+  {
+   "label": "27 Sep",
+   "value": 0
+  },
+  {
+   "label": "28 Sep",
+   "value": 0
+  },
+  {
+   "label": "29 Sep",
+   "value": 0
+  },
+  {
+   "label": "30 Sep",
+   "value": 0
+  },
+  {
+   "label": "1 Oct",
+   "value": 0
+  },
+  {
+   "label": "2 Oct",
+   "value": 0
+  },
+  {
+   "label": "3 Oct",
+   "value": 1
+  },
+  {
+   "label": "4 Oct",
+   "value": 0
+  },
+  {
+   "label": "5 Oct",
+   "value": 0
+  },
+  {
+   "label": "6 Oct",
+   "value": 26
+  },
+  {
+   "label": "7 Oct",
+   "value": 4
+  },
+  {
+   "label": "8 Oct",
+   "value": 0
+  },
+  {
+   "label": "9 Oct",
+   "value": 0
+  },
+  {
+   "label": "10 Oct",
+   "value": 33
+  },
+  {
+   "label": "11 Oct",
+   "value": 0
+  },
+  {
+   "label": "12 Oct",
+   "value": 2
+  },
+  {
+   "label": "13 Oct",
+   "value": 5
+  },
+  {
+   "label": "14 Oct",
+   "value": 19
+  },
+  {
+   "label": "15 Oct",
+   "value": 0
+  },
+  {
+   "label": "16 Oct",
+   "value": 0
+  },
+  {
+   "label": "17 Oct",
+   "value": 10
+  },
+  {
+   "label": "18 Oct",
+   "value": 0
+  },
+  {
+   "label": "19 Oct",
+   "value": 4
+  },
+  {
+   "label": "20 Oct",
+   "value": 6
+  },
+  {
+   "label": "21 Oct",
+   "value": 5
+  },
+  {
+   "label": "22 Oct",
+   "value": 0
+  },
+  {
+   "label": "23 Oct",
+   "value": 0
+  },
+  {
+   "label": "24 Oct",
+   "value": 5
+  },
+  {
+   "label": "25 Oct",
+   "value": 2
+  },
+  {
+   "label": "26 Oct",
+   "value": 0
+  },
+  {
+   "label": "27 Oct",
+   "value": 0
+  },
+  {
+   "label": "28 Oct",
+   "value": 1
+  },
+  {
+   "label": "29 Oct",
+   "value": 0
+  },
+  {
+   "label": "30 Oct",
+   "value": 0
+  },
+  {
+   "label": "31 Oct",
+   "value": 3
+  },
+  {
+   "label": "1 Nov",
+   "value": 0
+  },
+  {
+   "label": "2 Nov",
+   "value": 5
+  },
+  {
+   "label": "3 Nov",
+   "value": 8
+  },
+  {
+   "label": "4 Nov",
+   "value": 25
+  },
+  {
+   "label": "5 Nov",
+   "value": 0
+  },
+  {
+   "label": "6 Nov",
+   "value": 0
+  },
+  {
+   "label": "7 Nov",
+   "value": 6
+  },
+  {
+   "label": "8 Nov",
+   "value": 7
+  },
+  {
+   "label": "9 Nov",
+   "value": 2
+  },
+  {
+   "label": "10 Nov",
+   "value": 2
+  },
+  {
+   "label": "11 Nov",
+   "value": 5
+  },
+  {
+   "label": "12 Nov",
+   "value": 0
+  },
+  {
+   "label": "13 Nov",
+   "value": 0
+  },
+  {
+   "label": "14 Nov",
+   "value": 0
+  },
+  {
+   "label": "15 Nov",
+   "value": 0
+  },
+  {
+   "label": "16 Nov",
+   "value": 0
+  },
+  {
+   "label": "17 Nov",
+   "value": 4
+  },
+  {
+   "label": "18 Nov",
+   "value": 4
+  },
+  {
+   "label": "19 Nov",
+   "value": 0
+  },
+  {
+   "label": "20 Nov",
+   "value": 0
+  },
+  {
+   "label": "21 Nov",
+   "value": 0
+  },
+  {
+   "label": "22 Nov",
+   "value": 0
+  },
+  {
+   "label": "23 Nov",
+   "value": 0
+  },
+  {
+   "label": "24 Nov",
+   "value": 0
+  },
+  {
+   "label": "25 Nov",
+   "value": 0
+  },
+  {
+   "label": "26 Nov",
+   "value": 0
+  },
+  {
+   "label": "27 Nov",
+   "value": 0
+  },
+  {
+   "label": "28 Nov",
+   "value": 0
+  },
+  {
+   "label": "29 Nov",
+   "value": 0
+  },
+  {
+   "label": "30 Nov",
+   "value": 1
+  },
+  {
+   "label": "1 Dec",
+   "value": 5
+  },
+  {
+   "label": "2 Dec",
+   "value": 0
+  },
+  {
+   "label": "3 Dec",
+   "value": 0
+  },
+  {
+   "label": "4 Dec",
+   "value": 2
+  },
+  {
+   "label": "5 Dec",
+   "value": 0
+  },
+  {
+   "label": "6 Dec",
+   "value": 0
+  },
+  {
+   "label": "7 Dec",
+   "value": 2
+  },
+  {
+   "label": "8 Dec",
+   "value": 0
+  },
+  {
+   "label": "9 Dec",
+   "value": 0
+  },
+  {
+   "label": "10 Dec",
+   "value": 0
+  },
+  {
+   "label": "11 Dec",
+   "value": 0
+  },
+  {
+   "label": "12 Dec",
+   "value": 1
+  },
+  {
+   "label": "13 Dec",
+   "value": 0
+  },
+  {
+   "label": "14 Dec",
+   "value": 0
+  },
+  {
+   "label": "15 Dec",
+   "value": 4
+  },
+  {
+   "label": "16 Dec",
+   "value": 0
+  },
+  {
+   "label": "17 Dec",
+   "value": 0
+  },
+  {
+   "label": "18 Dec",
+   "value": 0
+  },
+  {
+   "label": "19 Dec",
+   "value": 2
+  },
+  {
+   "label": "20 Dec",
+   "value": 0
+  },
+  {
+   "label": "21 Dec",
+   "value": 0
+  },
+  {
+   "label": "22 Dec",
+   "value": 0
+  },
+  {
+   "label": "23 Dec",
+   "value": 0
+  },
+  {
+   "label": "24 Dec",
+   "value": 0
+  },
+  {
+   "label": "25 Dec",
+   "value": 0
+  },
+  {
+   "label": "26 Dec",
+   "value": 0
+  },
+  {
+   "label": "27 Dec",
+   "value": 0
+  },
+  {
+   "label": "28 Dec",
+   "value": 0
+  },
+  {
+   "label": "29 Dec",
+   "value": 0
+  },
+  {
+   "label": "30 Dec",
+   "value": 0
+  },
+  {
+   "label": "31 Dec",
+   "value": 0
+  }
+ ]
+}

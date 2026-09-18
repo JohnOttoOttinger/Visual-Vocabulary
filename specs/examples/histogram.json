@@ -1,0 +1,221 @@
+{
+ "chart": "histogram",
+ "kicker": "How long is a chart?",
+ "title": "LINES per TEMPLATE",
+ "line": "Lines of code in each FT chart, *counted into bands*.",
+ "source": "reference/ft-2021/*/*.js, 53 charts",
+ "data": [
+  {
+   "label": "Spine",
+   "value": 173
+  },
+  {
+   "label": "area",
+   "value": 264
+  },
+  {
+   "label": "bar",
+   "value": 229
+  },
+  {
+   "label": "bar-diverging-stacked",
+   "value": 244
+  },
+  {
+   "label": "bar-grouped",
+   "value": 204
+  },
+  {
+   "label": "bar-ordered",
+   "value": 229
+  },
+  {
+   "label": "bar-stacked",
+   "value": 260
+  },
+  {
+   "label": "bar-stacked-proportional",
+   "value": 220
+  },
+  {
+   "label": "boxplot",
+   "value": 179
+  },
+  {
+   "label": "bubble",
+   "value": 320
+  },
+  {
+   "label": "bullet-chart",
+   "value": 319
+  },
+  {
+   "label": "bump",
+   "value": 334
+  },
+  {
+   "label": "calendar-heat-map",
+   "value": 325
+  },
+  {
+   "label": "circles-timeline",
+   "value": 99
+  },
+  {
+   "label": "column",
+   "value": 238
+  },
+  {
+   "label": "column-diverging-stacked",
+   "value": 261
+  },
+  {
+   "label": "column-grouped",
+   "value": 216
+  },
+  {
+   "label": "column-line-timeline",
+   "value": 289
+  },
+  {
+   "label": "column-ordered",
+   "value": 243
+  },
+  {
+   "label": "column-political",
+   "value": 173
+  },
+  {
+   "label": "column-stacked",
+   "value": 272
+  },
+  {
+   "label": "column-timeline",
+   "value": 251
+  },
+  {
+   "label": "dot-plot",
+   "value": 174
+  },
+  {
+   "label": "dot-stacked",
+   "value": 154
+  },
+  {
+   "label": "histogram",
+   "value": 147
+  },
+  {
+   "label": "line",
+   "value": 446
+  },
+  {
+   "label": "line-dual-axis",
+   "value": 508
+  },
+  {
+   "label": "line-interday",
+   "value": 388
+  },
+  {
+   "label": "line-moving-average",
+   "value": 494
+  },
+  {
+   "label": "lollipop-h",
+   "value": 169
+  },
+  {
+   "label": "lollipop-v",
+   "value": 173
+  },
+  {
+   "label": "map-us-choropleth",
+   "value": 136
+  },
+  {
+   "label": "pie",
+   "value": 93
+  },
+  {
+   "label": "priestley-timeline",
+   "value": 244
+  },
+  {
+   "label": "proportional-squares",
+   "value": 101
+  },
+  {
+   "label": "pyramid",
+   "value": 160
+  },
+  {
+   "label": "sankey",
+   "value": 493
+  },
+  {
+   "label": "scatterplot",
+   "value": 204
+  },
+  {
+   "label": "scatterplot-line",
+   "value": 254
+  },
+  {
+   "label": "scatterplot-line-date",
+   "value": 327
+  },
+  {
+   "label": "slope",
+   "value": 316
+  },
+  {
+   "label": "small-multiples-area",
+   "value": 166
+  },
+  {
+   "label": "small-multiples-bars",
+   "value": 195
+  },
+  {
+   "label": "small-multiples-column-category",
+   "value": 239
+  },
+  {
+   "label": "small-multiples-column-timeline",
+   "value": 175
+  },
+  {
+   "label": "small-multiples-multiple-line",
+   "value": 185
+  },
+  {
+   "label": "small-multiples-single-line",
+   "value": 194
+  },
+  {
+   "label": "treemap",
+   "value": 205
+  },
+  {
+   "label": "uk-constituency-cartogram-2017",
+   "value": 90
+  },
+  {
+   "label": "uk-constituency-map-2017",
+   "value": 84
+  },
+  {
+   "label": "waterfall",
+   "value": 345
+  },
+  {
+   "label": "xy-heatmap-cat",
+   "value": 191
+  },
+  {
+   "label": "xy-heatmap-quant",
+   "value": 143
+  }
+ ]
+}

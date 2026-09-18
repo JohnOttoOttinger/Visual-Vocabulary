@@ -1,0 +1,49 @@
+{
+ "chart": "column-grouped",
+ "kicker": "Pictures against slides...",
+ "title": "IN and OUT",
+ "line": "Pictures dropped in, *slides drafted*.",
+ "source": "Marketing/Stories/*/draft",
+ "axes": [
+  "Pictures",
+  "Slides"
+ ],
+ "data": [
+  {
+   "label": "trump-balloon",
+   "value": 8,
+   "value2": 7,
+   "note": "bulletin, the first posted"
+  },
+  {
+   "label": "inflatables",
+   "value": 8,
+   "value2": 4,
+   "note": "gallery: 8 pictures, 2 grids"
+  },
+  {
+   "label": "experience-gardens",
+   "value": 8,
+   "value2": 9,
+   "note": "list"
+  },
+  {
+   "label": "sidehatch",
+   "value": 6,
+   "value2": 6,
+   "note": "walkthrough"
+  },
+  {
+   "label": "bab-arrives",
+   "value": 6,
+   "value2": 7,
+   "note": "build"
+  },
+  {
+   "label": "top-5-caricatures",
+   "value": 7,
+   "value2": 8,
+   "note": "list, Top 5s"
+  }
+ ]
+}

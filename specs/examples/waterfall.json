@@ -1,0 +1,55 @@
+{
+ "chart": "waterfall",
+ "kicker": "Pictures in, slides out...",
+ "title": "54 IN, 55 OUT",
+ "line": "From the pictures dropped in *to the slides drafted*, story by story.",
+ "source": "Marketing/Stories/*/draft",
+ "data": [
+  {
+   "label": "Pictures in",
+   "value": 54,
+   "total": true
+  },
+  {
+   "label": "trump-balloon",
+   "value": -1
+  },
+  {
+   "label": "inflatables",
+   "value": -4
+  },
+  {
+   "label": "experience-gardens",
+   "value": 1
+  },
+  {
+   "label": "sidehatch",
+   "value": 0
+  },
+  {
+   "label": "babbling-with-baobabs",
+   "value": 1
+  },
+  {
+   "label": "bab-arrives",
+   "value": 1
+  },
+  {
+   "label": "sweaty-cabbage",
+   "value": 1
+  },
+  {
+   "label": "a-wall-is-an-argument",
+   "value": 1
+  },
+  {
+   "label": "top-5-caricatures",
+   "value": 1
+  },
+  {
+   "label": "Slides out",
+   "value": 55,
+   "total": true
+  }
+ ]
+}

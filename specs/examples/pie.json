@@ -1,0 +1,26 @@
+{
+ "chart": "pie",
+ "kicker": "What is left to draw...",
+ "title": "the LIBRARY by WAVE",
+ "line": "81 charts in four waves, *maps last*.",
+ "source": "catalog/charts.json",
+ "insight": "Wave 1",
+ "data": [
+  {
+   "label": "Wave 1",
+   "value": 26
+  },
+  {
+   "label": "Wave 2",
+   "value": 27
+  },
+  {
+   "label": "Wave 3",
+   "value": 19
+  },
+  {
+   "label": "Wave 4",
+   "value": 9
+  }
+ ]
+}
