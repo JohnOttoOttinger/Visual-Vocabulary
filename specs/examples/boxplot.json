@@ -1,0 +1,230 @@
+{
+ "chart": "boxplot",
+ "kicker": "How long is a chart?",
+ "title": "LINES by FAMILY",
+ "line": "Lines of code in each FT template, *one line per family*.",
+ "source": "reference/ft-2021/*/*.js",
+ "insight": "line-dual-axis",
+ "data": [
+  {
+   "label": "area",
+   "value": 264,
+   "group": "Change over time"
+  },
+  {
+   "label": "calendar-heat-map",
+   "value": 325,
+   "group": "Change over time"
+  },
+  {
+   "label": "circles-timeline",
+   "value": 99,
+   "group": "Change over time"
+  },
+  {
+   "label": "column-timeline",
+   "value": 251,
+   "group": "Change over time"
+  },
+  {
+   "label": "line-dual-axis",
+   "value": 508,
+   "group": "Change over time"
+  },
+  {
+   "label": "line-interday",
+   "value": 388,
+   "group": "Change over time"
+  },
+  {
+   "label": "line-moving-average",
+   "value": 494,
+   "group": "Change over time"
+  },
+  {
+   "label": "line",
+   "value": 446,
+   "group": "Change over time"
+  },
+  {
+   "label": "priestley-timeline",
+   "value": 244,
+   "group": "Change over time"
+  },
+  {
+   "label": "small-multiples-area",
+   "value": 166,
+   "group": "Change over time"
+  },
+  {
+   "label": "small-multiples-multiple-line",
+   "value": 185,
+   "group": "Change over time"
+  },
+  {
+   "label": "small-multiples-single-line",
+   "value": 194,
+   "group": "Change over time"
+  },
+  {
+   "label": "bar-grouped",
+   "value": 204,
+   "group": "Magnitude"
+  },
+  {
+   "label": "bullet-chart",
+   "value": 319,
+   "group": "Magnitude"
+  },
+  {
+   "label": "column-grouped",
+   "value": 216,
+   "group": "Magnitude"
+  },
+  {
+   "label": "column-political",
+   "value": 173,
+   "group": "Magnitude"
+  },
+  {
+   "label": "column",
+   "value": 238,
+   "group": "Magnitude"
+  },
+  {
+   "label": "proportional-squares",
+   "value": 101,
+   "group": "Magnitude"
+  },
+  {
+   "label": "small-multiples-bars",
+   "value": 195,
+   "group": "Magnitude"
+  },
+  {
+   "label": "small-multiples-column-category",
+   "value": 239,
+   "group": "Magnitude"
+  },
+  {
+   "label": "small-multiples-column-timeline",
+   "value": 175,
+   "group": "Magnitude"
+  },
+  {
+   "label": "bar-stacked-proportional",
+   "value": 220,
+   "group": "Part-to-whole"
+  },
+  {
+   "label": "bar-stacked",
+   "value": 260,
+   "group": "Part-to-whole"
+  },
+  {
+   "label": "column-stacked",
+   "value": 272,
+   "group": "Part-to-whole"
+  },
+  {
+   "label": "pie",
+   "value": 93,
+   "group": "Part-to-whole"
+  },
+  {
+   "label": "treemap",
+   "value": 205,
+   "group": "Part-to-whole"
+  },
+  {
+   "label": "bubble",
+   "value": 320,
+   "group": "Correlation"
+  },
+  {
+   "label": "column-line-timeline",
+   "value": 289,
+   "group": "Correlation"
+  },
+  {
+   "label": "scatterplot-line-date",
+   "value": 327,
+   "group": "Correlation"
+  },
+  {
+   "label": "scatterplot-line",
+   "value": 254,
+   "group": "Correlation"
+  },
+  {
+   "label": "scatterplot",
+   "value": 204,
+   "group": "Correlation"
+  },
+  {
+   "label": "xy-heatmap-cat",
+   "value": 191,
+   "group": "Correlation"
+  },
+  {
+   "label": "xy-heatmap-quant",
+   "value": 143,
+   "group": "Correlation"
+  },
+  {
+   "label": "bar-ordered",
+   "value": 229,
+   "group": "Ranking"
+  },
+  {
+   "label": "bump",
+   "value": 334,
+   "group": "Ranking"
+  },
+  {
+   "label": "column-ordered",
+   "value": 243,
+   "group": "Ranking"
+  },
+  {
+   "label": "lollipop-h",
+   "value": 169,
+   "group": "Ranking"
+  },
+  {
+   "label": "lollipop-v",
+   "value": 173,
+   "group": "Ranking"
+  },
+  {
+   "label": "slope",
+   "value": 316,
+   "group": "Ranking"
+  },
+  {
+   "label": "boxplot",
+   "value": 179,
+   "group": "Distribution"
+  },
+  {
+   "label": "dot-plot",
+   "value": 174,
+   "group": "Distribution"
+  },
+  {
+   "label": "dot-stacked",
+   "value": 154,
+   "group": "Distribution"
+  },
+  {
+   "label": "histogram",
+   "value": 147,
+   "group": "Distribution"
+  },
+  {
+   "label": "pyramid",
+   "value": 160,
+   "group": "Distribution"
+  }
+ ]
+}

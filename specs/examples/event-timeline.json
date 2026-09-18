@@ -1,0 +1,24 @@
+{
+ "chart": "event-timeline",
+ "kicker": "How it grew...",
+ "title": "FOUR DAYS of the STORYTELLER",
+ "line": "What happened each day, *oldest at the top*.",
+ "data": [
+  {
+   "label": "15 SEP",
+   "note": "Named Oddview-20. The Trump Balloon story goes out."
+  },
+  {
+   "label": "16 SEP",
+   "note": "Four formats, three brands, the folder drafts itself."
+  },
+  {
+   "label": "17 SEP",
+   "note": "Six shapes run end to end on Otto's own pictures."
+  },
+  {
+   "label": "18 SEP",
+   "note": "Shape, purpose, close, series. *And now charts.*"
+  }
+ ]
+}

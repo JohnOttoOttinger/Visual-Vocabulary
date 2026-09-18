@@ -1,0 +1,221 @@
+{
+ "chart": "line-moving-average",
+ "kicker": "Week by week...",
+ "title": "THE FT SET in 2016",
+ "line": "Changes each week, *the four-week average in olive*.",
+ "source": "git log of reference/ft-2021, 2016",
+ "options": {
+  "window": 4,
+  "period": "week"
+ },
+ "data": [
+  {
+   "label": "Jan",
+   "value": 4
+  },
+  {
+   "label": "",
+   "value": 0
+  },
+  {
+   "label": "",
+   "value": 0
+  },
+  {
+   "label": "",
+   "value": 0
+  },
+  {
+   "label": "Feb",
+   "value": 1
+  },
+  {
+   "label": "",
+   "value": 2
+  },
+  {
+   "label": "",
+   "value": 0
+  },
+  {
+   "label": "",
+   "value": 0
+  },
+  {
+   "label": "",
+   "value": 5
+  },
+  {
+   "label": "Mar",
+   "value": 0
+  },
+  {
+   "label": "",
+   "value": 5
+  },
+  {
+   "label": "",
+   "value": 0
+  },
+  {
+   "label": "",
+   "value": 6
+  },
+  {
+   "label": "Apr",
+   "value": 29
+  },
+  {
+   "label": "",
+   "value": 30
+  },
+  {
+   "label": "",
+   "value": 47
+  },
+  {
+   "label": "",
+   "value": 52
+  },
+  {
+   "label": "May",
+   "value": 28
+  },
+  {
+   "label": "",
+   "value": 80
+  },
+  {
+   "label": "",
+   "value": 41
+  },
+  {
+   "label": "",
+   "value": 30
+  },
+  {
+   "label": "",
+   "value": 34
+  },
+  {
+   "label": "Jun",
+   "value": 11
+  },
+  {
+   "label": "",
+   "value": 0
+  },
+  {
+   "label": "",
+   "value": 8
+  },
+  {
+   "label": "",
+   "value": 99
+  },
+  {
+   "label": "Jul",
+   "value": 0
+  },
+  {
+   "label": "",
+   "value": 9
+  },
+  {
+   "label": "",
+   "value": 36
+  },
+  {
+   "label": "",
+   "value": 9
+  },
+  {
+   "label": "Aug",
+   "value": 27
+  },
+  {
+   "label": "",
+   "value": 27
+  },
+  {
+   "label": "",
+   "value": 26
+  },
+  {
+   "label": "",
+   "value": 36
+  },
+  {
+   "label": "",
+   "value": 46
+  },
+  {
+   "label": "Sep",
+   "value": 4
+  },
+  {
+   "label": "",
+   "value": 0
+  },
+  {
+   "label": "",
+   "value": 3
+  },
+  {
+   "label": "",
+   "value": 0
+  },
+  {
+   "label": "Oct",
+   "value": 31
+  },
+  {
+   "label": "",
+   "value": 59
+  },
+  {
+   "label": "",
+   "value": 25
+  },
+  {
+   "label": "",
+   "value": 8
+  },
+  {
+   "label": "",
+   "value": 41
+  },
+  {
+   "label": "Nov",
+   "value": 22
+  },
+  {
+   "label": "",
+   "value": 8
+  },
+  {
+   "label": "",
+   "value": 0
+  },
+  {
+   "label": "",
+   "value": 8
+  },
+  {
+   "label": "Dec",
+   "value": 2
+  },
+  {
+   "label": "",
+   "value": 5
+  },
+  {
+   "label": "",
+   "value": 2
+  },
+  {
+   "label": "",
+   "value": 0
+  }
+ ]
+}

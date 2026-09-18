@@ -1,0 +1,73 @@
+{
+ "chart": "line-surplus-deficit",
+ "kicker": "Two years of the FT set...",
+ "title": "2017 against 2016",
+ "line": "Changes each month, *olive where 2017 ran ahead, mauve where it fell behind*.",
+ "source": "git log of reference/ft-2021",
+ "axes": [
+  "2017",
+  "2016"
+ ],
+ "data": [
+  {
+   "label": "Jan",
+   "value": 58,
+   "value2": 4
+  },
+  {
+   "label": "Feb",
+   "value": 62,
+   "value2": 3
+  },
+  {
+   "label": "Mar",
+   "value": 47,
+   "value2": 10
+  },
+  {
+   "label": "Apr",
+   "value": 43,
+   "value2": 164
+  },
+  {
+   "label": "May",
+   "value": 32,
+   "value2": 180
+  },
+  {
+   "label": "Jun",
+   "value": 9,
+   "value2": 135
+  },
+  {
+   "label": "Jul",
+   "value": 11,
+   "value2": 70
+  },
+  {
+   "label": "Aug",
+   "value": 0,
+   "value2": 143
+  },
+  {
+   "label": "Sep",
+   "value": 0,
+   "value2": 26
+  },
+  {
+   "label": "Oct",
+   "value": 0,
+   "value2": 126
+  },
+  {
+   "label": "Nov",
+   "value": 0,
+   "value2": 69
+  },
+  {
+   "label": "Dec",
+   "value": 0,
+   "value2": 16
+  }
+ ]
+}

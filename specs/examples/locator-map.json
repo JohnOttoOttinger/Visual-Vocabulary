@@ -1,0 +1,116 @@
+{
+ "charts": [
+  {
+   "chart": "locator-map",
+   "kicker": "Where it is...",
+   "title": "MELBOURNE and SYDNEY",
+   "line": "Two capitals, *the pin on Melbourne*.",
+   "source": "Natural Earth, 2019 population estimates",
+   "options": {
+    "focus": "australia"
+   },
+   "data": [
+    {
+     "label": "Melbourne",
+     "country": "Australia",
+     "note": "Victoria's capital"
+    },
+    {
+     "label": "Sydney",
+     "country": "Australia"
+    }
+   ],
+   "name": "locator-map-1"
+  },
+  {
+   "chart": "locator-map",
+   "kicker": "Closer in...",
+   "title": "VICTORIA",
+   "line": "The state's four biggest cities, *Melbourne pinned*.",
+   "source": "Natural Earth, 2019 population estimates; ABS boundaries (ASGS 2021, councils 2025)",
+   "options": {
+    "focus": "Victoria"
+   },
+   "data": [
+    {
+     "label": "Melbourne",
+     "country": "Australia"
+    },
+    {
+     "label": "Geelong",
+     "country": "Australia"
+    },
+    {
+     "label": "Ballarat",
+     "country": "Australia"
+    },
+    {
+     "label": "Bendigo",
+     "country": "Australia"
+    }
+   ],
+   "name": "locator-map-2"
+  },
+  {
+   "chart": "locator-map",
+   "kicker": "Closer still...",
+   "title": "GREATER MELBOURNE",
+   "line": "The capital area and its councils, *the city pinned*.",
+   "source": "ABS boundaries (ASGS 2021, councils 2025)",
+   "options": {
+    "focus": "Greater Melbourne"
+   },
+   "data": [
+    {
+     "label": "Melbourne",
+     "country": "Australia",
+     "note": "Greater Melbourne, 9,993 km²"
+    },
+    {
+     "label": "Geelong",
+     "country": "Australia"
+    }
+   ],
+   "name": "locator-map-3"
+  },
+  {
+   "chart": "locator-map",
+   "kicker": "The festival shortlist...",
+   "title": "WHERE the FESTIVALS ARE",
+   "line": "Five festivals on the list, *two of them in Melbourne*.",
+   "source": "project-manager-agent/australia_asia_art_light_experimental_festivals.csv",
+   "options": {
+    "focus": [
+     95,
+     -46,
+     150,
+     42
+    ],
+    "inset": false
+   },
+   "data": [
+    {
+     "label": "Melbourne",
+     "country": "Australia",
+     "note": "RISING and Melbourne Fringe"
+    },
+    {
+     "label": "Vivid Sydney",
+     "lat": -33.918065,
+     "lon": 151.183234
+    },
+    {
+     "label": "i Light Singapore",
+     "lat": 1.294979,
+     "lon": 103.853875
+    },
+    {
+     "label": "MUTEK Japan",
+     "lat": 35.686963,
+     "lon": 139.749462
+    }
+   ],
+   "name": "locator-map-4"
+  }
+ ]
+}

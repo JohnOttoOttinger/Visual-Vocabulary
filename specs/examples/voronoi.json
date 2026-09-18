@@ -1,0 +1,119 @@
+{
+ "chart": "voronoi",
+ "kicker": "Who came and went...",
+ "title": "EACH HAND'S GROUND",
+ "line": "Days to each person's first change across, *to their last up*; each area the ground nearest them.",
+ "source": "git log of reference/ft-2021, 2015 to 2017",
+ "axes": [
+  "First change, days in",
+  "Last change"
+ ],
+ "insight": "Bob Haslett",
+ "data": [
+  {
+   "label": "Bob Haslett",
+   "value": 20,
+   "value2": 668
+  },
+  {
+   "label": "Alan Smith",
+   "value": 11,
+   "value2": 665
+  },
+  {
+   "label": "Jane Pong",
+   "value": 655,
+   "value2": 655
+  },
+  {
+   "label": "IanBottFT",
+   "value": 651,
+   "value2": 651
+  },
+  {
+   "label": "Steve Bernard",
+   "value": 4,
+   "value2": 642
+  },
+  {
+   "label": "Joanna Kao",
+   "value": 594,
+   "value2": 594
+  },
+  {
+   "label": "Tom Pearson",
+   "value": 0,
+   "value2": 592
+  },
+  {
+   "label": "Daniel Schildt",
+   "value": 571,
+   "value2": 571
+  },
+  {
+   "label": "Anna",
+   "value": 571,
+   "value2": 571
+  },
+  {
+   "label": "Leach",
+   "value": 565,
+   "value2": 565
+  },
+  {
+   "label": "Leatherby",
+   "value": 476,
+   "value2": 525
+  },
+  {
+   "label": "Billy Ehrenberg",
+   "value": 479,
+   "value2": 482
+  },
+  {
+   "label": "BillyEhrenberg",
+   "value": 474,
+   "value2": 474
+  },
+  {
+   "label": "Luke Kavanagh",
+   "value": 59,
+   "value2": 385
+  },
+  {
+   "label": "Ændrew Rininsland",
+   "value": 325,
+   "value2": 325
+  },
+  {
+   "label": "liz-faunce",
+   "value": 286,
+   "value2": 299
+  },
+  {
+   "label": "johnburnmurdoch",
+   "value": 200,
+   "value2": 257
+  },
+  {
+   "label": "Cleve Jones",
+   "value": 224,
+   "value2": 224
+  },
+  {
+   "label": "Caroline Nevitt",
+   "value": 209,
+   "value2": 216
+  },
+  {
+   "label": "Martin Stabe",
+   "value": 110,
+   "value2": 180
+  },
+  {
+   "label": "Robin Kwong",
+   "value": 147,
+   "value2": 148
+  }
+ ]
+}

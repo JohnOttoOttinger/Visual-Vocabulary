@@ -1,0 +1,33 @@
+{
+ "chart": "windows",
+ "kicker": "Two stories, side by side...",
+ "title": "BULLETIN against GALLERY",
+ "line": "The same eight pictures in, *three fewer slides out*.",
+ "source": "trump-balloon and inflatables drafts",
+ "axes": [
+  "The bulletin",
+  "The gallery"
+ ],
+ "insight": "Slides drafted",
+ "images": [
+  "~/Documents/Oddtoe - iCloud Apple/Marketing/Stories/trump-balloon/02-balloon-field.jpg",
+  "~/Documents/Oddtoe - iCloud Apple/Marketing/Stories/inflatables/06-dome-installed.jpg"
+ ],
+ "data": [
+  {
+   "label": "Pictures dropped in",
+   "value": 8,
+   "value2": 8
+  },
+  {
+   "label": "Slides drafted",
+   "value": 7,
+   "value2": 4
+  },
+  {
+   "label": "Slides per picture",
+   "value": 0.9,
+   "value2": 0.5
+  }
+ ]
+}

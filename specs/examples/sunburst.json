@@ -1,0 +1,129 @@
+{
+ "chart": "sunburst",
+ "kicker": "Eighty charts...",
+ "title": "EACH WAVE by FAMILY",
+ "line": "Waves inside, *their families around them*.",
+ "source": "catalog/charts.json",
+ "data": [
+  {
+   "parent": "Wave 1",
+   "label": "Ranking",
+   "value": 6
+  },
+  {
+   "parent": "Wave 1",
+   "label": "Change over time",
+   "value": 4
+  },
+  {
+   "parent": "Wave 1",
+   "label": "Part-to-whole",
+   "value": 4
+  },
+  {
+   "parent": "Wave 1",
+   "label": "Correlation",
+   "value": 2
+  },
+  {
+   "parent": "Wave 1",
+   "label": "Deviation",
+   "value": 1
+  },
+  {
+   "parent": "Wave 1",
+   "label": "Distribution",
+   "value": 4
+  },
+  {
+   "parent": "Wave 1",
+   "label": "Comparison",
+   "value": 1
+  },
+  {
+   "parent": "Wave 1",
+   "label": "Magnitude",
+   "value": 2
+  },
+  {
+   "parent": "Wave 1",
+   "label": "Flow",
+   "value": 2
+  },
+  {
+   "parent": "Wave 2",
+   "label": "Magnitude",
+   "value": 6
+  },
+  {
+   "parent": "Wave 2",
+   "label": "Deviation",
+   "value": 4
+  },
+  {
+   "parent": "Wave 2",
+   "label": "Distribution",
+   "value": 1
+  },
+  {
+   "parent": "Wave 2",
+   "label": "Part-to-whole",
+   "value": 2
+  },
+  {
+   "parent": "Wave 2",
+   "label": "Flow",
+   "value": 2
+  },
+  {
+   "parent": "Wave 2",
+   "label": "Change over time",
+   "value": 8
+  },
+  {
+   "parent": "Wave 2",
+   "label": "Correlation",
+   "value": 4
+  },
+  {
+   "parent": "Wave 3",
+   "label": "Deviation",
+   "value": 1
+  },
+  {
+   "parent": "Wave 3",
+   "label": "Change over time",
+   "value": 3
+  },
+  {
+   "parent": "Wave 3",
+   "label": "Ranking",
+   "value": 1
+  },
+  {
+   "parent": "Wave 3",
+   "label": "Distribution",
+   "value": 4
+  },
+  {
+   "parent": "Wave 3",
+   "label": "Part-to-whole",
+   "value": 5
+  },
+  {
+   "parent": "Wave 3",
+   "label": "Magnitude",
+   "value": 4
+  },
+  {
+   "parent": "Wave 3",
+   "label": "Flow",
+   "value": 1
+  },
+  {
+   "parent": "Wave 4",
+   "label": "Spatial",
+   "value": 9
+  }
+ ]
+}

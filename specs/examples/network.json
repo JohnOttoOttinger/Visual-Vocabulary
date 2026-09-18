@@ -1,0 +1,61 @@
+{
+ "chart": "network",
+ "kicker": "What calls what...",
+ "title": "INSIDE the ENGINE",
+ "line": "Each module, *linked to the ones it loads*.",
+ "source": "the _load and lab() calls in the Storyteller's creative/*.py",
+ "insight": "build_creative",
+ "data": [
+  {
+   "label": "build_creative",
+   "to": [
+    "framing",
+    "brand",
+    "callout",
+    "bleed_lab",
+    "slide2_lab",
+    "slide34_lab",
+    "infographic_lab",
+    "lastslide_lab"
+   ]
+  },
+  {
+   "label": "infographic_lab",
+   "to": [
+    "slide2_lab",
+    "slide34_lab"
+   ]
+  },
+  {
+   "label": "lastslide_lab",
+   "to": [
+    "bleed_lab",
+    "infographic_lab",
+    "slide2_lab",
+    "slide34_lab"
+   ]
+  },
+  {
+   "label": "slide34_lab",
+   "to": [
+    "bleed_lab",
+    "popup_lab",
+    "slide2_lab"
+   ]
+  },
+  {
+   "label": "popup_lab",
+   "to": [
+    "bleed_lab",
+    "callout",
+    "slide2_lab"
+   ]
+  },
+  {
+   "label": "chart_lab",
+   "to": [
+    "infographic_lab"
+   ]
+  }
+ ]
+}

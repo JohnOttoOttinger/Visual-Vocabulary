@@ -1,0 +1,26 @@
+{
+ "chart": "bar",
+ "kicker": "Eighty charts...",
+ "title": "CHARTS per WAVE",
+ "line": "The catalogue in the order it gets drawn, *maps last*.",
+ "source": "catalog/charts.json",
+ "insight": "Wave 2",
+ "data": [
+  {
+   "label": "Wave 1",
+   "value": 26
+  },
+  {
+   "label": "Wave 2",
+   "value": 27
+  },
+  {
+   "label": "Wave 3",
+   "value": 19
+  },
+  {
+   "label": "Wave 4",
+   "value": 9
+  }
+ ]
+}

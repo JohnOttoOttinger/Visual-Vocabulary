@@ -1,0 +1,96 @@
+{
+ "chart": "cumulative-curve",
+ "kicker": "Who did the work...",
+ "title": "A FEW HANDS, MOSTLY",
+ "line": "Every person by the changes they made, *counted up from the fewest*.",
+ "source": "git log of reference/ft-2021, 2015 to 2017",
+ "axes": [
+  "Changes per person"
+ ],
+ "data": [
+  {
+   "label": "Bob Haslett",
+   "value": 935
+  },
+  {
+   "label": "Alan Smith",
+   "value": 111
+  },
+  {
+   "label": "Jane Pong",
+   "value": 2
+  },
+  {
+   "label": "IanBottFT",
+   "value": 2
+  },
+  {
+   "label": "Steve Bernard",
+   "value": 86
+  },
+  {
+   "label": "Joanna Kao",
+   "value": 1
+  },
+  {
+   "label": "Tom Pearson",
+   "value": 189
+  },
+  {
+   "label": "Daniel Schildt",
+   "value": 1
+  },
+  {
+   "label": "Anna",
+   "value": 1
+  },
+  {
+   "label": "Leach",
+   "value": 1
+  },
+  {
+   "label": "Leatherby",
+   "value": 2
+  },
+  {
+   "label": "Billy Ehrenberg",
+   "value": 7
+  },
+  {
+   "label": "BillyEhrenberg",
+   "value": 2
+  },
+  {
+   "label": "Luke Kavanagh",
+   "value": 2
+  },
+  {
+   "label": "Ændrew Rininsland",
+   "value": 2
+  },
+  {
+   "label": "liz-faunce",
+   "value": 3
+  },
+  {
+   "label": "johnburnmurdoch",
+   "value": 6
+  },
+  {
+   "label": "Cleve Jones",
+   "value": 1
+  },
+  {
+   "label": "Caroline Nevitt",
+   "value": 4
+  },
+  {
+   "label": "Martin Stabe",
+   "value": 6
+  },
+  {
+   "label": "Robin Kwong",
+   "value": 2
+  }
+ ]
+}

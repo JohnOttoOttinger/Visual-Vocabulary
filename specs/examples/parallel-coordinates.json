@@ -1,0 +1,89 @@
+{
+ "chart": "parallel-coordinates",
+ "kicker": "Five ways to size a family...",
+ "title": "THE FT's FAMILIES",
+ "line": "Each family across five counts, *each on its own scale*.",
+ "source": "chartTypes.csv, reference/ft-2021 and catalog/charts.json",
+ "series": [
+  "Listed",
+  "Built",
+  "Library",
+  "Wave 1",
+  "Lines of code"
+ ],
+ "insight": "Change over time",
+ "data": [
+  {
+   "label": "Deviation",
+   "Listed": 4,
+   "Built": 3,
+   "Library": 6,
+   "Wave 1": 1,
+   "Lines of code": 907
+  },
+  {
+   "label": "Correlation",
+   "Listed": 5,
+   "Built": 5,
+   "Library": 6,
+   "Wave 1": 2,
+   "Lines of code": 1728
+  },
+  {
+   "label": "Change over time",
+   "Listed": 12,
+   "Built": 8,
+   "Library": 15,
+   "Wave 1": 4,
+   "Lines of code": 3564
+  },
+  {
+   "label": "Ranking",
+   "Listed": 8,
+   "Built": 6,
+   "Library": 7,
+   "Wave 1": 6,
+   "Lines of code": 1464
+  },
+  {
+   "label": "Distribution",
+   "Listed": 8,
+   "Built": 4,
+   "Library": 9,
+   "Wave 1": 4,
+   "Lines of code": 814
+  },
+  {
+   "label": "Part-to-whole",
+   "Listed": 11,
+   "Built": 6,
+   "Library": 11,
+   "Wave 1": 4,
+   "Lines of code": 1050
+  },
+  {
+   "label": "Magnitude",
+   "Listed": 12,
+   "Built": 8,
+   "Library": 12,
+   "Wave 1": 2,
+   "Lines of code": 1860
+  },
+  {
+   "label": "Spatial",
+   "Listed": 8,
+   "Built": 0,
+   "Library": 9,
+   "Wave 1": 0,
+   "Lines of code": 310
+  },
+  {
+   "label": "Flow",
+   "Listed": 4,
+   "Built": 2,
+   "Library": 5,
+   "Wave 1": 2,
+   "Lines of code": 838
+  }
+ ]
+}

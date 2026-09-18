@@ -1,0 +1,26 @@
+{
+ "chart": "proportional-symbol",
+ "kicker": "Eighty charts...",
+ "title": "CHARTS per WAVE",
+ "line": "The catalogue in the order it gets drawn, *each wave a circle*.",
+ "source": "catalog/charts.json",
+ "insight": "Wave 3",
+ "data": [
+  {
+   "label": "Wave 1",
+   "value": 26
+  },
+  {
+   "label": "Wave 2",
+   "value": 27
+  },
+  {
+   "label": "Wave 3",
+   "value": 19
+  },
+  {
+   "label": "Wave 4",
+   "value": 9
+  }
+ ]
+}

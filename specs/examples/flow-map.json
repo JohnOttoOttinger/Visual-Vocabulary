@@ -1,0 +1,62 @@
+{
+ "chart": "flow-map",
+ "kicker": "All lines lead to...",
+ "title": "HOW FAR to CANBERRA",
+ "line": "Each capital to Canberra as the crow flies, *thicker the further*.",
+ "source": "Natural Earth city points; distances on a sphere",
+ "unit": " km",
+ "options": {
+  "focus": "australia"
+ },
+ "data": [
+  {
+   "from": "Sydney",
+   "from_country": "Australia",
+   "to": "Canberra",
+   "to_country": "Australia",
+   "value": 242
+  },
+  {
+   "from": "Melbourne",
+   "from_country": "Australia",
+   "to": "Canberra",
+   "to_country": "Australia",
+   "value": 466
+  },
+  {
+   "from": "Brisbane",
+   "from_country": "Australia",
+   "to": "Canberra",
+   "to_country": "Australia",
+   "value": 946
+  },
+  {
+   "from": "Perth",
+   "from_country": "Australia",
+   "to": "Canberra",
+   "to_country": "Australia",
+   "value": 3090
+  },
+  {
+   "from": "Adelaide",
+   "from_country": "Australia",
+   "to": "Canberra",
+   "to_country": "Australia",
+   "value": 958
+  },
+  {
+   "from": "Hobart",
+   "from_country": "Australia",
+   "to": "Canberra",
+   "to_country": "Australia",
+   "value": 856
+  },
+  {
+   "from": "Darwin",
+   "from_country": "Australia",
+   "to": "Canberra",
+   "to_country": "Australia",
+   "value": 3136
+  }
+ ]
+}

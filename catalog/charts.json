@@ -1,0 +1,1232 @@
+{
+ "about": "Every chart in the library, built or to come. `ft` is the FT Visual Vocabulary folder it redesigns (reference/ft-2021/), null where the FT listed a chart and never built it, or `storyteller` where it comes from the Visual Storyteller. `methods` are the workshop pack's Ten Methods it can draw, which the Storyteller uses as its chart modes; `replaces` is the Storyteller drawing this chart took over; `storyteller` is the mode and sub-mode that draws with it now. Dropped from the FT set: the UK constituency map and cartogram, the US choropleth and the UK party columns, all tied to FT stories.",
+ "waves": {
+  "1": "What the Storyteller's methods draw, and their closest siblings",
+  "2": "The rest of the FT's built set",
+  "3": "Charts the FT listed and never built",
+  "4": "Maps: the world by country, Australia by state and council, close-ups with places marked"
+ },
+ "charts": [
+  {
+   "id": "bar-ordered",
+   "name": "Ordered bar",
+   "group": "Ranking",
+   "methods": [
+    "ranking"
+   ],
+   "reads": "label, value",
+   "wave": 1,
+   "ft": "bar-ordered",
+   "replaces": "ranking",
+   "storyteller": "ranking › bar",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "column-ordered",
+   "name": "Ordered column",
+   "group": "Ranking",
+   "methods": [
+    "ranking"
+   ],
+   "reads": "label, value",
+   "wave": 1,
+   "ft": "column-ordered",
+   "replaces": null,
+   "storyteller": "ranking › column",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "lollipop-h",
+   "name": "Lollipop, horizontal",
+   "group": "Ranking",
+   "methods": [
+    "ranking"
+   ],
+   "reads": "label, value",
+   "wave": 1,
+   "ft": "lollipop-h",
+   "replaces": null,
+   "storyteller": "ranking › lollipop",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "lollipop-v",
+   "name": "Lollipop, vertical",
+   "group": "Ranking",
+   "methods": [
+    "ranking"
+   ],
+   "reads": "label, value",
+   "wave": 1,
+   "ft": "lollipop-v",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "slope",
+   "name": "Slope",
+   "group": "Ranking",
+   "methods": [
+    "ranking",
+    "cause-effect"
+   ],
+   "reads": "label, value, value2",
+   "wave": 1,
+   "ft": "slope",
+   "replaces": "cause-effect",
+   "storyteller": null,
+   "status": "built",
+   "note": "The Storyteller parked cause-effect as a slope (too small and technical); this one is drawn big with at most seven lines."
+  },
+  {
+   "id": "bump",
+   "name": "Bump",
+   "group": "Ranking",
+   "methods": [
+    "ranking",
+    "trend"
+   ],
+   "reads": "label + one column per period",
+   "wave": 1,
+   "ft": "bump",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "line",
+   "name": "Line",
+   "group": "Change over time",
+   "methods": [
+    "trend"
+   ],
+   "reads": "label, value (or one column per series)",
+   "wave": 1,
+   "ft": "line",
+   "replaces": "trend",
+   "storyteller": "trend › line",
+   "status": "built",
+   "note": "The Storyteller's trend is this line with its area filled."
+  },
+  {
+   "id": "area",
+   "name": "Area",
+   "group": "Change over time",
+   "methods": [
+    "trend",
+    "proportions"
+   ],
+   "reads": "label, value (or series)",
+   "wave": 1,
+   "ft": "area",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "column-timeline",
+   "name": "Column over time",
+   "group": "Change over time",
+   "methods": [
+    "trend"
+   ],
+   "reads": "label, value",
+   "wave": 1,
+   "ft": "column-timeline",
+   "replaces": null,
+   "storyteller": "trend › column",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "event-timeline",
+   "name": "Event timeline",
+   "group": "Change over time",
+   "methods": [
+    "timeline"
+   ],
+   "reads": "label, note",
+   "wave": 1,
+   "ft": "storyteller",
+   "replaces": "timeline",
+   "storyteller": "timeline",
+   "status": "built",
+   "note": "Events down a dotted spine, alternating sides."
+  },
+  {
+   "id": "donut",
+   "name": "Donut",
+   "group": "Part-to-whole",
+   "methods": [
+    "proportions"
+   ],
+   "reads": "label, value",
+   "wave": 1,
+   "ft": "pie",
+   "replaces": "proportions",
+   "storyteller": "proportions › donut",
+   "status": "built",
+   "note": "FT's pie folder draws both; the Storyteller's proportions is the donut with a Depot stat in the hole."
+  },
+  {
+   "id": "pie",
+   "name": "Pie",
+   "group": "Part-to-whole",
+   "methods": [
+    "proportions"
+   ],
+   "reads": "label, value",
+   "wave": 1,
+   "ft": "pie",
+   "replaces": null,
+   "storyteller": "proportions › pie",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "bar-stacked-proportional",
+   "name": "Proportional stacked bar",
+   "group": "Part-to-whole",
+   "methods": [
+    "proportions"
+   ],
+   "reads": "label + one column per part",
+   "wave": 1,
+   "ft": "bar-stacked-proportional",
+   "replaces": null,
+   "storyteller": "proportions › bar",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "treemap",
+   "name": "Treemap",
+   "group": "Part-to-whole",
+   "methods": [
+    "proportions"
+   ],
+   "reads": "label, value (parent optional)",
+   "wave": 1,
+   "ft": "treemap",
+   "replaces": null,
+   "storyteller": "proportions › treemap",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "scatterplot",
+   "name": "Scatterplot",
+   "group": "Correlation",
+   "methods": [
+    "correlation"
+   ],
+   "reads": "label, value, value2",
+   "wave": 1,
+   "ft": "scatterplot",
+   "replaces": "correlation",
+   "storyteller": "correlation › scatter",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "bubble",
+   "name": "Bubble",
+   "group": "Correlation",
+   "methods": [
+    "correlation"
+   ],
+   "reads": "label, value, value2, size",
+   "wave": 1,
+   "ft": "bubble",
+   "replaces": null,
+   "storyteller": "correlation › bubble",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "butterfly",
+   "name": "Butterfly",
+   "group": "Deviation",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "label, value, value2",
+   "wave": 1,
+   "ft": "storyteller",
+   "replaces": "comparison / butterfly",
+   "storyteller": "comparison › butterfly",
+   "status": "built",
+   "note": "Names down the middle, A left in olive, B right in blue."
+  },
+  {
+   "id": "dumbbell",
+   "name": "Dumbbell",
+   "group": "Distribution",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "label, value, value2",
+   "wave": 1,
+   "ft": "dot-plot",
+   "replaces": "comparison / dumbbell",
+   "storyteller": "comparison › dumbbell",
+   "status": "built",
+   "note": "FT calls it a dot plot."
+  },
+  {
+   "id": "windows",
+   "name": "Two windows",
+   "group": "Comparison",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "label, value, value2 + two pictures",
+   "wave": 1,
+   "ft": "storyteller",
+   "replaces": "comparison / windows",
+   "storyteller": "comparison › windows",
+   "status": "built",
+   "note": "A picture-led comparison; not in the FT set."
+  },
+  {
+   "id": "bar-grouped",
+   "name": "Grouped bar",
+   "group": "Magnitude",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "label + one column per series",
+   "wave": 1,
+   "ft": "bar-grouped",
+   "replaces": null,
+   "storyteller": "comparison › grouped",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "column-grouped",
+   "name": "Grouped column",
+   "group": "Magnitude",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "label + one column per series",
+   "wave": 1,
+   "ft": "column-grouped",
+   "replaces": null,
+   "storyteller": "comparison › columns",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "beeswarm",
+   "name": "Beeswarm",
+   "group": "Distribution",
+   "methods": [
+    "outlier"
+   ],
+   "reads": "label, value",
+   "wave": 1,
+   "ft": "dot-stacked",
+   "replaces": "outlier",
+   "storyteller": "outlier › swarm",
+   "status": "built",
+   "note": "Every row on one scale, the middle half shaded, the odd one out named."
+  },
+  {
+   "id": "histogram",
+   "name": "Histogram",
+   "group": "Distribution",
+   "methods": [
+    "outlier"
+   ],
+   "reads": "value",
+   "wave": 1,
+   "ft": "histogram",
+   "replaces": null,
+   "storyteller": "outlier › histogram",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "boxplot",
+   "name": "Box plot",
+   "group": "Distribution",
+   "methods": [
+    "outlier",
+    "comparison"
+   ],
+   "reads": "label + values",
+   "wave": 1,
+   "ft": "boxplot",
+   "replaces": null,
+   "storyteller": "outlier › box",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "process-spine",
+   "name": "Process spine",
+   "group": "Flow",
+   "methods": [
+    "process"
+   ],
+   "reads": "label, note",
+   "wave": 1,
+   "ft": "storyteller",
+   "replaces": "process",
+   "storyteller": "process",
+   "status": "built",
+   "note": "A spine of numbered chevrons, each step's words beside it."
+  },
+  {
+   "id": "network",
+   "name": "Network",
+   "group": "Flow",
+   "methods": [
+    "network"
+   ],
+   "reads": "label, to",
+   "wave": 1,
+   "ft": null,
+   "replaces": "network",
+   "storyteller": "network",
+   "status": "built",
+   "note": "FT listed it and never built it; the Storyteller did."
+  },
+  {
+   "id": "bar",
+   "name": "Bar",
+   "group": "Magnitude",
+   "methods": [
+    "ranking",
+    "comparison"
+   ],
+   "reads": "label, value",
+   "wave": 2,
+   "ft": "bar",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "column",
+   "name": "Column",
+   "group": "Magnitude",
+   "methods": [
+    "ranking",
+    "comparison"
+   ],
+   "reads": "label, value",
+   "wave": 2,
+   "ft": "column",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "bar-diverging",
+   "name": "Diverging bar",
+   "group": "Deviation",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "label, value (+/-)",
+   "wave": 2,
+   "ft": "bar",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "FT draws negatives with the plain bar."
+  },
+  {
+   "id": "bar-diverging-stacked",
+   "name": "Diverging stacked bar",
+   "group": "Deviation",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "label + one column per answer",
+   "wave": 2,
+   "ft": "bar-diverging-stacked",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "Survey answers from disagree to agree."
+  },
+  {
+   "id": "column-diverging-stacked",
+   "name": "Diverging stacked column",
+   "group": "Deviation",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "label + one column per answer",
+   "wave": 2,
+   "ft": "column-diverging-stacked",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "spine",
+   "name": "Spine",
+   "group": "Deviation",
+   "methods": [
+    "comparison",
+    "proportions"
+   ],
+   "reads": "label, value, value2",
+   "wave": 2,
+   "ft": "Spine",
+   "replaces": null,
+   "storyteller": "comparison › spine",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "pyramid",
+   "name": "Population pyramid",
+   "group": "Distribution",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "label, value, value2",
+   "wave": 2,
+   "ft": "pyramid",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "bullet",
+   "name": "Bullet",
+   "group": "Magnitude",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "label, value, target, ranges",
+   "wave": 2,
+   "ft": "bullet-chart",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "proportional-squares",
+   "name": "Proportional squares",
+   "group": "Magnitude",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "label, value",
+   "wave": 2,
+   "ft": "proportional-squares",
+   "replaces": null,
+   "storyteller": "ranking › squares",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "bar-stacked",
+   "name": "Stacked bar",
+   "group": "Part-to-whole",
+   "methods": [
+    "proportions"
+   ],
+   "reads": "label + one column per part",
+   "wave": 2,
+   "ft": "bar-stacked",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "column-stacked",
+   "name": "Stacked column",
+   "group": "Part-to-whole",
+   "methods": [
+    "proportions",
+    "trend"
+   ],
+   "reads": "label + one column per part",
+   "wave": 2,
+   "ft": "column-stacked",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "waterfall",
+   "name": "Waterfall",
+   "group": "Flow",
+   "methods": [
+    "process",
+    "proportions"
+   ],
+   "reads": "label, value (+/-)",
+   "wave": 2,
+   "ft": "waterfall",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "sankey",
+   "name": "Sankey",
+   "group": "Flow",
+   "methods": [
+    "process"
+   ],
+   "reads": "source, target, value",
+   "wave": 2,
+   "ft": "sankey",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "line-two-panel",
+   "name": "Two panels on one time axis",
+   "group": "Change over time",
+   "methods": [
+    "trend",
+    "correlation"
+   ],
+   "reads": "label + two series",
+   "wave": 2,
+   "ft": "line-dual-axis",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "Redraws FT's dual-axis line: two scales on one chart invite a false crossing, so each measure gets its own panel."
+  },
+  {
+   "id": "line-interday",
+   "name": "Intraday line",
+   "group": "Change over time",
+   "methods": [
+    "trend"
+   ],
+   "reads": "time, value",
+   "wave": 2,
+   "ft": "line-interday",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "line-moving-average",
+   "name": "Line with moving average",
+   "group": "Change over time",
+   "methods": [
+    "trend"
+   ],
+   "reads": "label, value",
+   "wave": 2,
+   "ft": "line-moving-average",
+   "replaces": null,
+   "storyteller": "trend › average",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "column-line",
+   "name": "Column and line",
+   "group": "Correlation",
+   "methods": [
+    "trend",
+    "correlation"
+   ],
+   "reads": "label, value (amount), value2 (rate)",
+   "wave": 2,
+   "ft": "column-line-timeline",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "Amount as columns, rate as a line, drawn as two panels unless both share a unit."
+  },
+  {
+   "id": "scatterplot-connected",
+   "name": "Connected scatterplot",
+   "group": "Correlation",
+   "methods": [
+    "correlation",
+    "trend"
+   ],
+   "reads": "label, value, value2 in time order",
+   "wave": 2,
+   "ft": "scatterplot-line",
+   "replaces": null,
+   "storyteller": "correlation › path",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "heatmap-category",
+   "name": "Heatmap, categories",
+   "group": "Correlation",
+   "methods": [
+    "correlation"
+   ],
+   "reads": "row, column, value",
+   "wave": 2,
+   "ft": "xy-heatmap-cat",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "heatmap-quantity",
+   "name": "Heatmap, quantities",
+   "group": "Correlation",
+   "methods": [
+    "correlation"
+   ],
+   "reads": "x, y, value",
+   "wave": 2,
+   "ft": "xy-heatmap-quant",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "calendar-heatmap",
+   "name": "Calendar heatmap",
+   "group": "Change over time",
+   "methods": [
+    "trend"
+   ],
+   "reads": "date, value",
+   "wave": 2,
+   "ft": "calendar-heat-map",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "priestley-timeline",
+   "name": "Priestley timeline",
+   "group": "Change over time",
+   "methods": [
+    "timeline"
+   ],
+   "reads": "label, start, end",
+   "wave": 2,
+   "ft": "priestley-timeline",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "circles-timeline",
+   "name": "Circles timeline",
+   "group": "Change over time",
+   "methods": [
+    "timeline",
+    "outlier"
+   ],
+   "reads": "label, date, value",
+   "wave": 2,
+   "ft": "circles-timeline",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "small-multiples-line",
+   "name": "Small multiples: line",
+   "group": "Change over time",
+   "methods": [
+    "trend",
+    "comparison"
+   ],
+   "reads": "panel, label, value",
+   "wave": 2,
+   "ft": "small-multiples-single-line",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "Also covers FT's multiple-line panels."
+  },
+  {
+   "id": "small-multiples-area",
+   "name": "Small multiples: area",
+   "group": "Change over time",
+   "methods": [
+    "trend",
+    "comparison"
+   ],
+   "reads": "panel, label, value",
+   "wave": 2,
+   "ft": "small-multiples-area",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "small-multiples-column",
+   "name": "Small multiples: column",
+   "group": "Magnitude",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "panel, label, value",
+   "wave": 2,
+   "ft": "small-multiples-column-category",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "Also covers FT's column-timeline panels."
+  },
+  {
+   "id": "small-multiples-bar",
+   "name": "Small multiples: bar",
+   "group": "Magnitude",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "panel, label, value",
+   "wave": 2,
+   "ft": "small-multiples-bars",
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "line-surplus-deficit",
+   "name": "Surplus and deficit line",
+   "group": "Deviation",
+   "methods": [
+    "trend",
+    "comparison"
+   ],
+   "reads": "label, value, value2",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "candlestick",
+   "name": "Candlestick",
+   "group": "Change over time",
+   "methods": [
+    "trend"
+   ],
+   "reads": "date, open, high, low, close",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "FT calls it stock price."
+  },
+  {
+   "id": "fan",
+   "name": "Fan",
+   "group": "Change over time",
+   "methods": [
+    "trend"
+   ],
+   "reads": "label, value, low, high",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "Uncertainty widening into a projection."
+  },
+  {
+   "id": "seismogram",
+   "name": "Seismogram",
+   "group": "Change over time",
+   "methods": [
+    "timeline",
+    "outlier"
+   ],
+   "reads": "date, value",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "proportional-symbol-ordered",
+   "name": "Ordered proportional symbols",
+   "group": "Ranking",
+   "methods": [
+    "ranking"
+   ],
+   "reads": "label, value",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": "ranking › circles",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "dot-strip",
+   "name": "Dot strip",
+   "group": "Distribution",
+   "methods": [
+    "ranking",
+    "outlier"
+   ],
+   "reads": "label, group, value",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "FT lists it under both ranking and distribution."
+  },
+  {
+   "id": "violin",
+   "name": "Violin",
+   "group": "Distribution",
+   "methods": [
+    "outlier",
+    "comparison"
+   ],
+   "reads": "label + values",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": "outlier › violin",
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "barcode",
+   "name": "Barcode",
+   "group": "Distribution",
+   "methods": [
+    "outlier"
+   ],
+   "reads": "label, group, value",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "cumulative-curve",
+   "name": "Cumulative curve",
+   "group": "Distribution",
+   "methods": [
+    "outlier"
+   ],
+   "reads": "value",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "waffle",
+   "name": "Waffle",
+   "group": "Part-to-whole",
+   "methods": [
+    "proportions"
+   ],
+   "reads": "label, value",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": "proportions › waffle",
+   "status": "built",
+   "note": "FT calls it a gridplot."
+  },
+  {
+   "id": "sunburst",
+   "name": "Sunburst",
+   "group": "Part-to-whole",
+   "methods": [
+    "proportions"
+   ],
+   "reads": "label, parent, value",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "voronoi",
+   "name": "Voronoi",
+   "group": "Part-to-whole",
+   "methods": [
+    "proportions",
+    "network"
+   ],
+   "reads": "label, x, y",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "arc",
+   "name": "Parliament arc",
+   "group": "Part-to-whole",
+   "methods": [
+    "proportions"
+   ],
+   "reads": "label, value",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "A hemicycle of seats."
+  },
+  {
+   "id": "venn",
+   "name": "Venn",
+   "group": "Part-to-whole",
+   "methods": [
+    "proportions",
+    "network"
+   ],
+   "reads": "sets, overlaps",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "Echoes Oddview-29, the Express Venn diagrams."
+  },
+  {
+   "id": "proportional-symbol",
+   "name": "Proportional symbols",
+   "group": "Magnitude",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "label, value",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "pictogram",
+   "name": "Pictogram",
+   "group": "Magnitude",
+   "methods": [
+    "comparison",
+    "proportions"
+   ],
+   "reads": "label, value + an icon",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "FT calls it isotype. Whole numbers only."
+  },
+  {
+   "id": "radar",
+   "name": "Radar",
+   "group": "Magnitude",
+   "methods": [
+    "comparison"
+   ],
+   "reads": "label + one column per measure",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "parallel-coordinates",
+   "name": "Parallel coordinates",
+   "group": "Magnitude",
+   "methods": [
+    "comparison",
+    "correlation"
+   ],
+   "reads": "label + one column per measure",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "chord",
+   "name": "Chord",
+   "group": "Flow",
+   "methods": [
+    "network",
+    "process"
+   ],
+   "reads": "source, target, value",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "choropleth",
+   "name": "Choropleth",
+   "group": "Spatial",
+   "methods": [],
+   "reads": "region, value",
+   "wave": 4,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "Base maps: Natural Earth (world) and ABS boundaries (Australia, states, councils)."
+  },
+  {
+   "id": "proportional-symbol-map",
+   "name": "Proportional symbol map",
+   "group": "Spatial",
+   "methods": [],
+   "reads": "place, value",
+   "wave": 4,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "flow-map",
+   "name": "Flow map",
+   "group": "Spatial",
+   "methods": [],
+   "reads": "from, to, value",
+   "wave": 4,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "contour-map",
+   "name": "Contour map",
+   "group": "Spatial",
+   "methods": [],
+   "reads": "grid of values",
+   "wave": 4,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "cartogram-equal",
+   "name": "Equal-area cartogram",
+   "group": "Spatial",
+   "methods": [],
+   "reads": "region, value",
+   "wave": 4,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "FT's UK constituency cartogram is the example."
+  },
+  {
+   "id": "cartogram-scaled",
+   "name": "Scaled cartogram",
+   "group": "Spatial",
+   "methods": [],
+   "reads": "region, value",
+   "wave": 4,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "dot-density-map",
+   "name": "Dot density map",
+   "group": "Spatial",
+   "methods": [],
+   "reads": "place (one dot each)",
+   "wave": 4,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "heatmap-map",
+   "name": "Grid heatmap map",
+   "group": "Spatial",
+   "methods": [],
+   "reads": "lat, lon, value",
+   "wave": 4,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": null
+  },
+  {
+   "id": "locator-map",
+   "name": "Locator map",
+   "group": "Spatial",
+   "methods": [],
+   "reads": "label (a city) or lat, lon; note",
+   "wave": 4,
+   "ft": null,
+   "replaces": null,
+   "storyteller": null,
+   "status": "built",
+   "note": "Not on the FT poster: where a place is, with a pin, a close-up and an overview inset. Otto, 18 Sep 2026."
+  }
+ ]
+}

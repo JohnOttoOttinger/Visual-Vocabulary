@@ -1,0 +1,33 @@
+{
+ "chart": "column-ordered",
+ "kicker": "Where the slides went...",
+ "title": "SLIDES by STYLE",
+ "line": "All 55 slides, *the busiest style first*.",
+ "source": "nine story folders, 55 slides",
+ "data": [
+  {
+   "label": "divider",
+   "value": 24
+  },
+  {
+   "label": "article",
+   "value": 10
+  },
+  {
+   "label": "bleed",
+   "value": 5
+  },
+  {
+   "label": "panel",
+   "value": 4
+  },
+  {
+   "label": "ask",
+   "value": 4
+  },
+  {
+   "label": "everything else",
+   "value": 8
+  }
+ ]
+}

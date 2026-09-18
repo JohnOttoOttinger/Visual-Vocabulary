@@ -1,0 +1,68 @@
+{
+ "chart": "column-diverging-stacked",
+ "kicker": "Pictures or words...",
+ "title": "HOW EACH STORY LEANS",
+ "line": "Each story's slides, *word-led above, picture-led below*.",
+ "source": "Marketing/Stories/*/draft/story.json",
+ "series": [
+  "Picture only",
+  "Picture and words",
+  "Words only"
+ ],
+ "data": [
+  {
+   "label": "trump-balloon",
+   "Picture only": 1,
+   "Picture and words": 4,
+   "Words only": 2
+  },
+  {
+   "label": "inflatables",
+   "Picture only": 3,
+   "Picture and words": 0,
+   "Words only": 1
+  },
+  {
+   "label": "experience-gardens",
+   "Picture only": 8,
+   "Picture and words": 0,
+   "Words only": 1
+  },
+  {
+   "label": "sidehatch",
+   "Picture only": 6,
+   "Picture and words": 0,
+   "Words only": 0
+  },
+  {
+   "label": "babbling-with-baobabs",
+   "Picture only": 6,
+   "Picture and words": 0,
+   "Words only": 0
+  },
+  {
+   "label": "bab-arrives",
+   "Picture only": 1,
+   "Picture and words": 4,
+   "Words only": 2
+  },
+  {
+   "label": "sweaty-cabbage",
+   "Picture only": 3,
+   "Picture and words": 0,
+   "Words only": 0
+  },
+  {
+   "label": "a-wall-is-an-argument",
+   "Picture only": 1,
+   "Picture and words": 2,
+   "Words only": 2
+  },
+  {
+   "label": "top-5-caricatures",
+   "Picture only": 7,
+   "Picture and words": 0,
+   "Words only": 1
+  }
+ ]
+}

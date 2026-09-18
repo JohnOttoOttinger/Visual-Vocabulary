@@ -1,0 +1,49 @@
+{
+ "chart": "chord",
+ "kicker": "Who worked on what...",
+ "title": "SHARED TEMPLATES",
+ "line": "Each ribbon the FT templates two people both changed, *the widest in olive*.",
+ "source": "git log of reference/ft-2021",
+ "data": [
+  {
+   "source": "Bob Haslett",
+   "target": "Tom Pearson",
+   "value": 5
+  },
+  {
+   "source": "Bob Haslett",
+   "target": "Alan Smith",
+   "value": 24
+  },
+  {
+   "source": "Bob Haslett",
+   "target": "Steve Bernard",
+   "value": 29
+  },
+  {
+   "source": "Tom Pearson",
+   "target": "Alan Smith",
+   "value": 6
+  },
+  {
+   "source": "Tom Pearson",
+   "target": "Steve Bernard",
+   "value": 4
+  },
+  {
+   "source": "Tom Pearson",
+   "target": "Billy Ehrenberg",
+   "value": 1
+  },
+  {
+   "source": "Alan Smith",
+   "target": "Steve Bernard",
+   "value": 19
+  },
+  {
+   "source": "Alan Smith",
+   "target": "Billy Ehrenberg",
+   "value": 1
+  }
+ ]
+}

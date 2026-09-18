@@ -1,0 +1,59 @@
+{
+ "chart": "bar-grouped",
+ "kicker": "What the FT drew...",
+ "title": "BUILT or ONLY DRAWN",
+ "line": "Charts on the FT poster, *built or only drawn*.",
+ "source": "reference/ft-2021/chartTypes.csv",
+ "series": [
+  "Built",
+  "Never built"
+ ],
+ "insight": "Spatial",
+ "data": [
+  {
+   "label": "Deviation",
+   "Built": 3,
+   "Never built": 1
+  },
+  {
+   "label": "Correlation",
+   "Built": 5,
+   "Never built": 0
+  },
+  {
+   "label": "Change over time",
+   "Built": 8,
+   "Never built": 4
+  },
+  {
+   "label": "Ranking",
+   "Built": 6,
+   "Never built": 2
+  },
+  {
+   "label": "Distribution",
+   "Built": 4,
+   "Never built": 4
+  },
+  {
+   "label": "Part-to-whole",
+   "Built": 6,
+   "Never built": 5
+  },
+  {
+   "label": "Magnitude",
+   "Built": 8,
+   "Never built": 4
+  },
+  {
+   "label": "Spatial",
+   "Built": 0,
+   "Never built": 8
+  },
+  {
+   "label": "Flow",
+   "Built": 2,
+   "Never built": 2
+  }
+ ]
+}

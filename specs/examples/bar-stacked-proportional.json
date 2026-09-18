@@ -1,0 +1,21 @@
+{
+ "chart": "bar-stacked-proportional",
+ "kicker": "Where they come from...",
+ "title": "EIGHTY CHARTS, THREE SOURCES",
+ "line": "The catalogue by where each chart started, *most from the FT's own set*.",
+ "source": "catalog/charts.json",
+ "data": [
+  {
+   "label": "FT built it",
+   "value": 48
+  },
+  {
+   "label": "FT listed it",
+   "value": 29
+  },
+  {
+   "label": "The Storyteller",
+   "value": 4
+  }
+ ]
+}

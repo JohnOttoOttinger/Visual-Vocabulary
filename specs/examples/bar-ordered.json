@@ -1,0 +1,44 @@
+{
+ "chart": "bar-ordered",
+ "kicker": "The longest carousels...",
+ "title": "SLIDES PER STORY",
+ "line": "The seven longest stories, *most slides first*.",
+ "source": "Marketing/Stories/*/draft/story.json",
+ "data": [
+  {
+   "label": "experience-gardens",
+   "value": 9,
+   "note": "list"
+  },
+  {
+   "label": "top-5-caricatures",
+   "value": 8,
+   "note": "list, Top 5s"
+  },
+  {
+   "label": "trump-balloon",
+   "value": 7,
+   "note": "bulletin, the first posted"
+  },
+  {
+   "label": "bab-arrives",
+   "value": 7,
+   "note": "build"
+  },
+  {
+   "label": "sidehatch",
+   "value": 6,
+   "note": "walkthrough"
+  },
+  {
+   "label": "babbling-with-baobabs",
+   "value": 6,
+   "note": "conversation"
+  },
+  {
+   "label": "a-wall-is-an-argument",
+   "value": 5,
+   "note": "argument"
+  }
+ ]
+}

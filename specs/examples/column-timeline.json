@@ -1,0 +1,46 @@
+{
+ "chart": "column-timeline",
+ "kicker": "How the FT built it...",
+ "title": "COMMITS by QUARTER",
+ "line": "Changes to the FT's templates, *the big push in 2016*.",
+ "source": "git log of reference/ft-2021, 2015 to 2017",
+ "insight": "max",
+ "data": [
+  {
+   "label": "2015 Q3",
+   "value": 75
+  },
+  {
+   "label": "Q4",
+   "value": 83
+  },
+  {
+   "label": "2016 Q1",
+   "value": 17
+  },
+  {
+   "label": "Q2",
+   "value": 479
+  },
+  {
+   "label": "Q3",
+   "value": 239
+  },
+  {
+   "label": "Q4",
+   "value": 211
+  },
+  {
+   "label": "2017 Q1",
+   "value": 167
+  },
+  {
+   "label": "Q2",
+   "value": 84
+  },
+  {
+   "label": "Q3",
+   "value": 11
+  }
+ ]
+}

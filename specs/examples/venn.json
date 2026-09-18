@@ -1,0 +1,48 @@
+{
+ "chart": "venn",
+ "kicker": "Which charts draw what...",
+ "title": "RANK, COMPARE, TREND",
+ "line": "Charts in the catalogue by the pack's methods they can draw, *each overlap counted*.",
+ "source": "catalog/charts.json",
+ "data": [
+  {
+   "sets": [
+    "ranking"
+   ],
+   "value": 7
+  },
+  {
+   "sets": [
+    "ranking",
+    "trend"
+   ],
+   "value": 1
+  },
+  {
+   "sets": [
+    "trend"
+   ],
+   "value": 12
+  },
+  {
+   "sets": [
+    "comparison"
+   ],
+   "value": 20
+  },
+  {
+   "sets": [
+    "ranking",
+    "comparison"
+   ],
+   "value": 2
+  },
+  {
+   "sets": [
+    "comparison",
+    "trend"
+   ],
+   "value": 3
+  }
+ ]
+}

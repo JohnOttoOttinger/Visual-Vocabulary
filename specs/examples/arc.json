@@ -1,0 +1,25 @@
+{
+ "chart": "arc",
+ "kicker": "Fifty-five seats...",
+ "title": "the SLIDE PARLIAMENT",
+ "line": "Every slide drafted as a seat, *by the style that drew it*.",
+ "source": "nine story folders, 55 slides",
+ "data": [
+  {
+   "label": "divider",
+   "value": 24
+  },
+  {
+   "label": "article",
+   "value": 10
+  },
+  {
+   "label": "bleed",
+   "value": 5
+  },
+  {
+   "label": "the rest",
+   "value": 16
+  }
+ ]
+}

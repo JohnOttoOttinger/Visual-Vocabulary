@@ -1,0 +1,29 @@
+{
+ "chart": "proportional-squares",
+ "kicker": "Who built the FT set...",
+ "title": "ONE HAND, MOSTLY",
+ "line": "Changes by the five busiest hands, *one far ahead*.",
+ "source": "git log of reference/ft-2021, 2015 to 2017",
+ "data": [
+  {
+   "label": "Bob Haslett",
+   "value": 935
+  },
+  {
+   "label": "Tom Pearson",
+   "value": 189
+  },
+  {
+   "label": "Alan Smith",
+   "value": 111
+  },
+  {
+   "label": "Steve Bernard",
+   "value": 86
+  },
+  {
+   "label": "Billy Ehrenberg",
+   "value": 7
+  }
+ ]
+}

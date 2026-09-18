@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vv render</title>
+<style>
+  /* The four faces are read from ~/Library/Fonts by the render server, never kept in this repo. */
+  @font-face { font-family: "Bebas Neue"; src: url(/fonts/BebasNeue-Regular.ttf); }
+  @font-face { font-family: "Arvo"; font-weight: 400; src: url(/fonts/Arvo-Regular.ttf); }
+  @font-face { font-family: "Arvo"; font-weight: 700; src: url(/fonts/Arvo-Bold.ttf); }
+  @font-face { font-family: "Qwigley"; src: url(/fonts/Qwigley-Regular.ttf); }
+  @font-face { font-family: "Numbers Depot"; src: url(/fonts/Numbers-Depot.otf); }
+  html, body { margin: 0; background: transparent; }
+  #stage > * { display: block; }
+</style>
+<script src="/node_modules/d3/dist/d3.min.js"></script>
+<script src="/node_modules/d3-sankey/dist/d3-sankey.min.js"></script>
+<script src="/node_modules/topojson-client/dist/topojson-client.min.js"></script>
+</head>
+<body>
+<div id="stage"></div>
+<script type="module">
+  import { drawChart, drawFrame } from "/src/render.js";
+  const faces = ['40px "Bebas Neue"', '40px "Arvo"', 'bold 40px "Arvo"', '40px "Qwigley"', '40px "Numbers Depot"'];
+  await Promise.all(faces.map((f) => document.fonts.load(f)));
+  // the map data (geo/*.json, built by tools/build-geo.sh), read once for every map chart
+  const { loadGeo } = await import("/src/geo.js");
+  await loadGeo();
+  const stage = document.getElementById("stage");
+  // Each call clears the stage and draws one spec; the render server screenshots #stage.
+  // pictures arrive as data URIs (the render tool reads the files); their sizes are measured here
+  async function sized(spec) {
+    if (!spec.images) return spec;
+    const images = await Promise.all(spec.images.map(async (href) => {
+      if (!href) return null;
+      const im = new Image(); im.src = href; await im.decode();
+      return { href, width: im.naturalWidth, height: im.naturalHeight };
+    }));
+    return { ...spec, images };
+  }
+  window.vv = {
+    async chart(spec) {
+      spec = await sized(spec);
+      stage.replaceChildren();
+      const r = drawChart(spec);
+      stage.append(r.node);
+      return { bleed: r.bleed, insight: r.insight, warnings: r.warnings, svg: r.node.outerHTML,
+               width: +r.node.getAttribute("width"), height: +r.node.getAttribute("height") };
+    },
+    async frame(spec) {
+      spec = await sized(spec);
+      stage.replaceChildren();
+      const r = await drawFrame(spec);
+      stage.append(r.node);
+      return { box: r.box, bleed: r.bleed, warnings: r.warnings,
+               width: r.node.offsetWidth, height: r.node.offsetHeight };
+    },
+  };
+  window.vvReady = true;
+</script>
+</body>
+</html>

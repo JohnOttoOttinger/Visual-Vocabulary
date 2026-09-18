@@ -1,0 +1,78 @@
+{
+ "chart": "column-stacked",
+ "kicker": "Who built it...",
+ "title": "EACH QUARTER'S HANDS",
+ "line": "Changes each quarter, *stacked by who made them*.",
+ "source": "git log of reference/ft-2021, usernames merged with names",
+ "series": [
+  "Bob Haslett",
+  "Tom Pearson",
+  "Alan Smith",
+  "Everyone else"
+ ],
+ "data": [
+  {
+   "label": "2015 Q3",
+   "Bob Haslett": 0,
+   "Tom Pearson": 65,
+   "Alan Smith": 2,
+   "Everyone else": 8
+  },
+  {
+   "label": "Q4",
+   "Bob Haslett": 6,
+   "Tom Pearson": 58,
+   "Alan Smith": 13,
+   "Everyone else": 6
+  },
+  {
+   "label": "2016 Q1",
+   "Bob Haslett": 0,
+   "Tom Pearson": 4,
+   "Alan Smith": 2,
+   "Everyone else": 11
+  },
+  {
+   "label": "Q2",
+   "Bob Haslett": 447,
+   "Tom Pearson": 0,
+   "Alan Smith": 20,
+   "Everyone else": 12
+  },
+  {
+   "label": "Q3",
+   "Bob Haslett": 219,
+   "Tom Pearson": 0,
+   "Alan Smith": 14,
+   "Everyone else": 6
+  },
+  {
+   "label": "Q4",
+   "Bob Haslett": 133,
+   "Tom Pearson": 5,
+   "Alan Smith": 44,
+   "Everyone else": 29
+  },
+  {
+   "label": "2017 Q1",
+   "Bob Haslett": 71,
+   "Tom Pearson": 41,
+   "Alan Smith": 5,
+   "Everyone else": 50
+  },
+  {
+   "label": "Q2",
+   "Bob Haslett": 56,
+   "Tom Pearson": 16,
+   "Alan Smith": 5,
+   "Everyone else": 7
+  },
+  {
+   "label": "Q3",
+   "Bob Haslett": 3,
+   "Tom Pearson": 0,
+   "Alan Smith": 6,
+   "Everyone else": 2
+  }
+ ]
+}
