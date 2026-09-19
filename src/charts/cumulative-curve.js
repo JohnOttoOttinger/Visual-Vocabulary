@@ -21,7 +21,7 @@ export default {
     const grid = g.append("g").attr("id", "grid"), faint = mix(th.roles.neutral, th.ground, 0.45);
     for (const t of yt) { core.dottedLine(grid, [px0, Y(t)], [px1, Y(t)], faint, S); core.text(grid, `${t}%`, { x: px0 - S * 0.02, y: Y(t), face: "arvo", px: S * 0.022, fill: th.body, align: "r", valign: "mid" }); }
     for (const t of xt) core.text(grid, core.num(t, ctx, true), { x: X(t), y: py1 + S * 0.02, face: "arvo", px: S * 0.022, fill: th.body, align: "c", valign: "asc" });
-    if (ctx.axes?.[0]) core.text(grid, ctx.axes[0].toUpperCase(), { x: px1, y: py1 + S * 0.065, face: "bebas", px: S * 0.032, fill: th.roles.neutral, align: "r" });
+    core.axisNames(grid, [ctx.axes?.[0]], ctx, { x0, px0, px1, py0, py1, below: py1 + S * 0.065 });
     const pts = [[X(lo), Y(0)]];
     sorted.forEach((d, k) => { pts.push([X(d.v), Y(k / n * 100)]); pts.push([X(d.v), Y((k + 1) / n * 100)]); });
     pts.push([px1, Y(100)]);

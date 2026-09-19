@@ -6,8 +6,9 @@
 //       SVG (<name>.svg). --frame also draws it on a specimen slide (<name>-frame.png).
 //       A spec file may hold one spec or {"charts": [...]}, so a caller renders a whole deck in
 //       one launch. Prints a JSON list of what it wrote.
-//   vv gallery [--out DIR]
-//       Every example in specs/examples, framed, in plaster and in marquee.
+//   vv gallery [--out DIR] [--only chart,chart] [--scale 2]
+//       Every example in specs/examples, framed, in plaster and in marquee. --scale 2 renders at
+//       twice the pixels (for a zoomable review page).
 //
 // Fonts come from ~/Library/Fonts; the plaster and grunge textures from the Visual Storyteller
 // (VV_TEXTURES to point elsewhere). Neither is copied into this repo.
@@ -92,8 +93,10 @@ async function session(fn) {
   }
 }
 
+let SCALE = 1;   // --scale 2 renders at twice the pixels, for zooming in
+
 async function shoot(page, file, w, h) {
-  await page.setViewport({ width: Math.ceil(w), height: Math.ceil(h), deviceScaleFactor: 1 });
+  await page.setViewport({ width: Math.ceil(w), height: Math.ceil(h), deviceScaleFactor: SCALE });
   const el = await page.$("#stage > *");
   await el.screenshot({ path: file, omitBackground: true });
 }
@@ -121,6 +124,7 @@ async function renderOne(page, spec, outDir, { frame, chartOnly = true }) {
 async function main() {
   const [cmd, ...rest] = process.argv.slice(2);
   const { files, flags } = args(rest);
+  SCALE = Number(flags.scale) || 1;
   if (cmd === "render") {
     const outDir = resolve(flags.out || join(ROOT, "out"));
     mkdirSync(outDir, { recursive: true });
@@ -135,7 +139,10 @@ async function main() {
     const outDir = resolve(flags.out || join(ROOT, "out/gallery"));
     mkdirSync(outDir, { recursive: true });
     const dir = join(ROOT, "specs/examples");
-    const specs = readdirSync(dir).filter((f) => f.endsWith(".json")).sort().flatMap((f) => specsFrom(join(dir, f)));
+    // --only a,b: just the examples whose chart id is listed
+    const only = flags.only ? new Set(String(flags.only).split(",")) : null;
+    const specs = readdirSync(dir).filter((f) => f.endsWith(".json")).sort().flatMap((f) => specsFrom(join(dir, f)))
+      .filter((s) => !only || only.has(s.chart));
     const modes = flags.mode ? [flags.mode] : ["plaster", "marquee"];
     const done = await session(async (page) => {
       const out = [];

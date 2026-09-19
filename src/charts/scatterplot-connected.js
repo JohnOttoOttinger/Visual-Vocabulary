@@ -14,13 +14,12 @@ export default {
   draw(g, rows, [x0, y0, x1, y1], ctx) {
     const { S, th, paint: P } = ctx, R = th.roles, n = rows.length, names = ctx.axes || ["", ""], tp = S * 0.021;
     const [xlo, xhi, xt] = core.spanOf(rows.map((r) => r.value)), [ylo, yhi, yt] = core.spanOf(rows.map((r) => r.value2));
-    const px0 = x0 + core.tickWidth(yt, ctx) + S * 0.03, px1 = x1 - S * 0.03, py0 = y0 + S * 0.07, py1 = y1 - S * 0.10;
+    const px0 = x0 + core.axisRoom(names[1], ctx) + core.tickWidth(yt, ctx) + S * 0.03, px1 = x1 - S * 0.03, py0 = y0 + S * 0.035, py1 = y1 - S * 0.10;
     const X = (v) => px0 + (px1 - px0) * (v - xlo) / ((xhi - xlo) || 1), Y = (v) => py1 - (py1 - py0) * (v - ylo) / ((yhi - ylo) || 1);
     const ax = g.append("g").attr("id", "axes"), faint = mix(R.neutral, th.ground, 0.5);
     for (const t of yt) { core.dottedLine(ax, [px0, Y(t)], [px1, Y(t)], faint, S); core.text(ax, core.num(t, ctx, true), { x: px0 - S * 0.018, y: Y(t), face: "arvo", px: tp, fill: th.body, align: "r", valign: "mid" }); }
     for (const t of xt) { core.dottedLine(ax, [X(t), py0], [X(t), py1], faint, S); core.text(ax, core.num(t, ctx, true), { x: X(t), y: py1 + S * 0.018, face: "arvo", px: tp, fill: th.body, align: "c", valign: "asc" }); }
-    if (names[0]) core.text(ax, names[0].toUpperCase(), { x: px1, y: py1 + S * 0.06, face: "bebas", px: S * 0.034, fill: R.neutral, align: "r" });
-    if (names[1]) core.text(ax, names[1].toUpperCase(), { x: x0, y: y0, face: "bebas", px: S * 0.034, fill: R.neutral });
+    core.axisNames(ax, names, ctx, { x0, px0, px1, py0, py1, below: py1 + S * 0.06 });
     const pts = rows.map((r) => [X(r.value), Y(r.value2)]), marks = g.append("g").attr("id", "marks");
     marks.append("path").attr("d", d3.line().curve(d3.curveCatmullRom.alpha(0.5))(pts)).attr("fill", "none")
       .attr("stroke", R.neutral).attr("stroke-width", S * 0.005).attr("stroke-linecap", "round");

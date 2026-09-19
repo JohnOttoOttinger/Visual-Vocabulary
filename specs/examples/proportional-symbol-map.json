@@ -3,7 +3,7 @@
  "kicker": "Where the people are...",
  "title": "AUSTRALIA'S CITIES",
  "line": "Every city of 20,000 people or more, *each circle its population*.",
- "source": "Natural Earth, 2019 population estimates",
+ "source": "Natural Earth, 2019 population estimates; RESOLVE Ecoregions",
  "options": {
   "focus": "australia"
  },

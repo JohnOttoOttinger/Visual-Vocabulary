@@ -141,3 +141,19 @@ export function div(th, t) {
   const pos = th.dark ? TOKENS.mint : TOKENS.primary;
   return t < 0 ? mix(mid, neg, -t) : mix(mid, pos, t);
 }
+
+// The ground a map is drawn on. Plain land is sand; the land beyond the focus paler. With terrain,
+// each kind of ground its own shade from the palette's earths: sand deepening for desert, dry
+// grass, olive scrub, sage greens for forest and jungle, a blue-green for taiga, grey for tundra,
+// near white for ice. The greens lean to sage, away from the olive that carries the insight. On
+// dark paper the same colours, sunk into the ground.
+const LAND = {
+  land: "#D2C1A0", far: "#DDD4C2",
+  desert: "#CFAC79", dry: "#C8BB8B", scrub: "#B3B288", forest: "#9AAA8A", jungle: "#7E9879",
+  taiga: "#8E9F98", tundra: "#BCC1B5", ice: "#F5F4F0",
+};
+export function landColours(th) {
+  if (!th.dark) return LAND;
+  const sunk = Object.fromEntries(Object.entries(LAND).map(([k, c]) => [k, mix(c, th.ground, k === "ice" ? 0.45 : 0.55)]));
+  return { ...sunk, far: mix(LAND.far, th.ground, 0.78) };
+}

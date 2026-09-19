@@ -5,7 +5,7 @@
    "kicker": "Where it is...",
    "title": "MELBOURNE and SYDNEY",
    "line": "Two capitals, *the pin on Melbourne*.",
-   "source": "Natural Earth, 2019 population estimates",
+   "source": "Natural Earth, 2019 population estimates; RESOLVE Ecoregions",
    "options": {
     "focus": "australia"
    },
@@ -27,7 +27,7 @@
    "kicker": "Closer in...",
    "title": "VICTORIA",
    "line": "The state's four biggest cities, *Melbourne pinned*.",
-   "source": "Natural Earth, 2019 population estimates; ABS boundaries (ASGS 2021, councils 2025)",
+   "source": "Natural Earth, 2019 population estimates; ABS boundaries (ASGS 2021, councils 2025); RESOLVE Ecoregions",
    "options": {
     "focus": "Victoria"
    },
@@ -56,7 +56,7 @@
    "kicker": "Closer still...",
    "title": "GREATER MELBOURNE",
    "line": "The capital area and its councils, *the city pinned*.",
-   "source": "ABS boundaries (ASGS 2021, councils 2025)",
+   "source": "ABS boundaries (ASGS 2021, councils 2025); RESOLVE Ecoregions",
    "options": {
     "focus": "Greater Melbourne"
    },
@@ -78,7 +78,7 @@
    "kicker": "The festival shortlist...",
    "title": "WHERE the FESTIVALS ARE",
    "line": "Five festivals on the list, *two of them in Melbourne*.",
-   "source": "project-manager-agent/australia_asia_art_light_experimental_festivals.csv",
+   "source": "project-manager-agent/australia_asia_art_light_experimental_festivals.csv; RESOLVE Ecoregions",
    "options": {
     "focus": [
      95,

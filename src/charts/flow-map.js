@@ -1,6 +1,7 @@
 // Flow map — FT Spatial. Movement between places: each row "from" and "to" (cities, or give
 // "from_lat" / "from_lon" / "to_lat" / "to_lon") and a "value", drawn as a curved band as thick as
-// the value with an arrowhead at the destination. The biggest flow (unless one is named by its
+// the value with an arrowhead at the destination. The Storyteller's table works too: "label" is
+// where it starts and "to" (a name, or a list whose first name is used) where it ends. The biggest flow (unless one is named by its
 // "to") in olive with its value; every end named once.
 import * as core from "../core.js";
 import * as geo from "../geo.js";
@@ -11,16 +12,18 @@ const d3 = globalThis.d3;
 export default {
   id: "flow-map",
   name: "Flow map",
-  needs: () => ["from", "to", "value"],
+  needs: () => ["to", "value"],
   insight: (rows, spec) => {
     if (spec.insight) { const k = rows.findIndex((r) => r.to === spec.insight); if (k >= 0) return k; }
     return rows.reduce((m, r, i) => (r.value > rows[m].value ? i : m), 0);
   },
   draw(g, rows, box, ctx) {
     const { S, th, paint: P } = ctx, focus = ctx.options.focus || "world";
-    const base = geo.basemap(g, focus, box, ctx);
+    const base = geo.basemap(g, focus, box, ctx, { terrain: ctx.options.terrain ?? true });
     const vmax = Math.max(...rows.map((r) => r.value)) || 1, W = (v) => S * (0.003 + 0.016 * v / vmax);
-    const end = (r, k) => base.proj(core.isNum(r[`${k}_lon`]) ? [r[`${k}_lon`], r[`${k}_lat`]] : geo.place({ label: r[k], country: r[`${k}_country`] }));
+    // the Storyteller's table: "label" to "to"
+    rows = rows.map((r) => ({ ...r, from: r.from ?? r.label, to: Array.isArray(r.to) ? r.to[0] : r.to }));
+    const end = (r, k) => base.proj(core.isNum(r[`${k}_lon`]) ? [r[`${k}_lon`], r[`${k}_lat`]] : geo.place({ label: r[k], country: r[`${k}_country`] ?? r.country }));
     const marks = g.append("g").attr("id", "marks"), ends = new Map();
     let ib = null;
     rows.map((r, i) => ({ r, i })).sort((a, b) => (P.on(a.i) ? 1 : 0) - (P.on(b.i) ? 1 : 0)).forEach(({ r, i }, o) => {

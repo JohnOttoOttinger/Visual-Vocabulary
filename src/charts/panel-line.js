@@ -53,7 +53,12 @@ export function timePanel(g, rows, get, [x0, y0, x1, y1], ctx, { title, colour, 
   if (k !== null && core.isNum(get(rows[k]))) {
     const x = X(k), y = Y(get(rows[k])), ins = g.append("g").attr("class", "insight");
     if (kind !== "column") core.dot(ins, x, y, S * 0.012, hot ? th.roles.main : col, th.ground, S * 0.004);
-    const vb = core.text(ins, core.num(get(rows[k]), ctx), { x: Math.min(x, px1 - S * 0.03), y: y - S * 0.02, face: "bebas", px: S * 0.036, fill: th.ink, align: x > px1 - S * 0.05 ? "r" : "c", valign: "bottom", halo: [th.ground, S * 0.003] });
+    // the number above its point, centred on it; at the panel's right edge, ending just past it
+    // (Otto, 19 Sep 2026: beside the point it sat on the line); below when the top is too close
+    const s = core.num(get(rows[k]), ctx), npx = S * 0.036, half = core.measure(s, "bebas", npx).w / 2;
+    const above = y - S * 0.024 - npx * 0.75 > py0 - S * 0.01, ny = above ? y - S * 0.024 : y + S * 0.024;
+    const vb = core.text(ins, s, { x: x + half <= px1 + S * 0.02 ? x : x + S * 0.012, y: ny, face: "bebas", px: npx, fill: th.ink,
+      align: x + half <= px1 + S * 0.02 ? "c" : "r", valign: above ? "bottom" : "top", halo: [th.ground, S * 0.003] });
     ib = core.union(vb, [x - S * 0.012, y - S * 0.012, x + S * 0.012, y + S * 0.012]);
   }
   return { X, Y, px0, px1, py0, py1, ib };

@@ -1,7 +1,9 @@
 // Radar — FT Magnitude. Several measures around a circle, one shape per row: "series" names the
 // measures (the spokes, all on one scale from the centre), each row is a shape in the fixed series
-// order, the insight row drawn solid and the others as outlines. Three rows at most; the spokes'
-// order matters, so put related measures side by side.
+// order. Every shape is filled see-through so the ones behind show where they overlap (Otto, 19 Sep
+// 2026: solid, the insight hid the rest); the insight's fill is the strongest and it is drawn on
+// top. The outlines go over all the fills, so no shape loses its edge. Three rows at most; the
+// spokes' order matters, so put related measures side by side.
 import * as core from "../core.js";
 import { mix } from "../theme.js";
 
@@ -36,12 +38,15 @@ export default {
     const marks = g.append("g").attr("id", "marks");
     const order = rows.map((_, i) => i).sort((a, b) => (P.on(a) ? 1 : 0) - (P.on(b) ? 1 : 0));
     let ib = null;
+    const polys = rows.map((r) => cols.map((c, k) => pt(k, Math.max(0, r[c] || 0))));
+    // fills first, every one see-through; then each shape's edge and points over them all
+    const fills = marks.append("g").attr("class", "fills"), edges = marks.append("g").attr("class", "edges");
     order.forEach((i, o) => {
-      const row = core.rowGroup(marks, i, o, P), poly = cols.map((c, k) => pt(k, Math.max(0, rows[i][c] || 0)));
-      row.append("path").attr("d", d3.line()(poly) + "Z").attr("fill", P.on(i) ? mix(colours[i], th.ground, 0.35) : "none")
-        .attr("stroke", colours[i]).attr("stroke-width", S * (P.on(i) ? 0.006 : 0.005)).attr("stroke-linejoin", "round");
-      poly.forEach(([x, y]) => core.dot(row, x, y, S * 0.008, colours[i], th.ground, S * 0.002));
-      if (P.on(i)) ib = null;
+      core.rowGroup(fills, i, o, P).append("path").attr("d", d3.line()(polys[i]) + "Z").attr("fill", colours[i]).attr("fill-opacity", P.on(i) ? 0.38 : 0.2);
+      const row = core.rowGroup(edges, i, o, P);
+      row.append("path").attr("d", d3.line()(polys[i]) + "Z").attr("fill", "none")
+        .attr("stroke", colours[i]).attr("stroke-width", S * (P.on(i) ? 0.006 : 0.0045)).attr("stroke-linejoin", "round");
+      polys[i].forEach(([x, y]) => core.dot(row, x, y, S * 0.008, colours[i], th.ground, S * 0.002));
     });
     return ib;
   },

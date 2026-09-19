@@ -14,7 +14,7 @@ export default {
   insight: "max",
   draw(g, rows, box, ctx) {
     const { S, th, paint: P } = ctx, focus = ctx.options.focus || "world", [x0, y0, x1, y1] = box;
-    const base = geo.basemap(g, focus, box, ctx);
+    const base = geo.basemap(g, focus, box, ctx, { terrain: ctx.options.terrain ?? false });
     const pts = rows.map((r, i) => ({ r, i, xy: base.proj(geo.place(r)) })).filter((p) => p.xy);
     const bands = ctx.options.bands || 7;
     const dens = d3.contourDensity().x((p) => p.xy[0] - x0).y((p) => p.xy[1] - y0).weight((p) => Math.max(0, p.r.value))

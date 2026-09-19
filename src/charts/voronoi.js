@@ -14,13 +14,12 @@ export default {
   draw(g, rows, [x0, y0, x1, y1], ctx) {
     const { S, th, paint: P } = ctx, names = ctx.axes || ["", ""], tp = S * 0.021;
     const [xlo, xhi, xt] = core.spanOf(rows.map((r) => r.value)), [ylo, yhi, yt] = core.spanOf(rows.map((r) => r.value2));
-    const px0 = x0 + core.tickWidth(yt, ctx) + S * 0.03, px1 = x1, py0 = y0 + S * 0.06, py1 = y1 - S * 0.10;
+    const px0 = x0 + core.axisRoom(names[1], ctx) + core.tickWidth(yt, ctx) + S * 0.03, px1 = x1, py0 = y0 + S * 0.03, py1 = y1 - S * 0.10;
     const X = (v) => px0 + (px1 - px0) * (v - xlo) / ((xhi - xlo) || 1), Y = (v) => py1 - (py1 - py0) * (v - ylo) / ((yhi - ylo) || 1);
     const ax = g.append("g").attr("id", "axes");
     for (const t of yt) core.text(ax, core.num(t, ctx, true), { x: px0 - S * 0.018, y: Y(t), face: "arvo", px: tp, fill: th.body, align: "r", valign: "mid" });
     for (const t of xt) core.text(ax, core.num(t, ctx, true), { x: X(t), y: py1 + S * 0.018, face: "arvo", px: tp, fill: th.body, align: "c", valign: "asc" });
-    if (names[0]) core.text(ax, names[0].toUpperCase(), { x: px1, y: py1 + S * 0.06, face: "bebas", px: S * 0.032, fill: th.roles.neutral, align: "r" });
-    if (names[1]) core.text(ax, names[1].toUpperCase(), { x: x0, y: y0, face: "bebas", px: S * 0.032, fill: th.roles.neutral });
+    core.axisNames(ax, names, ctx, { x0, px0, px1, py0, py1, below: py1 + S * 0.06 });
     const pts = rows.map((r) => [X(r.value), Y(r.value2)]);
     const vor = d3.Delaunay.from(pts).voronoi([px0, py0, px1, py1]);
     const marks = g.append("g").attr("id", "marks");

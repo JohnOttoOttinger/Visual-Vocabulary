@@ -412,7 +412,7 @@ for line in subprocess.run(["git", "log", "--format=@%an", "--name-only"], cwd=H
             seen.add(folder); touched[folder] += 1; who_touched[author].add(folder)
 start = min(first_seen.values())
 put("voronoi", {"chart": "voronoi", "kicker": "Who came and went...", "title": "EACH HAND'S GROUND",
-    "line": "Days to each person's first change across, *to their last up*; each area the ground nearest them.",
+    "line": "First change across, last up, *each area the ground nearest*.",
     "source": f"{GIT}, 2015 to 2017", "axes": ["First change, days in", "Last change"], "insight": "Bob Haslett",
     "data": [{"label": w, "value": (first_seen[w] - start).days, "value2": (last_seen[w] - start).days} for w in by_person]})
 put("arc", {"chart": "arc", "kicker": "Fifty-five seats...", "title": "the SLIDE PARLIAMENT",
@@ -457,6 +457,7 @@ councils = [g["properties"] for g in json.loads((HERE / "geo/australia-councils.
 cities = json.loads((HERE / "geo/cities.json").read_text())
 au_cities = sorted((c for c in cities if c["country"] == "Australia"), key=lambda c: -c["pop"])
 NE, ABS = "Natural Earth, 2019 population estimates", "ABS boundaries (ASGS 2021, councils 2025)"
+TER = "RESOLVE Ecoregions"   # the terrain under locator, flow and symbol maps (CC BY 4.0)
 city = lambda n: next(c for c in au_cities if c["name"] == n)
 
 def charts(name, specs):
@@ -469,7 +470,7 @@ charts("choropleth", [
      "line": "Every country by how crowded it is, *Australia among the emptiest*.", "source": NE, "insight": "Australia",
      "options": {"focus": "world"}, "data": dense},
     {"chart": "choropleth", "kicker": "City and country...", "title": "HOW MUCH is the CAPITAL",
-     "line": "Each capital city area as a share of its state, *Greater Melbourne the biggest share of a state*.", "source": ABS,
+     "line": "Each capital area as a share of its state, *Melbourne's the biggest*.", "source": ABS,
      "unit": "%", "insight": "Victoria", "options": {"focus": "australia", "layer": "states"}, "data": share}])
 vic = [{"label": c["name"], "value": round(c["area"])} for c in councils if c["state"] == "Victoria" and "Unincorporated" not in c["name"]]
 charts("choropleth-councils", [
@@ -477,7 +478,7 @@ charts("choropleth-councils", [
      "line": "Every council by its area in square kilometres, *the biggest in the far north-west*.", "source": ABS, "unit": " km²",
      "options": {"focus": "Victoria", "layer": "councils"}, "data": vic}])
 put("proportional-symbol-map", {"chart": "proportional-symbol-map", "kicker": "Where the people are...", "title": "AUSTRALIA'S CITIES",
-    "line": "Every city of 20,000 people or more, *each circle its population*.", "source": NE, "options": {"focus": "australia"},
+    "line": "Every city of 20,000 people or more, *each circle its population*.", "source": f"{NE}; {TER}", "options": {"focus": "australia"},
     "data": [{"label": c["name"], "country": "Australia", "value": c["pop"]} for c in au_cities]})
 def dist(a, b):
     la1, lo1, la2, lo2 = map(math.radians, (a["lat"], a["lon"], b["lat"], b["lon"]))
@@ -485,7 +486,7 @@ def dist(a, b):
     return round(2 * 6371 * math.asin(math.sqrt(h)))
 cb = city("Canberra")
 put("flow-map", {"chart": "flow-map", "kicker": "All lines lead to...", "title": "HOW FAR to CANBERRA",
-    "line": "Each capital to Canberra as the crow flies, *thicker the further*.", "source": "Natural Earth city points; distances on a sphere",
+    "line": "Each capital to Canberra as the crow flies, *thicker the further*.", "source": f"Natural Earth city points; distances on a sphere; {TER}",
     "unit": " km", "options": {"focus": "australia"},
     "data": [{"from": n, "from_country": "Australia", "to": "Canberra", "to_country": "Australia", "value": dist(city(n), cb)} for n in ("Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Hobart", "Darwin")]})
 put("contour-map", {"chart": "contour-map", "kicker": "Where the people are...", "title": "WHERE AUSTRALIA LIVES",
@@ -511,16 +512,16 @@ tok = next(c for c in cities if c["name"] == "Tokyo")
 sg = next(c for c in cities if c["name"] == "Singapore")
 charts("locator-map", [
     {"chart": "locator-map", "kicker": "Where it is...", "title": "MELBOURNE and SYDNEY", "line": "Two capitals, *the pin on Melbourne*.",
-     "source": NE, "options": {"focus": "australia"},
+     "source": f"{NE}; {TER}", "options": {"focus": "australia"},
      "data": [{"label": "Melbourne", "country": "Australia", "note": "Victoria's capital"}, {"label": "Sydney", "country": "Australia"}]},
     {"chart": "locator-map", "kicker": "Closer in...", "title": "VICTORIA", "line": "The state's four biggest cities, *Melbourne pinned*.",
-     "source": f"{NE}; {ABS}", "options": {"focus": "Victoria"},
+     "source": f"{NE}; {ABS}; {TER}", "options": {"focus": "Victoria"},
      "data": [{"label": n, "country": "Australia"} for n in ("Melbourne", "Geelong", "Ballarat", "Bendigo")]},
     {"chart": "locator-map", "kicker": "Closer still...", "title": "GREATER MELBOURNE", "line": "The capital area and its councils, *the city pinned*.",
-     "source": ABS, "options": {"focus": "Greater Melbourne"},
+     "source": f"{ABS}; {TER}", "options": {"focus": "Greater Melbourne"},
      "data": [{"label": "Melbourne", "country": "Australia", "note": "Greater Melbourne, {:,} km²".format(round(caps["Victoria"]["area"]))}, {"label": "Geelong", "country": "Australia"}]},
     {"chart": "locator-map", "kicker": "The festival shortlist...", "title": "WHERE the FESTIVALS ARE",
-     "line": "Five festivals on the list, *two of them in Melbourne*.", "source": "project-manager-agent/australia_asia_art_light_experimental_festivals.csv",
+     "line": "Five festivals on the list, *two of them in Melbourne*.", "source": f"project-manager-agent/australia_asia_art_light_experimental_festivals.csv; {TER}",
      "options": {"focus": [95, -46, 150, 42], "inset": False},
      "data": [{"label": "Melbourne", "country": "Australia", "note": "RISING and Melbourne Fringe"},
               {"label": "Vivid Sydney", "lat": city("Sydney")["lat"], "lon": city("Sydney")["lon"]},

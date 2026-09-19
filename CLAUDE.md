@@ -36,7 +36,10 @@ its `LIBRARY` and `SUB_LINE`, and a `storyteller` entry in `catalog/charts.json`
 - One insight per chart, the row the eye goes to first; `highlight` says how it is marked.
 - Bars are chunky, only the far end slightly rounded, seven at most. Wide columns keep the bar's
   corner (`rmax`), never a pill.
-- Large stats in Numbers Depot (digits and `% $ . , -` only; anything else falls back to Bebas).
+- Called-out values in Bebas; Numbers Depot only for numbering: the circle-number (every rank on a
+  ranking bar) and a process's steps (Otto, 19 Sep 2026, replacing large stats in Depot).
+- Axis names in small Arvo Bold, as written, each centred on its axis, the up one turned to read
+  sideways (`core.axisNames`; Otto, 19 Sep 2026: Bebas in taupe was hard to read).
 - Every chart slide has a one-line Arvo `line` with the house bold on its key phrase, and a source.
 - The slope chart was parked in the Storyteller as too small and technical; if it is drawn here,
   draw it big.
@@ -45,7 +48,10 @@ its `LIBRARY` and `SUB_LINE`, and a `storyteller` entry in `catalog/charts.json`
 ## Maps
 
 - Map data is `geo/*.json`, rebuilt by `tools/build-geo.sh`; the raw downloads stay in `out/`.
-  A map using the ABS layers (states, capitals, councils) credits "ABS boundaries" in its source.
+  A map using the ABS layers (states, capitals, councils) credits "ABS boundaries" in its source;
+  one drawn on terrain (locator, flow and symbol maps by default) credits "RESOLVE Ecoregions".
+- Land is sand, never washed out; terrain colours are `landColours` in `src/theme.js`, the greens
+  kept to sage so they never read as the olive insight.
 - Maps from data are drawn here; photographic, street-level or moving maps are GEOlayers in After
   Effects (`tools/to-geolayers.mjs` writes the job). Otto chose this split over Leaflet (18 Sep 2026).
 - Places come from `geo/cities.json` by name; names repeat across countries, so give `"country"`.

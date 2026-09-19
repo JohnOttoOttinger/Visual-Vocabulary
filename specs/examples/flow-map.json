@@ -3,7 +3,7 @@
  "kicker": "All lines lead to...",
  "title": "HOW FAR to CANBERRA",
  "line": "Each capital to Canberra as the crow flies, *thicker the further*.",
- "source": "Natural Earth city points; distances on a sphere",
+ "source": "Natural Earth city points; distances on a sphere; RESOLVE Ecoregions",
  "unit": " km",
  "options": {
   "focus": "australia"

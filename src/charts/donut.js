@@ -40,9 +40,9 @@ export function drawDonut(g, rows, [x0, y0, x1, y1], ctx, hole = 0.29) {
     if (P.ins !== null && P.ins !== undefined) {
       const pct = `${Math.round(share[P.ins] * 100)}%`;
       let sp = D * 0.19;
-      while (sp > D * 0.08 && core.measure(pct, core.statFace(pct), sp).w > D * 0.44) sp -= 2;
+      while (sp > D * 0.08 && core.measure(pct, core.STAT_FACE, sp).w > D * 0.44) sp -= 2;
       const lp = S * 0.024, gap = S * 0.018, name = rows[P.ins].label || "";
-      const sm = core.measure(pct, core.statFace(pct), sp), sh = sm.asc + sm.desc;
+      const sm = core.measure(pct, core.STAT_FACE, sp), sh = sm.asc + sm.desc;
       const lh = core.paraHeight(name, lp, D * 0.46, 2);
       const top = cy - (sh + gap + lh) / 2;
       const hb = core.stat(ins, pct, { x: cx, y: top, px: sp, fill: P.words(P.ins) });
@@ -51,7 +51,7 @@ export function drawDonut(g, rows, [x0, y0, x1, y1], ctx, hole = 0.29) {
     } else {
       const t = core.num(total, ctx);
       let sp = D * 0.19;
-      while (sp > D * 0.08 && core.measure(t, core.statFace(t), sp).w > D * 0.44) sp -= 2;
+      while (sp > D * 0.08 && core.measure(t, core.STAT_FACE, sp).w > D * 0.44) sp -= 2;
       core.stat(ins, t, { x: cx, y: cy, px: sp, fill: th.ink, valign: "mid" });
     }
   }

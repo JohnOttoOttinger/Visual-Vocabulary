@@ -5,6 +5,8 @@
 #   Natural Earth (public domain): countries and cities of the world
 #   Australian Bureau of Statistics, ASGS Edition 3 (CC BY 4.0): states and territories, greater
 #   capital city areas, and local government areas (councils). Credit: "ABS boundaries".
+#   RESOLVE Ecoregions 2017 (CC BY 4.0): the kind of ground, for the terrain under a base map.
+#   Credit: "RESOLVE Ecoregions". Natural Earth's glaciated areas give the ice.
 #
 #   tools/build-geo.sh
 set -euo pipefail
@@ -20,6 +22,8 @@ get "$NE/10m/cultural/ne_10m_populated_places_simple.zip" ne_10m_populated_place
 get "$ABS/STE_2021_AUST_SHP_GDA2020.zip" STE_2021_AUST_SHP_GDA2020.zip
 get "$ABS/GCCSA_2021_AUST_SHP_GDA2020.zip" GCCSA_2021_AUST_SHP_GDA2020.zip
 get "$ABS/LGA_2025_AUST_GDA2020.zip" LGA_2025_AUST_GDA2020.zip
+get "$NE/50m/physical/ne_50m_glaciated_areas.zip" ne_50m_glaciated_areas.zip
+get https://storage.googleapis.com/teow2016/Ecoregions2017.zip Ecoregions2017.zip
 for z in "$RAW"/*.zip; do d="${z%.zip}"; [ -d "$d" ] || unzip -oq "$z" -d "$d"; done
 find_one() { find "$RAW/$1" \( -name '*.shp' -o -name '*.gpkg' \) | head -1; }
 
@@ -44,4 +48,18 @@ LGA="$(find_one LGA_2025_AUST_GDA2020)"
 $MS "$LGA" -filter 'AREASQKM > 0' -each 'name=LGA_NAME25, code=LGA_CODE25, state=STE_NAME21, area=AREASQKM' \
   -filter-fields name,code,state,area -rename-layers councils -simplify 1.5% keep-shapes \
   -o geo/australia-councils.json format=topojson quantization=1e5 force
+
+# terrain: the fourteen biomes grouped into the kinds of ground a map shows, and the ice; a coarse
+# file for the world and a finer one for Australia's close-ups
+KIND='terrain = BIOME_NUM == 13 ? "desert" : [7, 8, 9, 10].indexOf(BIOME_NUM) >= 0 ? "dry" : BIOME_NUM == 12 ? "scrub"
+  : [2, 3, 4, 5].indexOf(BIOME_NUM) >= 0 ? "forest" : [1, 14].indexOf(BIOME_NUM) >= 0 ? "jungle" : BIOME_NUM == 6 ? "taiga"
+  : BIOME_NUM == 11 ? "tundra" : ""'
+[ -s "$RAW/terrain.json" ] || $MS "$(find_one Ecoregions2017)" -each "$KIND" -filter 'terrain !== ""' -dissolve terrain \
+  -o "$RAW/terrain.json" format=geojson force
+$MS "$(find_one ne_50m_glaciated_areas)" -each 'terrain = "ice"' -filter-fields terrain -o "$RAW/ice.json" format=geojson force
+$MS -i "$RAW/terrain.json" "$RAW/ice.json" combine-files -merge-layers force -rename-layers terrain \
+  -simplify 0.5% keep-shapes -filter-islands min-area=400km2 -filter-slivers \
+  -o geo/terrain-world.json format=topojson quantization=5e4 force
+$MS "$RAW/terrain.json" -clip bbox=110,-45,156,-9 -rename-layers terrain -simplify 3% keep-shapes -filter-islands min-area=2km2 \
+  -o geo/terrain-australia.json format=topojson quantization=1e5 force
 ls -la geo
