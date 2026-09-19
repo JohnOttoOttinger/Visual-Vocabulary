@@ -1,7 +1,9 @@
 // Ordered bar — FT Ranking; the Storyteller's `ranking` mode. Biggest first, each bar under its
-// name, the value at its end, the insight's rank in the circle-number. Seven bars at most
-// (Otto, 18 Sep 2026: chunkier bars mean fewer of them).
+// name, the value at its end in Bebas, every rank in a circle-number in Depot: the insight's olive,
+// the rest in their bar's colour (Otto, 19 Sep 2026). Seven bars at most (Otto, 18 Sep 2026:
+// chunkier bars mean fewer of them).
 import * as core from "../core.js";
+import { onFill } from "../theme.js";
 
 export const MAX_BARS = 7;
 
@@ -30,13 +32,10 @@ export function bars(g, rows, [x0, y0, x1, y1], ctx, { sorted = true } = {}) {
       const vb = core.text(row, core.num(r.value, ctx), { x: bx0 + ln + S * 0.016, y: cy, face: "bebas", px: vp, fill: P.words(i), valign: "mid" });
       const nx = x0 + numw / 2 - S * 0.012;
       if (!sorted) { if (P.on(i)) ib = core.union([bx0, top, bx0 + ln, by + t], vb); return; }
-      if (P.on(i)) {
-        const dia = S * 0.058;
-        const bb = core.badge(row, nx, cy, dia, String(k + 1), th);
-        ib = core.union([bx0, top, bx0 + ln, by + t], vb, bb);
-      } else {
-        core.text(row, String(k + 1), { x: nx, y: cy, face: "bebas", px: S * 0.040, fill: th.roles.neutral, align: "c", valign: "mid" });
-      }
+      const dia = Math.min(S * 0.058, rowH * 0.62);
+      const bb = P.on(i) ? core.badge(row, nx, cy, dia, String(k + 1), th)
+        : core.badge(row, nx, cy, dia, String(k + 1), th, "depot", { fill: P.mark(i), ink: onFill(P.mark(i)) });
+      if (P.on(i)) ib = core.union([bx0, top, bx0 + ln, by + t], vb, bb);
     });
     return ib;
 }

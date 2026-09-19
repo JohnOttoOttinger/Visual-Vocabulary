@@ -18,7 +18,7 @@ export default {
     const names = ctx.axes || ["", ""], tp = S * 0.021, rmax = S * 0.065;
     const [ylo, yhi, yt] = core.spanOf(ys), [xlo, xhi, xt] = core.spanOf(xs);
     const labW = Math.max(...yt.map((t) => core.measure(core.num(t, ctx, true), "arvo", tp).w));
-    const px0 = x0 + labW + S * 0.03 + rmax * 0.4, px1 = x1 - rmax * 0.6, py0 = y0 + S * 0.075 + rmax * 0.4, py1 = y1 - S * 0.10;
+    const px0 = x0 + core.axisRoom(names[1], ctx) + labW + S * 0.03 + rmax * 0.4, px1 = x1 - rmax * 0.6, py0 = y0 + S * 0.035 + rmax * 0.4, py1 = y1 - S * 0.10;
     const X = (v) => px0 + (px1 - px0) * (v - xlo) / ((xhi - xlo) || 1);
     const Y = (v) => py1 - (py1 - py0) * (v - ylo) / ((yhi - ylo) || 1);
     const Rz = d3.scaleSqrt().domain([0, Math.max(...zs) || 1]).range([0, rmax]);
@@ -28,8 +28,7 @@ export default {
       core.text(ax, core.num(t, ctx, true), { x: px0 - rmax * 0.4 - S * 0.018, y: Y(t), face: "arvo", px: tp, fill: th.body, align: "r", valign: "mid" });
     }
     for (const t of xt) core.text(ax, core.num(t, ctx, true), { x: X(t), y: py1 + S * 0.024, face: "arvo", px: tp, fill: th.body, align: "c", valign: "asc" });
-    if (names[0]) core.text(ax, names[0].toUpperCase(), { x: px1, y: py1 + S * 0.065, face: "bebas", px: S * 0.034, fill: R.neutral, align: "r" });
-    if (names[1]) core.text(ax, names[1].toUpperCase(), { x: x0, y: y0, face: "bebas", px: S * 0.034, fill: R.neutral });
+    core.axisNames(ax, names, ctx, { x0, px0, px1, py0, py1, below: py1 + S * 0.065 });
     const marks = g.append("g").attr("id", "marks");
     const order = rows.map((_, i) => i).sort((a, b) => zs[b] - zs[a]);   // big first, so small ones sit on top
     order.forEach((i, k) => {

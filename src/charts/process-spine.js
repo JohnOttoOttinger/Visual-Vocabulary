@@ -27,7 +27,7 @@ export default {
         .attr("d", `M${sx0},${top}L${scx},${top + notch}L${sx1},${top}L${sx1},${top + h}L${scx},${top + h + point}L${sx0},${top + h}Z`);
       const mid = top + (notch * 0.5 + h + point * 0.5) / 2;
       const onFill = P.on(i) && ["hue", "intensity"].includes(P.how);
-      core.stat(row, String(i + 1), { x: scx, y: mid, px: Math.min(S * 0.066, h * 0.46), fill: onFill ? R.onMain : mix(R.neutral, th.ink, 0.25), valign: "mid" });
+      core.stat(row, String(i + 1), { x: scx, y: mid, px: Math.min(S * 0.066, h * 0.46), fill: onFill ? R.onMain : mix(R.neutral, th.ink, 0.25), valign: "mid", face: "depot" });
       const cap = core.measure("H", "bebas", lpx).asc, npx = S * 0.025;
       const nh = core.paraHeight(r.note, npx, tw, 2), gap = r.note ? S * 0.014 : 0;
       const lb = core.text(row, (r.label || "").toUpperCase(), { x: tx, y: mid - (cap + gap + nh) / 2, face: "bebas", px: lpx, fill: P.words(i), ref: "H" });

@@ -23,6 +23,8 @@ node bin/vv.mjs gallery
 specimen slide `<name>-frame.png`. A file holding `{"charts": [...]}` renders them all in one
 launch. `gallery` renders every example in `specs/examples/` on plaster and on dark paper into
 `out/gallery/`.
+`--only <ids>` limits it to some charts and `--scale 2` renders at twice the pixels; the review
+page takes the maps from `out/gallery-2x/` so they stay sharp when zoomed.
 
 Needs Node 22 and Google Chrome. The four faces are read from `~/Library/Fonts` and never kept here.
 
@@ -64,8 +66,10 @@ two projects; the Storyteller finds the library at `~/Claude-Projects-2026/Visua
 (`VV_LIBRARY` if it moves).
 
 The workshop pack's Ten Methods stay the Storyteller's chart modes; library charts are their
-sub-modes. The map is `LIBRARY` in the Storyteller's `chart_lab.py`, and `storyteller` in
-`catalog/charts.json` records the same thing from this side.
+sub-modes. The Storyteller's `place` mode (19 Sep 2026) is the maps: `pins`, `shaded`, `circles`,
+`flows`, `dots`, `tiles`, `sized`, `contours`, `squares`, with the slide's `focus` and `layer`. The map is `LIBRARY` in the Storyteller's `chart_lab.py`, and `storyteller` in
+`catalog/charts.json` records the same thing from this side. Since 19 Sep 2026 the Storyteller
+offers 73 of the 81 charts; the other eight carry a `storyteller_note` saying why not.
 
 `python3 tools/storyteller-check.py` renders every Storyteller worked chart twice — with the drawing
 chart_lab made before the library, and as it is drawn now — and compares them.
@@ -75,12 +79,19 @@ chart_lab made before the library, and as it is drawn now — and compares them.
 Every map chart draws on the same base: open boundary data in `geo/`, built by
 `tools/build-geo.sh` from Natural Earth (public domain: countries, cities) and the Australian
 Bureau of Statistics' ASGS boundaries (CC BY 4.0: states, greater capital city areas, councils).
-Maps using the ABS layers credit it in their source line ("ABS boundaries").
+Maps using the ABS layers credit it in their source line ("ABS boundaries"). The terrain under
+locator, flow and symbol maps (desert, dry grass, scrub, forest, jungle, taiga, tundra, ice) is
+RESOLVE Ecoregions 2017 (CC BY 4.0) grouped into eight kinds of ground, with Natural Earth's ice;
+those maps credit "RESOLVE Ecoregions". `options.terrain` turns it on or off on any map.
 
 `options.focus` sets the view: `"world"`, `"australia"`, a state (`"Victoria"`), a capital area
 (`"Greater Melbourne"` or just `"melbourne"`), a country, or a box `[west, south, east, north]`.
-The world is drawn in Equal Earth (areas true, for shading), Australia in an equal-area conic, and
-close-ups in Mercator. Places are named cities (with `"country"` when names repeat) or `lat` and
+The world is a flat Miller map without the globe's outline, cropped to 56°S–84°N (no Antarctica)
+and cut through the Bering Strait, so small countries draw larger than an equal-area map allows;
+Australia is an equal-area conic, and close-ups Mercator. A view is fitted to a region's main
+landmasses, not its far islands (New South Wales includes Lord Howe Island). Every map is drawn as
+big as its box allows: its key and headline number go beside it when there is room, else on open
+sea in a corner, and only failing both does the map shrink (`mapRoom` in `src/geo.js`). Places are named cities (with `"country"` when names repeat) or `lat` and
 `lon`.
 
 The library draws maps from data: coastlines, borders, councils and cities, in the house style,
@@ -113,7 +124,7 @@ row and land on the insight last.
 | `specs/examples/` | one worked example per built chart, every number counted from disk |
 | `tools/storyteller-check.py` | the library against the Storyteller's approved slides |
 | `tools/examples.py` | writes every example spec, counting its numbers from disk |
-| `tools/gallery_page.py` | builds the review page from the gallery renders |
+| `tools/gallery_page.py` | builds the review page from the gallery renders; any chart opens large to zoom |
 | `geo/`, `tools/build-geo.sh` | the map data and how it is rebuilt from its sources |
 | `src/geo.js` | the map views, places, projections and the base map |
 | `tools/to-geolayers.mjs` | a locator map as a GEOlayers job for After Effects |

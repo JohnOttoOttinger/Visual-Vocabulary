@@ -978,7 +978,7 @@
    "chart": "choropleth",
    "kicker": "City and country...",
    "title": "HOW MUCH is the CAPITAL",
-   "line": "Each capital city area as a share of its state, *Greater Melbourne the biggest share of a state*.",
+   "line": "Each capital area as a share of its state, *Melbourne's the biggest*.",
    "source": "ABS boundaries (ASGS 2021, councils 2025)",
    "unit": "%",
    "insight": "Victoria",

@@ -54,7 +54,7 @@ function single(g, rows, box, ctx) {
   const ins = core.rowGroup(g.append("g").attr("id", "insight"), i, i, P);
   core.dot(ins, x, y, r, P.mark(i), th.ground, S * 0.005);
   const note = rows[i].note || "", nw = S * 0.40, spx = S * 0.064, npx = S * 0.024;
-  const vw = core.measure(core.num(vals[i], ctx), core.statFace(core.num(vals[i], ctx)), spx).w;
+  const vw = core.measure(core.num(vals[i], ctx), core.STAT_FACE, spx).w;
   const bw = Math.max(vw, note ? Math.min(nw, core.measure(note, "arvo", npx).w) : 0);
   const lx = Math.min(Math.max(x - bw / 2, box[0]), box[2] - bw);
   const top = y - r - S * 0.03 - spx * 0.72 - (note ? core.paraHeight(note, npx, nw, 2) + S * 0.012 : 0);

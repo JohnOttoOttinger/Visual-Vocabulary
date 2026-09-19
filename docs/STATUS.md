@@ -1,5 +1,28 @@
 # Status
 
+## 19 September 2026 — Otto's map and number review; 73 charts in the Storyteller
+
+- **Maps:** darker sand land; terrain under locator, flow and symbol maps (RESOLVE Ecoregions,
+  credited); the world flat (Miller, no globe outline, no Antarctica); every map as big as its box
+  allows, key and headline number beside it or on open sea (`mapRoom`); Australia fitted to its
+  main landmasses (Lord Howe Island had pulled it off centre); the pin edged so it holds on green;
+  the world's bubbles fill two-fifths of the box and fall back to country codes.
+- **Numbers:** called-out values in Bebas, Depot for numbering; every rank on the ordered bar in a
+  circle-number; the two-panel chart's end number above its point; axis names in small Arvo Bold,
+  each centred on its axis, the up one turned to read sideways (`core.axisNames`).
+- **Radar:** every shape see-through, the outlines over all the fills.
+- **The Storyteller** offers 35 more charts as sub-modes (73 of 81); `chart-library-deck-example.json`
+  draws them. The other eight say why in `storyteller_note`.
+- **Review page:** any chart opens in a zoom viewer; maps at twice the size.
+- `storyteller-check.py` still passes: the eleven worked charts within 1.3 to 3.2 of the old
+  drawings (the font changes cover small areas).
+
+## 19 September 2026 — maps in the Storyteller
+
+The Storyteller has a `place` mode (Otto asked): every library map is one of its sub-modes, `pins`
+by default. `flow-map` now also reads the Storyteller's table (`label` to `to`). Its worked deck is
+`chart-place-deck-example.json`, one slide for every map in the gallery (fifteen); the parity check is unchanged.
+
 ## 19 September 2026 — wave 4, the maps: the catalogue is built
 
 **81 of 81.** The eight FT map types and a locator map (Otto asked for close-ups with a city or two
@@ -15,7 +38,6 @@ marked): `choropleth`, `proportional-symbol-map`, `flow-map`, `contour-map`, `ca
 - **GEOlayers:** `tools/to-geolayers.mjs` turns locator maps into an Oddview-31 job. The four
   example locator maps convert and pass the After Effects pipeline's own check; they have not been
   rendered (After Effects must be open with the GEOlayers panel showing).
-- Maps are not in the Storyteller: none of the pack's Ten Methods is about place.
 
 ## 18 September 2026 (night) — wave 3 done
 
@@ -117,8 +139,8 @@ byte-identical and its chart slides within 2.0.
 
 ## Next
 
-The catalogue is done. Open: maps in the Storyteller would need a new mode, since no method is
-about place; the slope stays parked there until Otto looks at it.
+The catalogue is done, and every chart the Storyteller can use is offered there. Open: the slope
+stays parked in the Storyteller until Otto looks at it.
 
 ## Open
 

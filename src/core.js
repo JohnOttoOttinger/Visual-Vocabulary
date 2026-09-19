@@ -361,20 +361,20 @@ export function dottedBox(g, [x0, y0, x1, y1], colour, S, radius) {
 }
 
 // The oddtoe.com circle-number: an olive disc, the numeral in Depot, centred on the face's own
-// "0" so a 1 and an 8 sit at the same height.
-export function badge(g, cx, cy, dia, str, th, face = "depot") {
+// "0" so a 1 and an 8 sit at the same height. "fill" and "ink" for a disc that is not the insight.
+export function badge(g, cx, cy, dia, str, th, face = "depot", { fill, ink } = {}) {
   const b = g.append("g").attr("class", "badge");
-  dot(b, cx, cy, dia / 2, th.roles.main);
-  text(b, str, { x: cx, y: cy, face, px: dia * 0.58, fill: th.roles.onMain, align: "c", valign: "mid", ref: "0" });
+  dot(b, cx, cy, dia / 2, fill ?? th.roles.main);
+  text(b, str, { x: cx, y: cy, face, px: dia * 0.58, fill: ink ?? th.roles.onMain, align: "c", valign: "mid", ref: "0" });
   return [cx - dia / 2, cy - dia / 2, cx + dia / 2, cy + dia / 2];
 }
 
-// A large stat in Depot, centred on its own ink. Depot has digits and % $ . , - but no letters, so
-// a stat that is not a number falls back to Bebas.
-const STAT_CHARS = new Set("0123456789%$.,-+−·€£¥ ");
-export function statFace(s) { return [...String(s)].every((c) => STAT_CHARS.has(c)) ? "depot" : "bebas"; }
-export function stat(g, s, { x, y, px, fill, valign = "top" }) {
-  return text(g, s, { x, y, face: statFace(s), px, fill, align: "c", valign });
+// A large stat, centred on its own ink: a call-out value in Bebas. Depot is for numbering (the
+// circle-number, a process's steps), so a count of things reads apart from a value; pass
+// face: "depot" for those.
+export const STAT_FACE = "bebas";
+export function stat(g, s, { x, y, px, fill, valign = "top", face = STAT_FACE }) {
+  return text(g, s, { x, y, face, px, fill, align: "c", valign });
 }
 
 export function union(...boxes) {
@@ -465,6 +465,38 @@ export function axisLabels(g, labels, X, y, ctx, { must = [] } = {}) {
     if (placed.some((p) => !(b + S * 0.012 < p.a || a - S * 0.012 > p.b))) continue;
     placed.push({ i, a, b });
     text(g, String(labels[i]), { x: (a + b) / 2, y, face: "arvo", px: tp, fill: th.body, align: "c", valign: "asc" });
+  }
+}
+
+// An axis's name, written at the axis's far end: small Arvo Bold in the body colour (Otto, 19 Sep
+// 2026: Bebas in the neutral was hard to read at this size). options.axisName picks another look,
+// for comparing: "bebas" (the old caps), "bebas-ink" (the caps in ink), "arvo-caps".
+const AXIS_NAME = {
+  arvo: { face: "arvoBold", px: 0.024, caps: false, fill: "body" },
+  "arvo-caps": { face: "arvoBold", px: 0.02, caps: true, fill: "body" },
+  bebas: { face: "bebas", px: 0.034, caps: true, fill: "neutral" },
+  "bebas-ink": { face: "bebas", px: 0.036, caps: true, fill: "ink" },
+};
+const axisStyle = (ctx) => AXIS_NAME[ctx.options?.axisName] || AXIS_NAME.arvo;
+export function axisName(g, name, ctx, { x, y, align = "l", valign }) {
+  const { S, th } = ctx, st = axisStyle(ctx);
+  const fill = st.fill === "neutral" ? th.roles.neutral : st.fill === "ink" ? th.ink : th.body;
+  return text(g, st.caps ? String(name).toUpperCase() : String(name), { x, y, face: st.face, px: S * st.px, fill, align, ...(valign ? { valign } : {}) });
+}
+
+// The room the up axis's name takes at the chart's left edge (none without a name).
+export function axisRoom(name, ctx) {
+  return name ? ctx.S * axisStyle(ctx).px * 1.2 + ctx.S * 0.022 : 0;
+}
+
+// Both axes' names, each centred on its own axis (Otto, 19 Sep 2026): the across name under the
+// tick numbers at "below", the up name turned to read upward at the chart's left edge "x0", in
+// the room axisRoom keeps for it.
+export function axisNames(g, [across, up], ctx, { x0, px0, px1, py0, py1, below }) {
+  if (across) axisName(g, across, ctx, { x: (px0 + px1) / 2, y: below, align: "c" });
+  if (up) {
+    const cx = x0 + ctx.S * axisStyle(ctx).px * 0.6, cy = (py0 + py1) / 2;
+    axisName(g.append("g").attr("class", "axis-name-up").attr("transform", `rotate(-90 ${cx} ${cy})`), up, ctx, { x: cx, y: cy, align: "c", valign: "fmid" });
   }
 }
 

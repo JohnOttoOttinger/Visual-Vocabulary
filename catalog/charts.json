@@ -63,7 +63,7 @@
    "wave": 1,
    "ft": "lollipop-v",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "ranking › stems",
    "status": "built",
    "note": null
   },
@@ -81,7 +81,8 @@
    "replaces": "cause-effect",
    "storyteller": null,
    "status": "built",
-   "note": "The Storyteller parked cause-effect as a slope (too small and technical); this one is drawn big with at most seven lines."
+   "note": "The Storyteller parked cause-effect as a slope (too small and technical); this one is drawn big with at most seven lines.",
+   "storyteller_note": "the Storyteller's cause-effect mode is parked"
   },
   {
    "id": "bump",
@@ -95,7 +96,7 @@
    "wave": 1,
    "ft": "bump",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "ranking › bump",
    "status": "built",
    "note": null
   },
@@ -126,7 +127,7 @@
    "wave": 1,
    "ft": "area",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "trend › area",
    "status": "built",
    "note": null
   },
@@ -156,7 +157,7 @@
    "wave": 1,
    "ft": "storyteller",
    "replaces": "timeline",
-   "storyteller": "timeline",
+   "storyteller": "timeline › spine",
    "status": "built",
    "note": "Events down a dotted spine, alternating sides."
   },
@@ -382,7 +383,7 @@
    "wave": 1,
    "ft": "storyteller",
    "replaces": "process",
-   "storyteller": "process",
+   "storyteller": "process › spine",
    "status": "built",
    "note": "A spine of numbered chevrons, each step's words beside it."
   },
@@ -397,7 +398,7 @@
    "wave": 1,
    "ft": null,
    "replaces": "network",
-   "storyteller": "network",
+   "storyteller": "network › web",
    "status": "built",
    "note": "FT listed it and never built it; the Storyteller did."
   },
@@ -415,7 +416,8 @@
    "replaces": null,
    "storyteller": null,
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_note": "ranking's bar covers it (the table's order is rarely the story)"
   },
   {
    "id": "column",
@@ -431,7 +433,8 @@
    "replaces": null,
    "storyteller": null,
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_note": "ranking's column covers it"
   },
   {
    "id": "bar-diverging",
@@ -444,7 +447,7 @@
    "wave": 2,
    "ft": "bar",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "comparison › diverging",
    "status": "built",
    "note": "FT draws negatives with the plain bar."
   },
@@ -459,7 +462,7 @@
    "wave": 2,
    "ft": "bar-diverging-stacked",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "comparison › likert",
    "status": "built",
    "note": "Survey answers from disagree to agree."
   },
@@ -476,7 +479,8 @@
    "replaces": null,
    "storyteller": null,
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_note": "comparison's likert draws it as bars, which read better on a slide"
   },
   {
    "id": "spine",
@@ -505,7 +509,7 @@
    "wave": 2,
    "ft": "pyramid",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "comparison › pyramid",
    "status": "built",
    "note": null
   },
@@ -520,7 +524,7 @@
    "wave": 2,
    "ft": "bullet-chart",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "comparison › bullet",
    "status": "built",
    "note": null
   },
@@ -550,7 +554,7 @@
    "wave": 2,
    "ft": "bar-stacked",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "proportions › stacked",
    "status": "built",
    "note": null
   },
@@ -566,7 +570,7 @@
    "wave": 2,
    "ft": "column-stacked",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "trend › stacked",
    "status": "built",
    "note": null
   },
@@ -582,7 +586,7 @@
    "wave": 2,
    "ft": "waterfall",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "process › waterfall",
    "status": "built",
    "note": null
   },
@@ -597,7 +601,7 @@
    "wave": 2,
    "ft": "sankey",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "process › flow",
    "status": "built",
    "note": null
   },
@@ -613,7 +617,7 @@
    "wave": 2,
    "ft": "line-dual-axis",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "trend › panels",
    "status": "built",
    "note": "Redraws FT's dual-axis line: two scales on one chart invite a false crossing, so each measure gets its own panel."
   },
@@ -628,7 +632,7 @@
    "wave": 2,
    "ft": "line-interday",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "trend › hours",
    "status": "built",
    "note": null
   },
@@ -659,7 +663,7 @@
    "wave": 2,
    "ft": "column-line-timeline",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "trend › column-line",
    "status": "built",
    "note": "Amount as columns, rate as a line, drawn as two panels unless both share a unit."
   },
@@ -690,7 +694,7 @@
    "wave": 2,
    "ft": "xy-heatmap-cat",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "correlation › grid",
    "status": "built",
    "note": null
   },
@@ -705,7 +709,7 @@
    "wave": 2,
    "ft": "xy-heatmap-quant",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "correlation › heatmap",
    "status": "built",
    "note": null
   },
@@ -720,7 +724,7 @@
    "wave": 2,
    "ft": "calendar-heat-map",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "trend › calendar",
    "status": "built",
    "note": null
   },
@@ -735,7 +739,7 @@
    "wave": 2,
    "ft": "priestley-timeline",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "timeline › spans",
    "status": "built",
    "note": null
   },
@@ -751,7 +755,7 @@
    "wave": 2,
    "ft": "circles-timeline",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "timeline › circles",
    "status": "built",
    "note": null
   },
@@ -767,7 +771,7 @@
    "wave": 2,
    "ft": "small-multiples-single-line",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "trend › multiples",
    "status": "built",
    "note": "Also covers FT's multiple-line panels."
   },
@@ -785,7 +789,8 @@
    "replaces": null,
    "storyteller": null,
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_note": "trend's multiples draws the same panels as lines"
   },
   {
    "id": "small-multiples-column",
@@ -800,7 +805,8 @@
    "replaces": null,
    "storyteller": null,
    "status": "built",
-   "note": "Also covers FT's column-timeline panels."
+   "note": "Also covers FT's column-timeline panels.",
+   "storyteller_note": "comparison's multiples draws the same panels as bars"
   },
   {
    "id": "small-multiples-bar",
@@ -813,7 +819,7 @@
    "wave": 2,
    "ft": "small-multiples-bars",
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "comparison › multiples",
    "status": "built",
    "note": null
   },
@@ -829,7 +835,7 @@
    "wave": 3,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "trend › gap",
    "status": "built",
    "note": null
   },
@@ -844,7 +850,7 @@
    "wave": 3,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "trend › candles",
    "status": "built",
    "note": "FT calls it stock price."
   },
@@ -859,7 +865,7 @@
    "wave": 3,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "trend › fan",
    "status": "built",
    "note": "Uncertainty widening into a projection."
   },
@@ -875,7 +881,7 @@
    "wave": 3,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "timeline › spikes",
    "status": "built",
    "note": null
   },
@@ -906,7 +912,7 @@
    "wave": 3,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "outlier › strip",
    "status": "built",
    "note": "FT lists it under both ranking and distribution."
   },
@@ -937,7 +943,7 @@
    "wave": 3,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "outlier › barcode",
    "status": "built",
    "note": null
   },
@@ -952,7 +958,7 @@
    "wave": 3,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "outlier › curve",
    "status": "built",
    "note": null
   },
@@ -982,7 +988,7 @@
    "wave": 3,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "proportions › rings",
    "status": "built",
    "note": null
   },
@@ -1000,7 +1006,8 @@
    "replaces": null,
    "storyteller": null,
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_note": "hard to read at slide size"
   },
   {
    "id": "arc",
@@ -1013,7 +1020,7 @@
    "wave": 3,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "proportions › seats",
    "status": "built",
    "note": "A hemicycle of seats."
   },
@@ -1029,7 +1036,7 @@
    "wave": 3,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "proportions › venn",
    "status": "built",
    "note": "Echoes Oddview-29, the Express Venn diagrams."
   },
@@ -1046,7 +1053,8 @@
    "replaces": null,
    "storyteller": null,
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_note": "ranking's circles draws it biggest first"
   },
   {
    "id": "pictogram",
@@ -1060,7 +1068,7 @@
    "wave": 3,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "comparison › icons",
    "status": "built",
    "note": "FT calls it isotype. Whole numbers only."
   },
@@ -1075,7 +1083,7 @@
    "wave": 3,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "comparison › radar",
    "status": "built",
    "note": null
   },
@@ -1091,7 +1099,7 @@
    "wave": 3,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "comparison › parallel",
    "status": "built",
    "note": null
   },
@@ -1107,7 +1115,7 @@
    "wave": 3,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "network › chord",
    "status": "built",
    "note": null
   },
@@ -1115,12 +1123,14 @@
    "id": "choropleth",
    "name": "Choropleth",
    "group": "Spatial",
-   "methods": [],
+   "methods": [
+    "place"
+   ],
    "reads": "region, value",
    "wave": 4,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "place › shaded",
    "status": "built",
    "note": "Base maps: Natural Earth (world) and ABS boundaries (Australia, states, councils)."
   },
@@ -1128,12 +1138,14 @@
    "id": "proportional-symbol-map",
    "name": "Proportional symbol map",
    "group": "Spatial",
-   "methods": [],
+   "methods": [
+    "place"
+   ],
    "reads": "place, value",
    "wave": 4,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "place › circles",
    "status": "built",
    "note": null
   },
@@ -1141,12 +1153,14 @@
    "id": "flow-map",
    "name": "Flow map",
    "group": "Spatial",
-   "methods": [],
+   "methods": [
+    "place"
+   ],
    "reads": "from, to, value",
    "wave": 4,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "place › flows",
    "status": "built",
    "note": null
   },
@@ -1154,12 +1168,14 @@
    "id": "contour-map",
    "name": "Contour map",
    "group": "Spatial",
-   "methods": [],
+   "methods": [
+    "place"
+   ],
    "reads": "grid of values",
    "wave": 4,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "place › contours",
    "status": "built",
    "note": null
   },
@@ -1167,12 +1183,14 @@
    "id": "cartogram-equal",
    "name": "Equal-area cartogram",
    "group": "Spatial",
-   "methods": [],
+   "methods": [
+    "place"
+   ],
    "reads": "region, value",
    "wave": 4,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "place › tiles",
    "status": "built",
    "note": "FT's UK constituency cartogram is the example."
   },
@@ -1180,12 +1198,14 @@
    "id": "cartogram-scaled",
    "name": "Scaled cartogram",
    "group": "Spatial",
-   "methods": [],
+   "methods": [
+    "place"
+   ],
    "reads": "region, value",
    "wave": 4,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "place › sized",
    "status": "built",
    "note": null
   },
@@ -1193,12 +1213,14 @@
    "id": "dot-density-map",
    "name": "Dot density map",
    "group": "Spatial",
-   "methods": [],
+   "methods": [
+    "place"
+   ],
    "reads": "place (one dot each)",
    "wave": 4,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "place › dots",
    "status": "built",
    "note": null
   },
@@ -1206,12 +1228,14 @@
    "id": "heatmap-map",
    "name": "Grid heatmap map",
    "group": "Spatial",
-   "methods": [],
+   "methods": [
+    "place"
+   ],
    "reads": "lat, lon, value",
    "wave": 4,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "place › squares",
    "status": "built",
    "note": null
   },
@@ -1219,12 +1243,14 @@
    "id": "locator-map",
    "name": "Locator map",
    "group": "Spatial",
-   "methods": [],
+   "methods": [
+    "place"
+   ],
    "reads": "label (a city) or lat, lon; note",
    "wave": 4,
    "ft": null,
    "replaces": null,
-   "storyteller": null,
+   "storyteller": "place › pins",
    "status": "built",
    "note": "Not on the FT poster: where a place is, with a pin, a close-up and an overview inset. Otto, 18 Sep 2026."
   }

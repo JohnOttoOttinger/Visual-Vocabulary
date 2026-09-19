@@ -13,7 +13,7 @@ export default {
   insight: "first",
   draw(g, rows, box, ctx) {
     const { S, th, paint: P } = ctx, focus = ctx.options.focus || "australia", [x0, y0, x1, y1] = box;
-    const base = geo.basemap(g, focus, box, ctx);
+    const base = geo.basemap(g, focus, box, ctx, { terrain: ctx.options.terrain ?? true });
     const fs = base.fs;
     const want = ctx.options.inset ?? (fs.world ? false : fs.australian ? (Array.isArray(focus) || fs.state || fs.capital ? "australia" : false) : "world");
     const pts = rows.map((r, i) => ({ r, i, xy: base.proj(geo.place(r)) })).filter((p) => p.xy);

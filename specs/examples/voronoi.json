@@ -2,7 +2,7 @@
  "chart": "voronoi",
  "kicker": "Who came and went...",
  "title": "EACH HAND'S GROUND",
- "line": "Days to each person's first change across, *to their last up*; each area the ground nearest them.",
+ "line": "First change across, last up, *each area the ground nearest*.",
  "source": "git log of reference/ft-2021, 2015 to 2017",
  "axes": [
   "First change, days in",

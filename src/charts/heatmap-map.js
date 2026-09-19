@@ -13,12 +13,13 @@ export default {
   needs: () => ["label"],
   insight: "none",
   draw(g, rows, [x0, y0, x1, y1], ctx) {
-    const { S, th } = ctx, focus = ctx.options.focus || "world", keyH = S * 0.11;
-    const base = geo.basemap(g, focus, [x0, y0, x1, y1 - keyH], ctx), cell = ctx.options.cell || S * 0.028;
+    const { S, th } = ctx, focus = ctx.options.focus || "world";
+    const room = geo.mapRoom(focus, [x0, y0, x1, y1], ctx, { bottom: [S * 0.46, S * 0.06] });
+    const base = geo.basemap(g, focus, [x0, y0, x1, y1], ctx, { fit: room.fit }), cell = ctx.options.cell || S * 0.028;
     const bins = new Map();
     for (const r of rows) {
       let xy; try { xy = base.proj(geo.place(r)); } catch { continue; }
-      if (!xy || xy[0] < x0 || xy[0] > x1 || xy[1] < y0 || xy[1] > y1 - keyH) continue;
+      if (!xy || xy[0] < x0 || xy[0] > x1 || xy[1] < y0 || xy[1] > y1) continue;
       const k = `${Math.floor((xy[0] - x0) / cell)},${Math.floor((xy[1] - y0) / cell)}`;
       bins.set(k, (bins.get(k) || 0) + (core.isNum(r.value) ? r.value : 1));
     }
@@ -30,7 +31,7 @@ export default {
       marks.append("rect").attr("x", x + gap / 2).attr("y", y + gap / 2).attr("width", cell - gap).attr("height", cell - gap).attr("rx", cell * 0.12).attr("fill", colours[scale(v)]);
       if (!best || v > best.v) best = { v, box: [x, y, x + cell, y + cell] };
     }
-    geo.shadeKey(g, colours, scale.quantiles().map((v) => core.num(Math.round(v), ctx, true)), [x0, y1 - keyH + S * 0.04], ctx);
+    geo.shadeKey(g, colours, scale.quantiles().map((v) => core.num(Math.round(v), ctx, true)), room.bottom, ctx);
     if (best) {
       const ins = g.append("g").attr("id", "insight");
       ins.append("rect").attr("x", best.box[0]).attr("y", best.box[1]).attr("width", cell).attr("height", cell).attr("rx", cell * 0.12).attr("fill", "none").attr("stroke", th.ink).attr("stroke-width", S * 0.003);

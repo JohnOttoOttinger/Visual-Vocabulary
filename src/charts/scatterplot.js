@@ -17,7 +17,7 @@ export default {
     const names = ctx.axes || ["", ""], tp = S * 0.021;
     const [ylo, yhi, yt] = core.spanOf(ys), [xlo, xhi, xt] = core.spanOf(xs);
     const labW = Math.max(...yt.map((t) => core.measure(core.num(t, ctx, true), "arvo", tp).w));
-    const px0 = x0 + labW + S * 0.03, px1 = x1 - S * 0.02, py0 = y0 + S * 0.075, py1 = y1 - S * 0.10;
+    const px0 = x0 + core.axisRoom(names[1], ctx) + labW + S * 0.03, px1 = x1 - S * 0.02, py0 = y0 + S * 0.035, py1 = y1 - S * 0.10;
     const X = (v) => px0 + (px1 - px0) * (v - xlo) / ((xhi - xlo) || 1);
     const Y = (v) => py1 - (py1 - py0) * (v - ylo) / ((yhi - ylo) || 1);
     const faint = mix(R.neutral, th.ground, 0.45);
@@ -29,8 +29,7 @@ export default {
     core.dottedLine(ax, [px0, Y(my)], [px1, Y(my)], faint, S);
     ax.append("path").attr("d", `M${px0},${py0 - S * 0.01}L${px0},${py1}L${px1 + S * 0.01},${py1}`)
       .attr("fill", "none").attr("stroke", th.ink).attr("stroke-width", S * 0.004).attr("stroke-linejoin", "round");
-    if (names[0]) core.text(ax, names[0].toUpperCase(), { x: px1, y: py1 + S * 0.06, face: "bebas", px: S * 0.034, fill: R.neutral, align: "r" });
-    if (names[1]) core.text(ax, names[1].toUpperCase(), { x: px0 - labW - S * 0.03, y: y0, face: "bebas", px: S * 0.034, fill: R.neutral });
+    core.axisNames(ax, names, ctx, { x0, px0, px1, py0, py1, below: py1 + S * 0.06 });
     if (rows.length > 2) {
       const [a, b] = core.fitLine(xs, ys);
       const ends = [xlo, xhi].map((xv) => {
