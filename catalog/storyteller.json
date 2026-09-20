@@ -1,0 +1,640 @@
+{
+ "about": "Written by `vv storyteller`, from catalog/charts.json and the charts' own needs(). The Visual Storyteller reads this: do not edit it by hand.",
+ "modes": {
+  "ranking": {
+   "default": "bar",
+   "subs": {
+    "bar": {
+     "chart": "bar-ordered",
+     "line": null,
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "column": {
+     "chart": "column-ordered",
+     "line": "Every row as a column, *biggest first*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "lollipop": {
+     "chart": "lollipop-h",
+     "line": "Every row on one scale, *biggest first*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "stems": {
+     "chart": "lollipop-v",
+     "line": "Every row on one scale, *biggest first*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "bump": {
+     "chart": "bump",
+     "line": "Each row's rank in every period, *the biggest mover marked*.",
+     "needs": [
+      "label"
+     ]
+    },
+    "squares": {
+     "chart": "proportional-squares",
+     "line": "Every row as a square, *its area the number*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "circles": {
+     "chart": "proportional-symbol-ordered",
+     "line": "Every row as a circle, *its area the number*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    }
+   }
+  },
+  "trend": {
+   "default": "line",
+   "subs": {
+    "line": {
+     "chart": "line",
+     "line": null,
+     "needs": [
+      "value"
+     ],
+     "needsWithSeries": [
+      "label"
+     ]
+    },
+    "area": {
+     "chart": "area",
+     "line": "Each part stacked over time, *the top edge the total*.",
+     "needs": [
+      "value"
+     ],
+     "needsWithSeries": [
+      "label"
+     ]
+    },
+    "column": {
+     "chart": "column-timeline",
+     "line": "One number per period, *the latest marked*.",
+     "needs": [
+      "value"
+     ]
+    },
+    "stacked": {
+     "chart": "column-stacked",
+     "line": "Each period one column, *split into its parts*.",
+     "needs": [
+      "label"
+     ]
+    },
+    "panels": {
+     "chart": "line-two-panel",
+     "line": "Two numbers on one time axis, *each on its own scale*.",
+     "needs": [
+      "label"
+     ]
+    },
+    "hours": {
+     "chart": "line-interday",
+     "line": "Through the hours of the day, *the latest marked*.",
+     "needs": [
+      "time",
+      "value"
+     ]
+    },
+    "average": {
+     "chart": "line-moving-average",
+     "line": "Each period, *the running average in olive*.",
+     "needs": [
+      "value"
+     ]
+    },
+    "column-line": {
+     "chart": "column-line",
+     "line": "{a} in columns, *{b} as a line below*.",
+     "needs": [
+      "label",
+      "value",
+      "value2"
+     ]
+    },
+    "calendar": {
+     "chart": "calendar-heatmap",
+     "line": "One square a day, *darker is more*.",
+     "needs": [
+      "date",
+      "value"
+     ]
+    },
+    "multiples": {
+     "chart": "small-multiples-line",
+     "line": "One panel each, *all on one scale*.",
+     "needs": [
+      "panel",
+      "label",
+      "value"
+     ]
+    },
+    "gap": {
+     "chart": "line-surplus-deficit",
+     "line": "{a} against {b} over time, *the gap shaded*.",
+     "needs": [
+      "value"
+     ]
+    },
+    "candles": {
+     "chart": "candlestick",
+     "line": "Each period's open and close, *its high and low*.",
+     "needs": [
+      "label",
+      "open",
+      "high",
+      "low",
+      "close"
+     ]
+    },
+    "fan": {
+     "chart": "fan",
+     "line": "What has happened, *then the range of what could*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    }
+   }
+  },
+  "timeline": {
+   "default": "spine",
+   "subs": {
+    "spine": {
+     "chart": "event-timeline",
+     "line": null,
+     "needs": [
+      "label"
+     ]
+    },
+    "spans": {
+     "chart": "priestley-timeline",
+     "line": "Each one a span in time, *the longest marked*.",
+     "needs": [
+      "label",
+      "start",
+      "end"
+     ]
+    },
+    "circles": {
+     "chart": "circles-timeline",
+     "line": "Events along time, *each circle sized by its number*.",
+     "needs": [
+      "label",
+      "date",
+      "value"
+     ]
+    },
+    "spikes": {
+     "chart": "seismogram",
+     "line": "Every period a spike, *the biggest named*.",
+     "needs": [
+      "value"
+     ]
+    }
+   }
+  },
+  "proportions": {
+   "default": "donut",
+   "subs": {
+    "donut": {
+     "chart": "donut",
+     "line": null,
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "pie": {
+     "chart": "pie",
+     "line": null,
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "bar": {
+     "chart": "bar-stacked-proportional",
+     "line": "One whole as one bar, *split by share*.",
+     "needs": [
+      "label",
+      "value"
+     ],
+     "needsWithSeries": [
+      "label"
+     ]
+    },
+    "treemap": {
+     "chart": "treemap",
+     "line": "One whole as tiles, *sized by share*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "stacked": {
+     "chart": "bar-stacked",
+     "line": "Each row one bar, *split into its parts*.",
+     "needs": [
+      "label"
+     ]
+    },
+    "waffle": {
+     "chart": "waffle",
+     "line": "One whole in a hundred squares, *one a per cent*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "rings": {
+     "chart": "sunburst",
+     "line": "One whole split twice, *the inner ring by group*.",
+     "needs": [
+      "label",
+      "parent",
+      "value"
+     ]
+    },
+    "seats": {
+     "chart": "arc",
+     "line": "Every seat a dot, *coloured by its side*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "venn": {
+     "chart": "venn",
+     "line": "What each set holds, *and what they share*.",
+     "needs": [
+      "sets",
+      "value"
+     ]
+    }
+   }
+  },
+  "correlation": {
+   "default": "scatter",
+   "subs": {
+    "scatter": {
+     "chart": "scatterplot",
+     "line": null,
+     "needs": [
+      "label",
+      "value",
+      "value2"
+     ]
+    },
+    "bubble": {
+     "chart": "bubble",
+     "line": "{a} across, {b} up, *each dot sized by a third number*.",
+     "needs": [
+      "label",
+      "value",
+      "value2",
+      "size"
+     ]
+    },
+    "path": {
+     "chart": "scatterplot-connected",
+     "line": "{a} across, {b} up, *joined in order*.",
+     "needs": [
+      "label",
+      "value",
+      "value2"
+     ]
+    },
+    "grid": {
+     "chart": "heatmap-category",
+     "line": "Each row against each column, *darker is more*.",
+     "needs": [
+      "label"
+     ]
+    },
+    "heatmap": {
+     "chart": "heatmap-quantity",
+     "line": "{a} across, {b} up, *each cell shaded by a third number*.",
+     "needs": [
+      "x",
+      "y",
+      "value"
+     ]
+    }
+   }
+  },
+  "comparison": {
+   "default": "butterfly",
+   "subs": {
+    "butterfly": {
+     "chart": "butterfly",
+     "line": null,
+     "needs": [
+      "label",
+      "value",
+      "value2"
+     ]
+    },
+    "dumbbell": {
+     "chart": "dumbbell",
+     "line": "Each row runs *from {a} to {b}*.",
+     "needs": [
+      "label",
+      "value",
+      "value2"
+     ]
+    },
+    "windows": {
+     "chart": "windows",
+     "line": "{a} and {b} side by side, *the numbers under each*.",
+     "needs": [
+      "label",
+      "value",
+      "value2"
+     ]
+    },
+    "grouped": {
+     "chart": "bar-grouped",
+     "line": "{a} against {b}, *row by row*.",
+     "needs": [
+      "label"
+     ]
+    },
+    "columns": {
+     "chart": "column-grouped",
+     "line": "{a} against {b}, *row by row*.",
+     "needs": [
+      "label"
+     ]
+    },
+    "diverging": {
+     "chart": "bar-diverging",
+     "line": "Either side of zero, *gains right, losses left*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "likert": {
+     "chart": "bar-diverging-stacked",
+     "line": "Each row's answers either side of the middle, *the most positive right*.",
+     "needs": [
+      "label"
+     ]
+    },
+    "spine": {
+     "chart": "spine",
+     "line": "{a} against {b}, *as shares of each row*.",
+     "needs": [
+      "label",
+      "value",
+      "value2"
+     ]
+    },
+    "pyramid": {
+     "chart": "pyramid",
+     "line": "{a} on the left, *{b} on the right*, back to back.",
+     "needs": [
+      "label",
+      "value",
+      "value2"
+     ]
+    },
+    "bullet": {
+     "chart": "bullet",
+     "line": "Each measure against its target, *the target a tick*.",
+     "needs": [
+      "label",
+      "value",
+      "target"
+     ]
+    },
+    "multiples": {
+     "chart": "small-multiples-bar",
+     "line": "One panel each, *all on one scale*.",
+     "needs": [
+      "panel",
+      "label",
+      "value"
+     ]
+    },
+    "icons": {
+     "chart": "pictogram",
+     "line": "Counted in whole symbols, *one per unit*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "radar": {
+     "chart": "radar",
+     "line": "Several measures round a circle, *one shape per row*.",
+     "needs": [
+      "label"
+     ]
+    },
+    "parallel": {
+     "chart": "parallel-coordinates",
+     "line": "Several measures side by side, *one line per row*.",
+     "needs": [
+      "label"
+     ]
+    }
+   }
+  },
+  "outlier": {
+   "default": "swarm",
+   "subs": {
+    "swarm": {
+     "chart": "beeswarm",
+     "line": null,
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "histogram": {
+     "chart": "histogram",
+     "line": "Every row counted into bands, *the busiest marked*.",
+     "needs": [
+      "value"
+     ]
+    },
+    "box": {
+     "chart": "boxplot",
+     "line": "The middle half boxed, *the odd one out named*.",
+     "needs": [
+      "value"
+     ]
+    },
+    "strip": {
+     "chart": "dot-strip",
+     "line": "Every row a dot on one scale, *the odd one out named*.",
+     "needs": [
+      "value"
+     ]
+    },
+    "violin": {
+     "chart": "violin",
+     "line": "The shape of the spread, *the middle half as a bar*.",
+     "needs": [
+      "value"
+     ]
+    },
+    "barcode": {
+     "chart": "barcode",
+     "line": "Every row a tick on one scale, *where they crowd shows*.",
+     "needs": [
+      "value"
+     ]
+    },
+    "curve": {
+     "chart": "cumulative-curve",
+     "line": "Sorted smallest to biggest, *the halfway mark dotted*.",
+     "needs": [
+      "value"
+     ]
+    }
+   }
+  },
+  "process": {
+   "default": "spine",
+   "subs": {
+    "spine": {
+     "chart": "process-spine",
+     "line": null,
+     "needs": [
+      "label"
+     ]
+    },
+    "waterfall": {
+     "chart": "waterfall",
+     "line": "How the total is built, *step by step*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "flow": {
+     "chart": "sankey",
+     "line": "Where it goes, *each band as wide as the amount*.",
+     "needs": [
+      "value"
+     ]
+    }
+   }
+  },
+  "network": {
+   "default": "web",
+   "subs": {
+    "web": {
+     "chart": "network",
+     "line": null,
+     "needs": [
+      "label",
+      "to"
+     ]
+    },
+    "chord": {
+     "chart": "chord",
+     "line": "What passes between them, *both ways*.",
+     "needs": [
+      "value"
+     ]
+    }
+   }
+  },
+  "place": {
+   "default": "pins",
+   "subs": {
+    "pins": {
+     "chart": "locator-map",
+     "line": null,
+     "needs": [
+      "label"
+     ]
+    },
+    "shaded": {
+     "chart": "choropleth",
+     "line": "Each region shaded by its number, *darker is more*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "circles": {
+     "chart": "proportional-symbol-map",
+     "line": "Each place a circle, *its area the number*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "flows": {
+     "chart": "flow-map",
+     "line": "From each place to the next, *thicker is more*.",
+     "needs": [
+      "to",
+      "value"
+     ]
+    },
+    "contours": {
+     "chart": "contour-map",
+     "line": "Where it gathers, *smoothed into bands*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "tiles": {
+     "chart": "cartogram-equal",
+     "line": "Every region the same size, *shaded by its number*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "sized": {
+     "chart": "cartogram-scaled",
+     "line": "Each region a circle, *its area the number*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "dots": {
+     "chart": "dot-density-map",
+     "line": "One dot for every so many, *gathered where they are*.",
+     "needs": [
+      "label",
+      "value"
+     ]
+    },
+    "squares": {
+     "chart": "heatmap-map",
+     "line": "Counted into squares, *darker is busier*.",
+     "needs": [
+      "label"
+     ]
+    }
+   }
+  }
+ }
+}
