@@ -21,6 +21,7 @@
 <div id="stage"></div>
 <script type="module">
   import { drawChart, drawFrame } from "/src/render.js";
+  import { CHARTS } from "/src/charts/index.js";
   const faces = ['40px "Bebas Neue"', '40px "Arvo"', 'bold 40px "Arvo"', '40px "Qwigley"', '40px "Numbers Depot"'];
   await Promise.all(faces.map((f) => document.fonts.load(f)));
   // the map data (geo/*.json, built by tools/build-geo.sh), read once for every map chart
@@ -39,6 +40,15 @@
     return { ...spec, images };
   }
   window.vv = {
+    // what every chart reads, from the charts themselves (the Storyteller checks a slide's table
+    // against this, so it is never copied by hand). A few read different columns when the slide
+    // names its series — an area is its series, or one "value" — so both answers go back.
+    needs() {
+      return Object.fromEntries(Object.entries(CHARTS).map(([id, c]) => [id, {
+        plain: c.needs ? c.needs({}) : [],
+        series: c.needs ? c.needs({ series: ["A", "B"] }) : [],
+      }]));
+    },
     async chart(spec) {
       spec = await sized(spec);
       stage.replaceChildren();

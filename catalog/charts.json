@@ -20,7 +20,8 @@
    "replaces": "ranking",
    "storyteller": "ranking › bar",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_default": true
   },
   {
    "id": "column-ordered",
@@ -35,7 +36,8 @@
    "replaces": null,
    "storyteller": "ranking › column",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Every row as a column, *biggest first*."
   },
   {
    "id": "lollipop-h",
@@ -50,7 +52,8 @@
    "replaces": null,
    "storyteller": "ranking › lollipop",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Every row on one scale, *biggest first*."
   },
   {
    "id": "lollipop-v",
@@ -65,7 +68,8 @@
    "replaces": null,
    "storyteller": "ranking › stems",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Every row on one scale, *biggest first*."
   },
   {
    "id": "slope",
@@ -98,7 +102,8 @@
    "replaces": null,
    "storyteller": "ranking › bump",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Each row's rank in every period, *the biggest mover marked*."
   },
   {
    "id": "line",
@@ -113,7 +118,8 @@
    "replaces": "trend",
    "storyteller": "trend › line",
    "status": "built",
-   "note": "The Storyteller's trend is this line with its area filled."
+   "note": "The Storyteller's trend is this line with its area filled.",
+   "storyteller_default": true
   },
   {
    "id": "area",
@@ -129,7 +135,8 @@
    "replaces": null,
    "storyteller": "trend › area",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Each part stacked over time, *the top edge the total*."
   },
   {
    "id": "column-timeline",
@@ -144,7 +151,8 @@
    "replaces": null,
    "storyteller": "trend › column",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "One number per period, *the latest marked*."
   },
   {
    "id": "event-timeline",
@@ -159,7 +167,8 @@
    "replaces": "timeline",
    "storyteller": "timeline › spine",
    "status": "built",
-   "note": "Events down a dotted spine, alternating sides."
+   "note": "Events down a dotted spine, alternating sides.",
+   "storyteller_default": true
   },
   {
    "id": "donut",
@@ -174,7 +183,8 @@
    "replaces": "proportions",
    "storyteller": "proportions › donut",
    "status": "built",
-   "note": "FT's pie folder draws both; the Storyteller's proportions is the donut with a Depot stat in the hole."
+   "note": "FT's pie folder draws both; the Storyteller's proportions is the donut with a Depot stat in the hole.",
+   "storyteller_default": true
   },
   {
    "id": "pie",
@@ -204,7 +214,8 @@
    "replaces": null,
    "storyteller": "proportions › bar",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "One whole as one bar, *split by share*."
   },
   {
    "id": "treemap",
@@ -219,7 +230,8 @@
    "replaces": null,
    "storyteller": "proportions › treemap",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "One whole as tiles, *sized by share*."
   },
   {
    "id": "scatterplot",
@@ -234,7 +246,8 @@
    "replaces": "correlation",
    "storyteller": "correlation › scatter",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_default": true
   },
   {
    "id": "bubble",
@@ -249,7 +262,8 @@
    "replaces": null,
    "storyteller": "correlation › bubble",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "{a} across, {b} up, *each dot sized by a third number*."
   },
   {
    "id": "butterfly",
@@ -264,7 +278,8 @@
    "replaces": "comparison / butterfly",
    "storyteller": "comparison › butterfly",
    "status": "built",
-   "note": "Names down the middle, A left in olive, B right in blue."
+   "note": "Names down the middle, A left in olive, B right in blue.",
+   "storyteller_default": true
   },
   {
    "id": "dumbbell",
@@ -279,7 +294,8 @@
    "replaces": "comparison / dumbbell",
    "storyteller": "comparison › dumbbell",
    "status": "built",
-   "note": "FT calls it a dot plot."
+   "note": "FT calls it a dot plot.",
+   "storyteller_line": "Each row runs *from {a} to {b}*."
   },
   {
    "id": "windows",
@@ -294,7 +310,8 @@
    "replaces": "comparison / windows",
    "storyteller": "comparison › windows",
    "status": "built",
-   "note": "A picture-led comparison; not in the FT set."
+   "note": "A picture-led comparison; not in the FT set.",
+   "storyteller_line": "{a} and {b} side by side, *the numbers under each*."
   },
   {
    "id": "bar-grouped",
@@ -309,7 +326,8 @@
    "replaces": null,
    "storyteller": "comparison › grouped",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "{a} against {b}, *row by row*."
   },
   {
    "id": "column-grouped",
@@ -324,7 +342,8 @@
    "replaces": null,
    "storyteller": "comparison › columns",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "{a} against {b}, *row by row*."
   },
   {
    "id": "beeswarm",
@@ -339,7 +358,8 @@
    "replaces": "outlier",
    "storyteller": "outlier › swarm",
    "status": "built",
-   "note": "Every row on one scale, the middle half shaded, the odd one out named."
+   "note": "Every row on one scale, the middle half shaded, the odd one out named.",
+   "storyteller_default": true
   },
   {
    "id": "histogram",
@@ -354,7 +374,8 @@
    "replaces": null,
    "storyteller": "outlier › histogram",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Every row counted into bands, *the busiest marked*."
   },
   {
    "id": "boxplot",
@@ -370,7 +391,8 @@
    "replaces": null,
    "storyteller": "outlier › box",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "The middle half boxed, *the odd one out named*."
   },
   {
    "id": "process-spine",
@@ -385,7 +407,8 @@
    "replaces": "process",
    "storyteller": "process › spine",
    "status": "built",
-   "note": "A spine of numbered chevrons, each step's words beside it."
+   "note": "A spine of numbered chevrons, each step's words beside it.",
+   "storyteller_default": true
   },
   {
    "id": "network",
@@ -400,7 +423,8 @@
    "replaces": "network",
    "storyteller": "network › web",
    "status": "built",
-   "note": "FT listed it and never built it; the Storyteller did."
+   "note": "FT listed it and never built it; the Storyteller did.",
+   "storyteller_default": true
   },
   {
    "id": "bar",
@@ -449,7 +473,8 @@
    "replaces": null,
    "storyteller": "comparison › diverging",
    "status": "built",
-   "note": "FT draws negatives with the plain bar."
+   "note": "FT draws negatives with the plain bar.",
+   "storyteller_line": "Either side of zero, *gains right, losses left*."
   },
   {
    "id": "bar-diverging-stacked",
@@ -464,7 +489,8 @@
    "replaces": null,
    "storyteller": "comparison › likert",
    "status": "built",
-   "note": "Survey answers from disagree to agree."
+   "note": "Survey answers from disagree to agree.",
+   "storyteller_line": "Each row's answers either side of the middle, *the most positive right*."
   },
   {
    "id": "column-diverging-stacked",
@@ -496,7 +522,8 @@
    "replaces": null,
    "storyteller": "comparison › spine",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "{a} against {b}, *as shares of each row*."
   },
   {
    "id": "pyramid",
@@ -511,7 +538,8 @@
    "replaces": null,
    "storyteller": "comparison › pyramid",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "{a} on the left, *{b} on the right*, back to back."
   },
   {
    "id": "bullet",
@@ -526,7 +554,8 @@
    "replaces": null,
    "storyteller": "comparison › bullet",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Each measure against its target, *the target a tick*."
   },
   {
    "id": "proportional-squares",
@@ -541,7 +570,8 @@
    "replaces": null,
    "storyteller": "ranking › squares",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Every row as a square, *its area the number*."
   },
   {
    "id": "bar-stacked",
@@ -556,7 +586,8 @@
    "replaces": null,
    "storyteller": "proportions › stacked",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Each row one bar, *split into its parts*."
   },
   {
    "id": "column-stacked",
@@ -572,7 +603,8 @@
    "replaces": null,
    "storyteller": "trend › stacked",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Each period one column, *split into its parts*."
   },
   {
    "id": "waterfall",
@@ -588,7 +620,8 @@
    "replaces": null,
    "storyteller": "process › waterfall",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "How the total is built, *step by step*."
   },
   {
    "id": "sankey",
@@ -603,7 +636,8 @@
    "replaces": null,
    "storyteller": "process › flow",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Where it goes, *each band as wide as the amount*."
   },
   {
    "id": "line-two-panel",
@@ -619,7 +653,8 @@
    "replaces": null,
    "storyteller": "trend › panels",
    "status": "built",
-   "note": "Redraws FT's dual-axis line: two scales on one chart invite a false crossing, so each measure gets its own panel."
+   "note": "Redraws FT's dual-axis line: two scales on one chart invite a false crossing, so each measure gets its own panel.",
+   "storyteller_line": "Two numbers on one time axis, *each on its own scale*."
   },
   {
    "id": "line-interday",
@@ -634,7 +669,8 @@
    "replaces": null,
    "storyteller": "trend › hours",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Through the hours of the day, *the latest marked*."
   },
   {
    "id": "line-moving-average",
@@ -649,7 +685,8 @@
    "replaces": null,
    "storyteller": "trend › average",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Each period, *the running average in olive*."
   },
   {
    "id": "column-line",
@@ -665,7 +702,8 @@
    "replaces": null,
    "storyteller": "trend › column-line",
    "status": "built",
-   "note": "Amount as columns, rate as a line, drawn as two panels unless both share a unit."
+   "note": "Amount as columns, rate as a line, drawn as two panels unless both share a unit.",
+   "storyteller_line": "{a} in columns, *{b} as a line below*."
   },
   {
    "id": "scatterplot-connected",
@@ -681,7 +719,8 @@
    "replaces": null,
    "storyteller": "correlation › path",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "{a} across, {b} up, *joined in order*."
   },
   {
    "id": "heatmap-category",
@@ -696,7 +735,8 @@
    "replaces": null,
    "storyteller": "correlation › grid",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Each row against each column, *darker is more*."
   },
   {
    "id": "heatmap-quantity",
@@ -711,7 +751,8 @@
    "replaces": null,
    "storyteller": "correlation › heatmap",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "{a} across, {b} up, *each cell shaded by a third number*."
   },
   {
    "id": "calendar-heatmap",
@@ -726,7 +767,8 @@
    "replaces": null,
    "storyteller": "trend › calendar",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "One square a day, *darker is more*."
   },
   {
    "id": "priestley-timeline",
@@ -741,7 +783,8 @@
    "replaces": null,
    "storyteller": "timeline › spans",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Each one a span in time, *the longest marked*."
   },
   {
    "id": "circles-timeline",
@@ -757,7 +800,8 @@
    "replaces": null,
    "storyteller": "timeline › circles",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Events along time, *each circle sized by its number*."
   },
   {
    "id": "small-multiples-line",
@@ -773,7 +817,8 @@
    "replaces": null,
    "storyteller": "trend › multiples",
    "status": "built",
-   "note": "Also covers FT's multiple-line panels."
+   "note": "Also covers FT's multiple-line panels.",
+   "storyteller_line": "One panel each, *all on one scale*."
   },
   {
    "id": "small-multiples-area",
@@ -821,7 +866,8 @@
    "replaces": null,
    "storyteller": "comparison › multiples",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "One panel each, *all on one scale*."
   },
   {
    "id": "line-surplus-deficit",
@@ -837,7 +883,8 @@
    "replaces": null,
    "storyteller": "trend › gap",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "{a} against {b} over time, *the gap shaded*."
   },
   {
    "id": "candlestick",
@@ -852,7 +899,8 @@
    "replaces": null,
    "storyteller": "trend › candles",
    "status": "built",
-   "note": "FT calls it stock price."
+   "note": "FT calls it stock price.",
+   "storyteller_line": "Each period's open and close, *its high and low*."
   },
   {
    "id": "fan",
@@ -867,7 +915,8 @@
    "replaces": null,
    "storyteller": "trend › fan",
    "status": "built",
-   "note": "Uncertainty widening into a projection."
+   "note": "Uncertainty widening into a projection.",
+   "storyteller_line": "What has happened, *then the range of what could*."
   },
   {
    "id": "seismogram",
@@ -883,7 +932,8 @@
    "replaces": null,
    "storyteller": "timeline › spikes",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Every period a spike, *the biggest named*."
   },
   {
    "id": "proportional-symbol-ordered",
@@ -898,7 +948,8 @@
    "replaces": null,
    "storyteller": "ranking › circles",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Every row as a circle, *its area the number*."
   },
   {
    "id": "dot-strip",
@@ -914,7 +965,8 @@
    "replaces": null,
    "storyteller": "outlier › strip",
    "status": "built",
-   "note": "FT lists it under both ranking and distribution."
+   "note": "FT lists it under both ranking and distribution.",
+   "storyteller_line": "Every row a dot on one scale, *the odd one out named*."
   },
   {
    "id": "violin",
@@ -930,7 +982,8 @@
    "replaces": null,
    "storyteller": "outlier › violin",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "The shape of the spread, *the middle half as a bar*."
   },
   {
    "id": "barcode",
@@ -945,7 +998,8 @@
    "replaces": null,
    "storyteller": "outlier › barcode",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Every row a tick on one scale, *where they crowd shows*."
   },
   {
    "id": "cumulative-curve",
@@ -960,7 +1014,8 @@
    "replaces": null,
    "storyteller": "outlier › curve",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Sorted smallest to biggest, *the halfway mark dotted*."
   },
   {
    "id": "waffle",
@@ -975,7 +1030,8 @@
    "replaces": null,
    "storyteller": "proportions › waffle",
    "status": "built",
-   "note": "FT calls it a gridplot."
+   "note": "FT calls it a gridplot.",
+   "storyteller_line": "One whole in a hundred squares, *one a per cent*."
   },
   {
    "id": "sunburst",
@@ -990,7 +1046,8 @@
    "replaces": null,
    "storyteller": "proportions › rings",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "One whole split twice, *the inner ring by group*."
   },
   {
    "id": "voronoi",
@@ -1022,7 +1079,8 @@
    "replaces": null,
    "storyteller": "proportions › seats",
    "status": "built",
-   "note": "A hemicycle of seats."
+   "note": "A hemicycle of seats.",
+   "storyteller_line": "Every seat a dot, *coloured by its side*."
   },
   {
    "id": "venn",
@@ -1038,7 +1096,8 @@
    "replaces": null,
    "storyteller": "proportions › venn",
    "status": "built",
-   "note": "Echoes Oddview-29, the Express Venn diagrams."
+   "note": "Echoes Oddview-29, the Express Venn diagrams.",
+   "storyteller_line": "What each set holds, *and what they share*."
   },
   {
    "id": "proportional-symbol",
@@ -1070,7 +1129,8 @@
    "replaces": null,
    "storyteller": "comparison › icons",
    "status": "built",
-   "note": "FT calls it isotype. Whole numbers only."
+   "note": "FT calls it isotype. Whole numbers only.",
+   "storyteller_line": "Counted in whole symbols, *one per unit*."
   },
   {
    "id": "radar",
@@ -1085,7 +1145,8 @@
    "replaces": null,
    "storyteller": "comparison › radar",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Several measures round a circle, *one shape per row*."
   },
   {
    "id": "parallel-coordinates",
@@ -1101,7 +1162,8 @@
    "replaces": null,
    "storyteller": "comparison › parallel",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Several measures side by side, *one line per row*."
   },
   {
    "id": "chord",
@@ -1117,7 +1179,8 @@
    "replaces": null,
    "storyteller": "network › chord",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "What passes between them, *both ways*."
   },
   {
    "id": "choropleth",
@@ -1132,7 +1195,8 @@
    "replaces": null,
    "storyteller": "place › shaded",
    "status": "built",
-   "note": "Base maps: Natural Earth (world) and ABS boundaries (Australia, states, councils)."
+   "note": "Base maps: Natural Earth (world) and ABS boundaries (Australia, states, councils).",
+   "storyteller_line": "Each region shaded by its number, *darker is more*."
   },
   {
    "id": "proportional-symbol-map",
@@ -1147,7 +1211,8 @@
    "replaces": null,
    "storyteller": "place › circles",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Each place a circle, *its area the number*."
   },
   {
    "id": "flow-map",
@@ -1162,7 +1227,8 @@
    "replaces": null,
    "storyteller": "place › flows",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "From each place to the next, *thicker is more*."
   },
   {
    "id": "contour-map",
@@ -1177,7 +1243,8 @@
    "replaces": null,
    "storyteller": "place › contours",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Where it gathers, *smoothed into bands*."
   },
   {
    "id": "cartogram-equal",
@@ -1192,7 +1259,8 @@
    "replaces": null,
    "storyteller": "place › tiles",
    "status": "built",
-   "note": "FT's UK constituency cartogram is the example."
+   "note": "FT's UK constituency cartogram is the example.",
+   "storyteller_line": "Every region the same size, *shaded by its number*."
   },
   {
    "id": "cartogram-scaled",
@@ -1207,7 +1275,8 @@
    "replaces": null,
    "storyteller": "place › sized",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Each region a circle, *its area the number*."
   },
   {
    "id": "dot-density-map",
@@ -1222,7 +1291,8 @@
    "replaces": null,
    "storyteller": "place › dots",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "One dot for every so many, *gathered where they are*."
   },
   {
    "id": "heatmap-map",
@@ -1237,7 +1307,8 @@
    "replaces": null,
    "storyteller": "place › squares",
    "status": "built",
-   "note": null
+   "note": null,
+   "storyteller_line": "Counted into squares, *darker is busier*."
   },
   {
    "id": "locator-map",
@@ -1252,7 +1323,8 @@
    "replaces": null,
    "storyteller": "place › pins",
    "status": "built",
-   "note": "Not on the FT poster: where a place is, with a pin, a close-up and an overview inset. Otto, 18 Sep 2026."
+   "note": "Not on the FT poster: where a place is, with a pin, a close-up and an overview inset. Otto, 18 Sep 2026.",
+   "storyteller_default": true
   }
  ]
 }

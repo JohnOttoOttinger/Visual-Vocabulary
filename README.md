@@ -67,9 +67,16 @@ two projects; the Storyteller finds the library at `~/Claude-Projects-2026/Visua
 
 The workshop pack's Ten Methods stay the Storyteller's chart modes; library charts are their
 sub-modes. The Storyteller's `place` mode (19 Sep 2026) is the maps: `pins`, `shaded`, `circles`,
-`flows`, `dots`, `tiles`, `sized`, `contours`, `squares`, with the slide's `focus` and `layer`. The map is `LIBRARY` in the Storyteller's `chart_lab.py`, and `storyteller` in
-`catalog/charts.json` records the same thing from this side. Since 19 Sep 2026 the Storyteller
+`flows`, `dots`, `tiles`, `sized`, `contours`, `squares`, with the slide's `focus` and `layer`. It
 offers 73 of the 81 charts; the other eight carry a `storyteller_note` saying why not.
+
+**The pairing is written here, once** (20 Sep 2026). A chart's `storyteller` (`"trend › area"`),
+`storyteller_line` (the one line a slide gets when it gives none) and `storyteller_default` (the
+sub-mode a mode falls back to) live in `catalog/charts.json`. `node bin/vv.mjs storyteller` reads
+them, asks every chart what columns it needs, checks the lot (a pairing twice over, a mode with no
+default, a chart offered but not built) and writes `catalog/storyteller.json`. The Storyteller
+reads that file for its `LIBRARY`, its sub-mode lines and its table checks, and prints its
+`CHART-MODES.md` from it. Adding a chart to a mode is one edit here and those two commands.
 
 `python3 tools/storyteller-check.py` renders the Storyteller's worked chart slides and compares each
 with its snapshot in `reference/storyteller-slides/`, so a change here shows up as a changed slide

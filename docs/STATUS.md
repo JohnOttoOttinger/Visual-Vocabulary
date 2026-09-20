@@ -1,5 +1,23 @@
 # Status
 
+## 20 September 2026 (later) — one place says which chart draws what
+
+The third clean-up off Otto's list. The pairing of a Storyteller sub-mode to a library chart used
+to be written five times: three tables in `chart_lab.py` (73 pairs, 62 lines, 28 lists of columns),
+the `storyteller` field here, and two tables in the Storyteller's `TEMPLATES.md`.
+
+- `node bin/vv.mjs storyteller` writes `catalog/storyteller.json` from `catalog/charts.json` and
+  from the charts' own `needs()` — nothing hand-copied — and refuses a pairing given twice, a mode
+  with no default, a chart offered but not built.
+- The Storyteller reads that file; `chart_lab.py` is 708 → 570 lines, and its `CHART-MODES.md` is
+  printed from the same place, so the docs table cannot drift.
+- Three charts read their `series` columns or one `value` (`area`, `line`,
+  `bar-stacked-proportional`), so both answers are recorded and the slide's own `series` picks.
+- Adding a chart to a mode: one edit here, two commands.
+
+Checked by rebuilding all 66 example slides: 62 byte-identical, the rest within 0.001, and the
+snapshot check clean.
+
 ## 20 September 2026 — one drawing, drawn once
 
 Otto asked what clean-up was worth doing, then took the top two:

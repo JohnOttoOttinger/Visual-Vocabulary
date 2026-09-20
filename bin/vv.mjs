@@ -9,6 +9,11 @@
 //   vv gallery [--out DIR] [--only chart,chart] [--scale 2]
 //       Every example in specs/examples, framed, in plaster and in marquee. --scale 2 renders at
 //       twice the pixels (for a zoomable review page).
+//   vv storyteller
+//       Writes catalog/storyteller.json: every Storyteller mode and sub-mode, the library chart
+//       that draws it, its one line, and the columns that chart reads — taken from the catalogue
+//       and from the charts themselves. The Storyteller reads that file, so the pairing is
+//       written once (Otto, 20 Sep 2026).
 //
 // Fonts come from ~/Library/Fonts; the plaster and grunge textures from the Visual Storyteller
 // (VV_TEXTURES to point elsewhere). Neither is copied into this repo.
@@ -154,6 +159,37 @@ async function main() {
       return out;
     });
     console.log(`${done.length} framed charts in ${outDir}`);
+  } else if (cmd === "storyteller") {
+    const cat = JSON.parse(readFileSync(join(ROOT, "catalog/charts.json"), "utf8"));
+    const needs = await session(async (page) => page.evaluate(() => window.vv.needs()));
+    const modes = {}, seen = new Map(), bad = [];
+    for (const c of cat.charts) {
+      if (!c.storyteller) continue;
+      const [mode, sub] = String(c.storyteller).split("›").map((t) => t.trim());
+      if (!mode || !sub) { bad.push(`${c.id}: "${c.storyteller}" is not "mode › sub-mode"`); continue; }
+      if (c.status !== "built") bad.push(`${c.id}: offered as ${c.storyteller} but not built`);
+      if (!needs[c.id]) bad.push(`${c.id}: offered as ${c.storyteller} but the library has no such chart`);
+      const key = `${mode} › ${sub}`;
+      if (seen.has(key)) bad.push(`${key}: both ${seen.get(key)} and ${c.id}`);
+      seen.set(key, c.id);
+      const m = (modes[mode] ||= { default: null, subs: {} });
+      const n = needs[c.id] || { plain: [], series: [] };
+      m.subs[sub] = { chart: c.id, line: c.storyteller_line || null, needs: n.plain };
+      if (String(n.series) !== String(n.plain)) m.subs[sub].needsWithSeries = n.series;
+      if (c.storyteller_default) {
+        if (m.default) bad.push(`${mode}: ${m.default} and ${sub} both say they are the default`);
+        m.default = sub;
+      }
+    }
+    for (const [mode, m] of Object.entries(modes)) if (!m.default) bad.push(`${mode}: no sub-mode marked "storyteller_default"`);
+    if (bad.length) { console.error(bad.map((b) => `! ${b}`).join("\n")); process.exit(1); }
+    // the default first, the rest in the catalogue's order
+    for (const m of Object.values(modes)) {
+      m.subs = Object.fromEntries([[m.default, m.subs[m.default]], ...Object.entries(m.subs).filter(([k]) => k !== m.default)]);
+    }
+    const file = join(ROOT, "catalog/storyteller.json");
+    writeFileSync(file, JSON.stringify({ about: "Written by `vv storyteller`, from catalog/charts.json and the charts' own needs(). The Visual Storyteller reads this: do not edit it by hand.", modes }, null, 1) + "\n");
+    console.log(`${Object.keys(modes).length} modes, ${seen.size} sub-modes -> ${file}`);
   } else {
     console.log(readFileSync(fileURLToPath(import.meta.url), "utf8").split("\n").filter((l) => l.startsWith("//")).map((l) => l.slice(3)).join("\n"));
   }
