@@ -1,5 +1,18 @@
 # Status
 
+## 20 September 2026 (evening) — a ten-second check, and sheets without hand-work
+
+The last two off Otto's list.
+
+- `node bin/vv.mjs check` draws all 87 worked examples on both grounds — 174 drawings — and reports
+  breaks, warnings and any built chart with no example. **9.4 seconds**, and it exits 1 on a break;
+  proved by breaking the waffle on purpose. It was 78 seconds until the drawing stopped being
+  serialised: a map's SVG is megabytes of text and the check never reads it, so the render page
+  gained a `check` entry point that hands back only the warnings.
+- The Storyteller's `contact_sheet.py` makes a deck's contact sheet (`--cols`, or a squarish sheet
+  by default), and `build_creative.py deck --file <deck>.json --sheet` writes one as it finishes.
+  That montage had been typed out by hand every time a deck was rebuilt.
+
 ## 20 September 2026 (later) — one place says which chart draws what
 
 The third clean-up off Otto's list. The pairing of a Storyteller sub-mode to a library chart used

@@ -48,6 +48,9 @@ its `LIBRARY` and `SUB_LINE`, and a `storyteller` entry in `catalog/charts.json`
   draw it big.
 - No dual-axis charts: FT's `line-dual-axis` becomes two panels on one time axis.
 
+- Run `node bin/vv.mjs check` after touching `src/`: ten seconds, every example on both grounds,
+  and it fails on a break. `vv gallery` and the review page are for looking, not for catching.
+
 ## Maps
 
 - Map data is `geo/*.json`, rebuilt by `tools/build-geo.sh`; the raw downloads stay in `out/`.

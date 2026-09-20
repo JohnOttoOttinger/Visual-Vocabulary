@@ -49,6 +49,17 @@
         series: c.needs ? c.needs({ series: ["A", "B"] }) : [],
       }]));
     },
+    // for `vv check`: draw it, keep the warnings, hand nothing back. A map's SVG is megabytes of
+    // text, and the check never looks at it.
+    async check(spec) {
+      spec = await sized(spec);
+      stage.replaceChildren();
+      const r = drawChart(spec);
+      stage.append(r.node);
+      const warnings = r.warnings || [];
+      stage.replaceChildren();
+      return { warnings };
+    },
     async chart(spec) {
       spec = await sized(spec);
       stage.replaceChildren();
