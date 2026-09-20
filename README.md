@@ -71,8 +71,13 @@ sub-modes. The Storyteller's `place` mode (19 Sep 2026) is the maps: `pins`, `sh
 `catalog/charts.json` records the same thing from this side. Since 19 Sep 2026 the Storyteller
 offers 73 of the 81 charts; the other eight carry a `storyteller_note` saying why not.
 
-`python3 tools/storyteller-check.py` renders every Storyteller worked chart twice — with the drawing
-chart_lab made before the library, and as it is drawn now — and compares them.
+`python3 tools/storyteller-check.py` renders the Storyteller's worked chart slides and compares each
+with its snapshot in `reference/storyteller-slides/`, so a change here shows up as a changed slide
+there; `--accept` takes the new picture when the change is wanted. Until 20 Sep 2026 it compared
+against the drawings `chart_lab.py` made before the library: those drawings are gone, and the
+eleven slides they drew are kept, with what they proved, in `reference/storyteller-before-library/`.
+A deck asks for all its charts in one run (`chart_lab.batch`), so one launch of Chrome draws a
+whole deck.
 
 ## Maps
 
@@ -122,7 +127,9 @@ row and land on the insight last.
 | `src/theme.js` | colour roles and the three grounds, read from `brand/tokens.json` |
 | `brand/sync-tokens.mjs` | copies the design system's `tokens.json` in; run it when the design system changes |
 | `specs/examples/` | one worked example per built chart, every number counted from disk |
-| `tools/storyteller-check.py` | the library against the Storyteller's approved slides |
+| `tools/storyteller-check.py` | the Storyteller's chart slides against their snapshots |
+| `reference/storyteller-slides/` | those snapshots; `--accept` takes new ones |
+| `reference/storyteller-before-library/` | how the Storyteller drew its charts before the library |
 | `tools/examples.py` | writes every example spec, counting its numbers from disk |
 | `tools/gallery_page.py` | builds the review page from the gallery renders; any chart opens large to zoom |
 | `geo/`, `tools/build-geo.sh` | the map data and how it is rebuilt from its sources |
