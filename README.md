@@ -26,6 +26,10 @@ launch. `gallery` renders every example in `specs/examples/` on plaster and on d
 `--only <ids>` limits it to some charts and `--scale 2` renders at twice the pixels; the review
 page takes the maps from `out/gallery-2x/` so they stay sharp when zoomed.
 
+`node bin/vv.mjs check` draws every example on both grounds without taking a picture — about ten
+seconds — and reports what broke, what the charts warned about, and any built chart with no worked
+example. It exits 1 on a break, so it is the thing to run after touching `src/`.
+
 Needs Node 22 and Google Chrome. The four faces are read from `~/Library/Fonts` and never kept here.
 
 ## A spec

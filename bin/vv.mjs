@@ -9,6 +9,11 @@
 //   vv gallery [--out DIR] [--only chart,chart] [--scale 2]
 //       Every example in specs/examples, framed, in plaster and in marquee. --scale 2 renders at
 //       twice the pixels (for a zoomable review page).
+//   vv check [--only chart,chart] [--mode plaster|marquee|both] [--times]
+//       Draws every example in specs/examples on both grounds without taking a picture, and
+//       reports what broke and what the charts warned about, in about ten seconds. Also names
+//       any built chart with no worked example. Exits 1 on an error. --times prints how long
+//       each one took (a chart drawn after a map wears the cost of clearing the map).
 //   vv storyteller
 //       Writes catalog/storyteller.json: every Storyteller mode and sub-mode, the library chart
 //       that draws it, its one line, and the columns that chart reads — taken from the catalogue
@@ -159,6 +164,37 @@ async function main() {
       return out;
     });
     console.log(`${done.length} framed charts in ${outDir}`);
+  } else if (cmd === "check") {
+    const dir = join(ROOT, "specs/examples");
+    const only = flags.only ? new Set(String(flags.only).split(",")) : null;
+    const specs = readdirSync(dir).filter((f) => f.endsWith(".json")).sort().flatMap((f) => specsFrom(join(dir, f)))
+      .filter((s) => !only || only.has(s.chart));
+    const modes = flags.mode && flags.mode !== "both" ? [flags.mode] : ["plaster", "marquee"];
+    const started = Date.now();
+    const { broke, warned } = await session(async (page) => {
+      const broke = [], warned = [];
+      for (const s of specs) for (const mode of modes) {
+        try {
+          // drawn at a slide's size but never photographed: the picture is what costs the seconds
+          const t0 = Date.now();
+          const r = await page.evaluate((spec) => window.vv.check(spec), { ...s, mode, width: s.width || 918, height: s.height || 834 });
+          if (flags.times) console.log(`  ${((Date.now() - t0) / 1000).toFixed(2)}s ${s.name} (${mode})`);
+          for (const w of r.warnings || []) warned.push(`${s.name} (${mode}): ${w}`);
+        } catch (e) {
+          broke.push(`${s.name} (${mode}): ${String(e.message).split("\n")[0]}`);
+        }
+      }
+      return { broke, warned };
+    });
+    const cat = JSON.parse(readFileSync(join(ROOT, "catalog/charts.json"), "utf8"));
+    const drawn = new Set(specs.map((s) => s.chart));
+    const missing = only ? [] : cat.charts.filter((c) => c.status === "built" && !drawn.has(c.id)).map((c) => c.id);
+    for (const b of broke) console.error(`! ${b}`);
+    for (const w of warned) console.log(`? ${w}`);
+    if (missing.length) console.log(`? no worked example: ${missing.join(", ")}`);
+    const secs = ((Date.now() - started) / 1000).toFixed(1);
+    console.log(`${specs.length} examples on ${modes.join(" and ")}, ${broke.length} broken, ${warned.length} warnings, ${secs}s`);
+    if (broke.length) process.exit(1);
   } else if (cmd === "storyteller") {
     const cat = JSON.parse(readFileSync(join(ROOT, "catalog/charts.json"), "utf8"));
     const needs = await session(async (page) => page.evaluate(() => window.vv.needs()));
