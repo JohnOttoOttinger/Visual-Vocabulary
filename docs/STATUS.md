@@ -1,5 +1,22 @@
 # Status
 
+## 20 September 2026 — one drawing, drawn once
+
+Otto asked what clean-up was worth doing, then took the top two:
+
+- **A deck's charts render in one launch of Chrome.** The library always could; the Storyteller was
+  asking chart by chart. `chart_lab.batch` takes every chart slide's spec — the box worked out from
+  the same words, on a canvas that is thrown away — and the deck builds on what comes back. The
+  thirty-five slide deck: 48 seconds to 17; the worked examples 16 to 8. Map decks gain little:
+  their cost is the drawing, not the launch.
+- **The Storyteller's own chart drawings are deleted** (about 870 lines, `chart_lab.py` 1577 → 704).
+  They were the parity reference, but Otto's 19 Sep decisions had landed only in the library, so
+  they had become a second, older design. `reference/storyteller-before-library/` keeps the eleven
+  slides and what they proved; `tools/storyteller-check.py` is now a snapshot check of the
+  Storyteller's own slides (noise floor 0.01–0.05 out of 255, flags past 0.6).
+
+Checked by rebuilding three decks slide for slide: 58 of 66 byte-identical, the rest within 0.02.
+
 ## 19 September 2026 — Otto's map and number review; 73 charts in the Storyteller
 
 - **Maps:** darker sand land; terrain under locator, flow and symbol maps (RESOLVE Ecoregions,

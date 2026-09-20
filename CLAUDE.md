@@ -14,7 +14,8 @@ Storyteller's modes; library charts are their sub-modes. Nothing is copied betwe
 
 The Storyteller calls the library from `chart_lab.build` (its `LIBRARY` table maps each mode and
 sub-mode to a chart here). A change to a chart the Storyteller uses is checked with
-`python3 tools/storyteller-check.py` before it is called done; a chart that takes over another
+`python3 tools/storyteller-check.py` before it is called done (it snapshots the Storyteller's own
+slides; `--accept` when a change is wanted); a chart that takes over another
 Storyteller drawing goes into `PORTED` there. Offering a new sub-mode in the Storyteller is a line in
 its `LIBRARY` and `SUB_LINE`, and a `storyteller` entry in `catalog/charts.json`.
 

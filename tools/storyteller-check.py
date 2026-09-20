@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
-"""Does the library draw the Storyteller's charts the way the Storyteller does?
+"""Do the Storyteller's chart slides still look the way they looked?
 
-The Storyteller's chart_lab.py asks the library for every chart it has (USE_LIBRARY). For every
-worked example in chart_lab.py, this renders the slide twice — once with the drawing chart_lab
-made before the library, once as the Storyteller draws it now — and compares them. The mean difference is out of 255: on the 18 Sep
-2026 examples 0.9 to 3.6, which is text anti-aliasing plus the library's deliberate fixes. A jump
-well past that is a drawing difference; look at check.jpg.
+The library draws every chart on every Storyteller slide, so a change here shows up there. This
+renders the Storyteller's worked chart examples and compares each with its snapshot in
+`reference/storyteller-slides/`, printing the mean difference out of 255. Anything past the floor
+of JPEG noise is a change in the drawing: look at check.jpg, and if the change is wanted, take the
+new picture with --accept.
 
-    python3 tools/storyteller-check.py [--format 4x5] [--out DIR]
+    python3 tools/storyteller-check.py [--format 4x5] [--accept] [--out DIR]
 
-Writes <mode>-storyteller.jpg, <mode>-library.jpg and check.jpg (all pairs side by side) to DIR.
-The Storyteller is read, never written: its slides go to DIR.
+It replaced the parity check against chart_lab's own drawings, which were deleted on 20 Sep 2026
+once the library drew everything; those eleven slides are kept, with what they proved, in
+`reference/storyteller-before-library/`.
 """
 import argparse
 import importlib.util
+import io
 import os
 from pathlib import Path
 
@@ -21,23 +23,11 @@ import numpy as np
 from PIL import Image
 
 HERE = Path(__file__).resolve().parent.parent
+SNAPS = HERE / "reference/storyteller-slides"
 STORYTELLER = Path(os.environ.get("VV_STORYTELLER", Path.home() /
                    "Claude-Projects-2026/Oddtoe-Instagram-Boost-Ads/creative"))
-
-# Storyteller mode (and sub-mode) -> library chart. A mode missing here is not ported yet.
-PORTED = {
-    ("timeline", None): "event-timeline",
-    ("trend", None): "line",
-    ("ranking", None): "bar-ordered",
-    ("proportions", None): "donut",
-    ("comparison", None): "butterfly",
-    ("comparison", "dumbbell"): "dumbbell",
-    ("outlier", None): "beeswarm",
-    ("correlation", None): "scatterplot",
-    ("process", None): "process-spine",
-    ("network", None): "network",
-    ("comparison", "windows"): "windows",
-}
+WIDE = 540          # snapshots are kept at this width; the fresh slide comes down to it to compare
+FLOOR = 0.6         # mean difference out of 255 under which two renders count as the same
 
 
 def load_chart_lab():
@@ -47,44 +37,65 @@ def load_chart_lab():
     return cl
 
 
+QUALITY = 88
+
+
+def small(path):
+    """The slide at snapshot size, through the same JPEG a snapshot went through, so a slide that
+    has not changed compares as not changed."""
+    im = Image.open(path).convert("RGB")
+    if im.width != WIDE:
+        im = im.resize((WIDE, round(im.height * WIDE / im.width)), Image.LANCZOS)
+    buf = io.BytesIO()
+    im.save(buf, "JPEG", quality=QUALITY, optimize=True)
+    return Image.open(io.BytesIO(buf.getvalue())).convert("RGB")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--format", default="4x5")
+    ap.add_argument("--accept", action="store_true", help="take the new pictures as the snapshots")
     ap.add_argument("--out", default=str(HERE / "out/storyteller-check"))
     a = ap.parse_args()
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
+    for old in out.glob("*.jpg"):        # last run's slides are not this run's
+        old.unlink()
+    SNAPS.mkdir(parents=True, exist_ok=True)
     cl = load_chart_lab()
-    cl.HERE = out
-    W, H = cl.bc.FORMATS[a.format]
+    cl.HERE = out                      # the Storyteller is read, never written: slides go to DIR
+    cl.examples(a.format, out=lambda mode, sub: f"{mode}{'-' + sub if sub else ''}.jpg")
 
-    pairs = []
-    for n, (mode, kw) in enumerate(cl.EXAMPLES, 1):
-        sub = kw.get("submode")
-        if (mode, sub) not in PORTED:
+    rows, changed = [], []
+    for f in sorted(out.glob("*.jpg")):
+        if f.name == "check.jpg":
             continue
-        name = f"{mode}{'-' + sub if sub else ''}"
-        # the reference: the drawing chart_lab made before the library; then the slide as it is now
-        for side, on in (("storyteller", False), ("library", True)):
-            cl.USE_LIBRARY = on
-            cl.build(f"{name}-{side}.jpg", mode, page=n, pages=len(cl.EXAMPLES), size=W, height=H, **kw)
-        A = np.asarray(Image.open(out / f"{name}-storyteller.jpg").convert("RGB")).astype(float)
-        B = np.asarray(Image.open(out / f"{name}-library.jpg").convert("RGB")).astype(float)
-        diff = float(np.abs(A - B).mean())
-        pairs.append((name, diff))
-        print(f"{name:<22} -> {PORTED[(mode, sub)]:<16} mean difference {diff:5.2f}")
+        fresh, snap = small(f), SNAPS / f.name
+        if a.accept or not snap.exists():
+            fresh.save(snap, quality=QUALITY, optimize=True)
+            rows.append((f.stem, None))
+            continue
+        d = float(np.abs(np.asarray(fresh).astype(float) - np.asarray(small(snap)).astype(float)).mean())
+        rows.append((f.stem, d))
+        if d > FLOOR:
+            changed.append(f.stem)
 
-    # everything side by side, the old drawing left, the library right
-    tw, th = W // 3, H // 3
-    sheet = Image.new("RGB", (4 * tw + 3 * 12 + 40, (len(pairs) + 1) // 2 * (th + 12)), (255, 255, 255))
-    for k, (name, _) in enumerate(pairs):
-        x = (k % 2) * (2 * tw + 52)
-        y = (k // 2) * (th + 12)
-        for j, side in enumerate(("storyteller", "library")):
-            im = Image.open(out / f"{name}-{side}.jpg").resize((tw, th), Image.LANCZOS)
-            sheet.paste(im, (x + j * (tw + 6), y))
-    sheet.save(out / "check.jpg", quality=88)
-    print(f"side by side: {out / 'check.jpg'}")
+    for name, d in rows:
+        print(f"{name:<24} {'taken' if d is None else f'{d:5.2f}' + ('  CHANGED' if d > FLOOR else '')}")
+
+    # the ones that changed, snapshot left and fresh right, so the eye can settle it
+    if changed:
+        w = WIDE // 2
+        sheet = Image.new("RGB", (2 * w + 18, len(changed) * (round(w * 1.25) + 12)), (255, 255, 255))
+        for k, name in enumerate(changed):
+            for j, im in enumerate((small(SNAPS / f"{name}.jpg"), small(out / f"{name}.jpg"))):
+                im = im.resize((w, round(w * im.height / im.width)), Image.LANCZOS)
+                sheet.paste(im, (6 + j * (w + 6), k * (round(w * 1.25) + 12)))
+        sheet.save(out / "check.jpg", quality=88)
+        print(f"\n{len(changed)} changed; snapshot left, fresh right: {out / 'check.jpg'}")
+        print("if the change is wanted: python3 tools/storyteller-check.py --accept")
+        raise SystemExit(1)
+    print(f"\n{len(rows)} slides, none changed")
 
 
 if __name__ == "__main__":
