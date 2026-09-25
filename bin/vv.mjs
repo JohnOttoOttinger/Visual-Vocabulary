@@ -33,7 +33,7 @@ import puppeteer from "puppeteer-core";
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const FONTS = join(homedir(), "Library/Fonts");
 const TEXTURES = process.env.VV_TEXTURES ||
-  join(homedir(), "Claude-Projects-2026/Oddtoe-Instagram-Boost-Ads/creative/textures");
+  join(homedir(), "Claude-Projects-2026/Oddtoe-Visual-Storyteller/creative/textures");
 const CHROME = process.env.VV_CHROME || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".mjs": "text/javascript", ".json": "application/json",

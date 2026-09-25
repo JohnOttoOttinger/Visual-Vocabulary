@@ -12,6 +12,7 @@ by one, and its sub-mode deck as a contact sheet.
 """
 import html
 import json
+import os
 from pathlib import Path
 
 from PIL import Image
@@ -19,7 +20,8 @@ from PIL import Image
 HERE = Path(__file__).resolve().parent.parent
 SRC, SRC2X, OUT = HERE / "out/gallery", HERE / "out/gallery-2x", HERE / "out/page"
 (OUT / "img").mkdir(parents=True, exist_ok=True)
-CREATIVE = Path.home() / "Claude-Projects-2026/Oddtoe-Instagram-Boost-Ads/creative"
+CREATIVE = Path(os.environ.get("VV_STORYTELLER", Path.home() /
+                "Claude-Projects-2026/Oddtoe-Visual-Storyteller/creative"))
 
 cat = json.loads((HERE / "catalog/charts.json").read_text())
 charts = cat["charts"]
