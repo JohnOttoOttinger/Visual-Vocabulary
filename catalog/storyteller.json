@@ -41,7 +41,13 @@
      "line": "Each row's rank in every period, *the biggest mover marked*.",
      "needs": [
       "label"
-     ]
+     ],
+     "needsWithSeries": [
+      "label",
+      "A",
+      "B"
+     ],
+     "measures": 2
     },
     "squares": {
      "chart": "proportional-squares",
@@ -103,7 +109,13 @@
      "line": "Two numbers on one time axis, *each on its own scale*.",
      "needs": [
       "label"
-     ]
+     ],
+     "needsWithSeries": [
+      "label",
+      "A",
+      "B"
+     ],
+     "measures": 2
     },
     "hours": {
      "chart": "line-interday",
@@ -448,14 +460,26 @@
      "line": "Several measures round a circle, *one shape per row*.",
      "needs": [
       "label"
-     ]
+     ],
+     "needsWithSeries": [
+      "label",
+      "A",
+      "B"
+     ],
+     "measures": 3
     },
     "parallel": {
      "chart": "parallel-coordinates",
      "line": "Several measures side by side, *one line per row*.",
      "needs": [
       "label"
-     ]
+     ],
+     "needsWithSeries": [
+      "label",
+      "A",
+      "B"
+     ],
+     "measures": 2
     }
    }
   },

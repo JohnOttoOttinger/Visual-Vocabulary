@@ -33,7 +33,16 @@ export function drawChart(spec) {
 
   const rows = core.rowsOf(spec.data);
   const needs = chart.needs(spec);
-  const ready = rows.length > 0 && needs.every((col) => rows.some((r) => core.has(r, col)));
+  // Some charts read several measures rather than one `value`: a radar wants three spokes, a bump
+  // two periods. They used to declare `needs: () => ["label"]` and then throw from draw() when the
+  // measures were not there - so a caller reading needs() was told a label was enough, built a
+  // label/value table in good faith, and got a hard error instead of the "data to come" card every
+  // other short table gets. `measures` is that requirement, declared where it can be read.
+  const short = chart.measures
+    && core.seriesOf(rows, { series: spec.series, axes: spec.axes }).cols.length < chart.measures
+    ? chart.measures : 0;
+  const ready = !short && rows.length > 0
+    && needs.every((col) => rows.some((r) => core.has(r, col)));
   let insight = null;
   if (ready) {
     for (const col of needs) {
@@ -56,18 +65,22 @@ export function drawChart(spec) {
       core.dottedBox(g.append("g").attr("id", "enclosure"),
         [insight[0] - m, insight[1] - m, insight[2] + m, insight[3] + m], th.ink, S);
     }
-  } else placeholder(g, box, spec.chart, needs, S, th);
+  } else placeholder(g, box, spec.chart, needs, S, th, short);
 
   return { node: svg.node(), bleed: b, insight, warnings };
 }
 
 // A drafted slide with no numbers yet still renders, so a shape can be looked at before the table
 // is written: a dotted box naming the columns the chart reads.
-function placeholder(g, box, id, needs, S, th) {
+function placeholder(g, box, id, needs, S, th, short = 0) {
   core.dottedBox(g, box, th.roles.neutral, S, S * 0.03);
   const cx = (box[0] + box[2]) / 2, cy = (box[1] + box[3]) / 2;
+  const measures = ["", "one measure", "two measures", "three measures"][short] || `${short} measures`;
+  const line = short
+    ? `${id} reads: ${needs.join(", ")}, and ${measures} named in "series"`
+    : `${id} reads: ${needs.join(", ")}`;
   core.text(g, "DATA TO COME", { x: cx, y: cy - S * 0.01, face: "bebas", px: S * 0.07, fill: th.roles.neutral, align: "c", valign: "bottom" });
-  core.text(g, `${id} reads: ${needs.join(", ")}`, { x: cx, y: cy + S * 0.03, face: "arvo", px: S * 0.026, fill: th.body, align: "c" });
+  core.text(g, line, { x: cx, y: cy + S * 0.03, face: "arvo", px: S * 0.026, fill: th.body, align: "c" });
 }
 
 // ---------------------------------------------------------------- the specimen slide

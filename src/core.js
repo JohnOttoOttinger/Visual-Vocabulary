@@ -31,6 +31,21 @@ export function rowsOf(data) {
 
 // numbers must be numbers; anything else (a name, a date, a time, a list) must just be there
 const NUMERIC = new Set(["value", "value2", "size", "target", "x", "y"]);
+// A column that holds a name, or a list of them: a network's `to`, a venn's `sets`. The charts
+// read these with `for (const t of r.to || [])`, so a number arrived at d3 as
+// "number 418 is not iterable" and a caller had no idea which row or column was wrong
+// (25 Sep 2026). Say it plainly instead, and accept a bare name as a list of one.
+export function listOf(rows, col, id) {
+  return rows.map((r, k) => {
+    const v = r[col];
+    if (v === undefined || v === null || v === "") return [];
+    if (Array.isArray(v)) return v.map(String);
+    if (typeof v === "string") return [v];
+    throw new Error(`${id}: row ${k + 1} has "${col}": ${JSON.stringify(v)}`
+      + ` — give a name, or a list of names, not a ${typeof v}`);
+  });
+}
+
 export function has(r, col) {
   const v = r[col];
   return NUMERIC.has(col) ? isNum(v) : Boolean(v !== undefined && v !== null && v !== "" && (v.length ?? true));
@@ -93,11 +108,16 @@ export function pickInsight(rows, want, fallback) {
 }
 
 export function degrees(rows) {
+  // through listOf, because this runs from a chart's insight() - which render.js calls BEFORE
+  // draw(), so a bad `to` blew up here first and never reached the chart's own clear message
+  const to = listOf(rows, "to", "network");
   const deg = {};
-  for (const r of rows) for (const t of r.to || []) {
-    deg[r.label] = (deg[r.label] || 0) + 1;
-    deg[t] = (deg[t] || 0) + 1;
-  }
+  rows.forEach((r, k) => {
+    for (const t of to[k]) {
+      deg[r.label] = (deg[r.label] || 0) + 1;
+      deg[t] = (deg[t] || 0) + 1;
+    }
+  });
   return deg;
 }
 

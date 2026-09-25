@@ -18,7 +18,10 @@ function ranks(rows, periods) {
 export default {
   id: "bump",
   name: "Bump",
-  needs: () => ["label"],
+  needs: (spec) => (spec && spec.series && spec.series.length
+    ? ["label", ...spec.series] : ["label"]),
+  // A rank needs two periods to move between, so "series" must name at least two.
+  measures: 2,
   insight(rows, spec) {
     const periods = spec.series || [];
     if (periods.length < 2) return null;
