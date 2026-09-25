@@ -12,7 +12,10 @@ const d3 = globalThis.d3;
 export default {
   id: "radar",
   name: "Radar",
-  needs: () => ["label"],
+  needs: (spec) => (spec && spec.series && spec.series.length
+    ? ["label", ...spec.series] : ["label"]),
+  // Three or more measures round a circle, so "series" must name at least three.
+  measures: 3,
   insight: "first",
   draw(g, rows, [x0, y0, x1, y1], ctx) {
     const { S, th, paint: P } = ctx, { names, cols } = core.seriesOf(rows, ctx), K = cols.length;

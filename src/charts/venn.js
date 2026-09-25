@@ -15,10 +15,11 @@ export default {
   insight: (rows) => rows.reduce((m, r, i) => ((r.sets || []).length > (rows[m].sets || []).length ? i : m), 0),
   draw(g, rows, [x0, y0, x1, y1], ctx) {
     const { S, th, paint: P } = ctx;
-    const names = [...new Set(rows.flatMap((r) => r.sets || []))].slice(0, 3), n = names.length;
+    const sets = core.listOf(rows, "sets", "venn");
+    const names = [...new Set(sets.flat())].slice(0, 3), n = names.length;
     if (n < 2) throw new Error("venn: name at least two sets");
-    const region = new Map(rows.map((r, i) => [keyOf(r.sets), { v: r.value, i }]));
-    const total = (s) => d3.sum(rows.filter((r) => (r.sets || []).includes(s)), (r) => r.value);
+    const region = new Map(rows.map((r, i) => [keyOf(sets[i]), { v: r.value, i }]));
+    const total = (nm) => d3.sum(rows.filter((r, i) => sets[i].includes(nm)), (r) => r.value);
     const cx = (x0 + x1) / 2, cy = y0 + (y1 - y0) * (n === 3 ? 0.52 : 0.5), span = Math.min(x1 - x0, (y1 - y0) * (n === 3 ? 1 : 1.3));
     const tmax = Math.max(...names.map(total)) || 1;
     const rBase = span * (n === 3 ? 0.27 : 0.30), rad = names.map((s) => rBase * (0.75 + 0.25 * Math.sqrt(total(s) / tmax)));

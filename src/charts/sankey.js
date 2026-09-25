@@ -11,13 +11,25 @@ const src = (r) => r.source ?? r.label, dst = (r) => r.target ?? (Array.isArray(
 export default {
   id: "sankey",
   name: "Sankey",
-  needs: () => ["value"],
+  // every row is a flow: where it comes from, where it goes, how much. `needs` said only
+  // "value", so a caller could satisfy it and still have no ends to draw between
+  needs: () => ["label", "to", "value"],
   insight: (rows, spec) => {
     if (spec.insight) { const k = rows.findIndex((r) => src(r) === spec.insight || dst(r) === spec.insight); if (k >= 0) return k; }
     return rows.reduce((m, r, i) => (r.value > rows[m].value ? i : m), 0);
   },
   draw(g, rows, [x0, y0, x1, y1], ctx) {
     const { S, th, paint: P } = ctx, R = th.roles, lp = S * 0.022;
+    // Every row is a flow FROM somewhere TO somewhere. A table of bare values has neither, so
+    // both ends resolved to undefined, every flow ran from one nameless node back to itself, and
+    // d3-sankey said "circular link" - true, and no help at all (25 Sep 2026).
+    const noEnds = rows.map((r, k) => (src(r) === undefined || dst(r) === undefined ? k + 1 : 0)).filter(Boolean);
+    if (noEnds.length) {
+      throw new Error(`sankey: row(s) ${noEnds.join(", ")} do not say where the flow goes`
+        + ' — give each row "label" and "to", or "source" and "target"');
+    }
+    const loops = rows.map((r, k) => (src(r) === dst(r) ? k + 1 : 0)).filter(Boolean);
+    if (loops.length) throw new Error(`sankey: row(s) ${loops.join(", ")} flow from a thing to itself`);
     const names = [...new Set(rows.flatMap((r) => [src(r), dst(r)]))];
     const graph = d3.sankey().nodeId((d) => d.name).nodeWidth(S * 0.022).nodePadding(S * 0.03)
       .nodeSort(null).extent([[x0, y0 + S * 0.01], [x1, y1 - S * 0.01]])({

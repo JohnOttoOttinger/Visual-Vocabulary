@@ -8,7 +8,10 @@ import * as core from "../core.js";
 export default {
   id: "bar-grouped",
   name: "Grouped bar",
-  needs: () => ["label"],
+  needs: (spec) => (spec && spec.series && spec.series.length
+    ? ["label", ...spec.series] : ["label"]),
+  // A group of one bar is a bar, so it reads two or more measures.
+  measures: 2,
   // the row whose series sit furthest apart
   insight(rows, spec) {
     const { cols: s } = core.seriesOf(rows, spec);
