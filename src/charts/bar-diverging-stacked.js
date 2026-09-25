@@ -76,7 +76,10 @@ export function leaning(rows, spec) {
 export default {
   id: "bar-diverging-stacked",
   name: "Diverging stacked bar",
-  needs: () => ["label"],
+  needs: (spec) => (spec && spec.series && spec.series.length
+    ? ["label", ...spec.series] : ["label"]),
+  // Two directions, each stacked: two or more measures.
+  measures: 2,
   insight: leaning,
   ringOnHue: true,
   draw: (g, rows, box, ctx) => diverging(g, rows, box, ctx),

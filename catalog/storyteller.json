@@ -42,10 +42,8 @@
      "needs": [
       "label"
      ],
-     "needsWithSeries": [
-      "label",
-      "A",
-      "B"
+     "needsBesidesSeries": [
+      "label"
      ],
      "measures": 2
     },
@@ -76,7 +74,7 @@
      "needs": [
       "value"
      ],
-     "needsWithSeries": [
+     "needsBesidesSeries": [
       "label"
      ]
     },
@@ -86,7 +84,7 @@
      "needs": [
       "value"
      ],
-     "needsWithSeries": [
+     "needsBesidesSeries": [
       "label"
      ]
     },
@@ -102,7 +100,11 @@
      "line": "Each period one column, *split into its parts*.",
      "needs": [
       "label"
-     ]
+     ],
+     "needsBesidesSeries": [
+      "label"
+     ],
+     "measures": 2
     },
     "panels": {
      "chart": "line-two-panel",
@@ -110,10 +112,8 @@
      "needs": [
       "label"
      ],
-     "needsWithSeries": [
-      "label",
-      "A",
-      "B"
+     "needsBesidesSeries": [
+      "label"
      ],
      "measures": 2
     },
@@ -249,7 +249,7 @@
       "label",
       "value"
      ],
-     "needsWithSeries": [
+     "needsBesidesSeries": [
       "label"
      ]
     },
@@ -266,7 +266,11 @@
      "line": "Each row one bar, *split into its parts*.",
      "needs": [
       "label"
-     ]
+     ],
+     "needsBesidesSeries": [
+      "label"
+     ],
+     "measures": 2
     },
     "waffle": {
      "chart": "waffle",
@@ -339,7 +343,11 @@
      "line": "Each row against each column, *darker is more*.",
      "needs": [
       "label"
-     ]
+     ],
+     "needsBesidesSeries": [
+      "label"
+     ],
+     "measures": 2
     },
     "heatmap": {
      "chart": "heatmap-quantity",
@@ -387,14 +395,22 @@
      "line": "{a} against {b}, *row by row*.",
      "needs": [
       "label"
-     ]
+     ],
+     "needsBesidesSeries": [
+      "label"
+     ],
+     "measures": 2
     },
     "columns": {
      "chart": "column-grouped",
      "line": "{a} against {b}, *row by row*.",
      "needs": [
       "label"
-     ]
+     ],
+     "needsBesidesSeries": [
+      "label"
+     ],
+     "measures": 2
     },
     "diverging": {
      "chart": "bar-diverging",
@@ -409,7 +425,11 @@
      "line": "Each row's answers either side of the middle, *the most positive right*.",
      "needs": [
       "label"
-     ]
+     ],
+     "needsBesidesSeries": [
+      "label"
+     ],
+     "measures": 2
     },
     "spine": {
      "chart": "spine",
@@ -461,10 +481,8 @@
      "needs": [
       "label"
      ],
-     "needsWithSeries": [
-      "label",
-      "A",
-      "B"
+     "needsBesidesSeries": [
+      "label"
      ],
      "measures": 3
     },
@@ -474,10 +492,8 @@
      "needs": [
       "label"
      ],
-     "needsWithSeries": [
-      "label",
-      "A",
-      "B"
+     "needsBesidesSeries": [
+      "label"
      ],
      "measures": 2
     }
@@ -560,6 +576,8 @@
      "chart": "sankey",
      "line": "Where it goes, *each band as wide as the amount*.",
      "needs": [
+      "label",
+      "to",
       "value"
      ]
     }

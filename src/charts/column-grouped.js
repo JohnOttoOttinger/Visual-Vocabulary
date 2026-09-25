@@ -7,7 +7,10 @@ import barGrouped from "./bar-grouped.js";
 export default {
   id: "column-grouped",
   name: "Grouped column",
-  needs: () => ["label"],
+  needs: (spec) => (spec && spec.series && spec.series.length
+    ? ["label", ...spec.series] : ["label"]),
+  // A group of one column is a column, so it reads two or more measures.
+  measures: 2,
   insight: barGrouped.insight,
   ringOnHue: true,
   draw(g, rows, [x0, y0, x1, y1], ctx) {

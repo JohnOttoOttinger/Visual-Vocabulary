@@ -7,7 +7,10 @@ import { seq, onFill } from "../theme.js";
 export default {
   id: "heatmap-category",
   name: "Heatmap, categories",
-  needs: () => ["label"],
+  needs: (spec) => (spec && spec.series && spec.series.length
+    ? ["label", ...spec.series] : ["label"]),
+  // A grid needs columns to be a grid: two or more measures.
+  measures: 2,
   insight: "none",
   draw(g, rows, [x0, y0, x1, y1], ctx) {
     const { S, th } = ctx, { names, cols } = core.seriesOf(rows, ctx);

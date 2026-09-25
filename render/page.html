@@ -46,7 +46,10 @@
     needs() {
       return Object.fromEntries(Object.entries(CHARTS).map(([id, c]) => [id, {
         plain: c.needs ? c.needs({}) : [],
-        series: c.needs ? c.needs({ series: ["A", "B"] }) : [],
+        // asked with two markers rather than two plausible names, so a reader can tell which
+        // entries ARE the series slots and substitute the slide's own. Stored as "A" and "B",
+        // they looked like column names and the Storyteller went looking for columns called A.
+        series: c.needs ? c.needs({ series: ["\u0000s1", "\u0000s2"] }) : [],
         // how many measures the chart reads, when one value is not enough (a radar's three
         // spokes, a bump's two periods). Absent means one is enough.
         measures: c.measures || 0,

@@ -11,7 +11,9 @@ const src = (r) => r.source ?? r.label, dst = (r) => r.target ?? (Array.isArray(
 export default {
   id: "sankey",
   name: "Sankey",
-  needs: () => ["value"],
+  // every row is a flow: where it comes from, where it goes, how much. `needs` said only
+  // "value", so a caller could satisfy it and still have no ends to draw between
+  needs: () => ["label", "to", "value"],
   insight: (rows, spec) => {
     if (spec.insight) { const k = rows.findIndex((r) => src(r) === spec.insight || dst(r) === spec.insight); if (k >= 0) return k; }
     return rows.reduce((m, r, i) => (r.value > rows[m].value ? i : m), 0);

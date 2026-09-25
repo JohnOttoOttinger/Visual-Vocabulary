@@ -73,7 +73,10 @@ export function biggest(rows, spec) {
 export default {
   id: "bar-stacked",
   name: "Stacked bar",
-  needs: () => ["label"],
+  needs: (spec) => (spec && spec.series && spec.series.length
+    ? ["label", ...spec.series] : ["label"]),
+  // A stack of one part is not a stack, so it reads two or more measures.
+  measures: 2,
   insight: biggest,
   ringOnHue: true,
   draw: (g, rows, box, ctx) => stacked(g, rows, box, ctx),
