@@ -1,7 +1,7 @@
 # Visual Vocabulary — rules for Claude
 
 Oddview-60 (proposed 18 Sep 2026): Otto's chart library for Oddtoe and Datalabs. A standalone
-project; the Visual Storyteller (Oddview-20, `~/Claude-Projects-2026/Oddtoe-Instagram-Boost-Ads`)
+project; the Visual Storyteller (Oddview-20, `~/Claude-Projects-2026/Oddtoe-Visual-Storyteller`)
 is its first user and After Effects its second. Start from `README.md`, `docs/STATUS.md` and
 `catalog/charts.json`.
 

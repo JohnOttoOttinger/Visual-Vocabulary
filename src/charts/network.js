@@ -81,11 +81,12 @@ export default {
   insight: "degree",
   draw(g, rows, [x0, y0, x1, y1], ctx) {
     const { S, th, paint: P } = ctx, R = th.roles;
+    const to = core.listOf(rows, "to", "network");
     const names = rows.map((r) => r.label);
-    for (const r of rows) for (const t of r.to || []) if (!names.includes(t)) names.push(t);
+    for (const ts of to) for (const t of ts) if (!names.includes(t)) names.push(t);
     const ix = Object.fromEntries(names.map((nm, i) => [nm, i]));
     const keys = new Set();
-    for (const r of rows) for (const t of r.to || []) { const [a, b] = [ix[r.label], ix[t]].sort((p, q) => p - q); keys.add(`${a},${b}`); }
+    rows.forEach((r, k) => { for (const t of to[k]) { const [a, b] = [ix[r.label], ix[t]].sort((p, q) => p - q); keys.add(`${a},${b}`); } });
     const edges = [...keys].map((k) => k.split(",").map(Number)).sort((p, q) => p[0] - q[0] || p[1] - q[1]);
     const deg = core.degrees(rows);
     const size = names.map((nm, i) => (i < rows.length && core.isNum(rows[i].value) ? rows[i].value : deg[nm] || 1));

@@ -25,7 +25,7 @@ from PIL import Image
 HERE = Path(__file__).resolve().parent.parent
 SNAPS = HERE / "reference/storyteller-slides"
 STORYTELLER = Path(os.environ.get("VV_STORYTELLER", Path.home() /
-                   "Claude-Projects-2026/Oddtoe-Instagram-Boost-Ads/creative"))
+                   "Claude-Projects-2026/Oddtoe-Visual-Storyteller/creative"))
 WIDE = 540          # snapshots are kept at this width; the fresh slide comes down to it to compare
 FLOOR = 0.6         # mean difference out of 255 under which two renders count as the same
 

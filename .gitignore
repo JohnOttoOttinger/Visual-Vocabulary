@@ -3,3 +3,7 @@ out/
 .DS_Store
 *.otf
 *.ttf
+
+# Posters and maps: exports, rebuilt by tools/poster.py and bin/vv.mjs. The repo has never
+# tracked a PDF, and the other repos keep renders out the same way.
+*.pdf

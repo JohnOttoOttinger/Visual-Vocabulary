@@ -10,7 +10,10 @@ const d3 = globalThis.d3;
 export default {
   id: "parallel-coordinates",
   name: "Parallel coordinates",
-  needs: () => ["label"],
+  needs: (spec) => (spec && spec.series && spec.series.length
+    ? ["label", ...spec.series] : ["label"]),
+  // One line per row across the measures, so "series" must name at least two.
+  measures: 2,
   insight: "first",
   draw(g, rows, [x0, y0, x1, y1], ctx) {
     const { S, th, paint: P } = ctx, { names, cols } = core.seriesOf(rows, ctx), K = cols.length;

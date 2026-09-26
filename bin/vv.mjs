@@ -33,7 +33,7 @@ import puppeteer from "puppeteer-core";
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const FONTS = join(homedir(), "Library/Fonts");
 const TEXTURES = process.env.VV_TEXTURES ||
-  join(homedir(), "Claude-Projects-2026/Oddtoe-Instagram-Boost-Ads/creative/textures");
+  join(homedir(), "Claude-Projects-2026/Oddtoe-Visual-Storyteller/creative/textures");
 const CHROME = process.env.VV_CHROME || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".mjs": "text/javascript", ".json": "application/json",
@@ -211,7 +211,13 @@ async function main() {
       const m = (modes[mode] ||= { default: null, subs: {} });
       const n = needs[c.id] || { plain: [], series: [] };
       m.subs[sub] = { chart: c.id, line: c.storyteller_line || null, needs: n.plain };
-      if (String(n.series) !== String(n.plain)) m.subs[sub].needsWithSeries = n.series;
+      // what the chart reads BESIDES its series, so a caller appends the slide's own series
+      // names to it. The probe markers never reach the file.
+      const base = (n.series || []).filter((c) => !String(c).startsWith("\u0000"));
+      if (String(n.series) !== String(n.plain)) m.subs[sub].needsBesidesSeries = base;
+      // A label and a value are not always enough. Carried through so the Storyteller can say so
+      // in its picker, and build a table that fits, instead of discovering it at draw time.
+      if (n.measures) m.subs[sub].measures = n.measures;
       if (c.storyteller_default) {
         if (m.default) bad.push(`${mode}: ${m.default} and ${sub} both say they are the default`);
         m.default = sub;

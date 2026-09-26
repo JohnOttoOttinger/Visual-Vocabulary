@@ -8,7 +8,10 @@ import { timePanel, xLabels, panelScale } from "./panel-line.js";
 export default {
   id: "line-two-panel",
   name: "Two panels on one time axis",
-  needs: () => ["label"],
+  needs: (spec) => (spec && spec.series && spec.series.length
+    ? ["label", ...spec.series] : ["label"]),
+  // One panel per measure, so "series" must name two - or the rows carry value and value2.
+  measures: 2,
   insight: "none",
   draw(g, rows, [x0, y0, x1, y1], ctx) {
     const { S } = ctx, { names, cols } = core.seriesOf(rows, ctx);
