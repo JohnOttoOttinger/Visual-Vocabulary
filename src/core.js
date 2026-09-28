@@ -157,7 +157,11 @@ export function num(v, ctx, short = false) {
   return `${ctx.prefix || ""}${s}${short ? "" : ctx.unit || ""}`;
 }
 
-export function niceTicks(lo, hi, want = 4) {
+// `want` is how many gaps the axis is cut into. Four is coarse: a series peaking at 41 takes a
+// step of 20 and a top tick of 60, so a third of the plot is empty above the data and the chart
+// reads as small under its own headline (Otto, 28 Sep 2026). Five gives a step of 10 and a top
+// of 50, which the data actually reaches.
+export function niceTicks(lo, hi, want = 5) {
   const span = (hi - lo) || Math.abs(hi) || 1;
   const raw = span / want, mag = 10 ** Math.floor(Math.log10(raw));
   const step = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((s) => s >= raw);

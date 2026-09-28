@@ -17,7 +17,7 @@ export default {
     const names = ctx.axes || ["", ""], tp = S * 0.021;
     const [ylo, yhi, yt] = core.spanOf(ys), [xlo, xhi, xt] = core.spanOf(xs);
     const labW = Math.max(...yt.map((t) => core.measure(core.num(t, ctx, true), "arvo", tp).w));
-    const px0 = x0 + core.axisRoom(names[1], ctx) + labW + S * 0.03, px1 = x1 - S * 0.02, py0 = y0 + S * 0.035, py1 = y1 - S * 0.10;
+    const px0 = x0 + core.axisRoom(names[1], ctx) + labW + S * 0.03, px1 = x1 - S * 0.02, py0 = y0 + S * 0.020, py1 = y1 - S * 0.10;
     const X = (v) => px0 + (px1 - px0) * (v - xlo) / ((xhi - xlo) || 1);
     const Y = (v) => py1 - (py1 - py0) * (v - ylo) / ((yhi - ylo) || 1);
     const faint = mix(R.neutral, th.ground, 0.45);

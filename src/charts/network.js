@@ -93,8 +93,17 @@ export default {
     const smax = Math.max(...size) || 1;
     const rad = size.map((s) => S * (0.014 + 0.026 * Math.sqrt(s / smax)));
     const pos = layout(names.length, edges);
-    const mx = S * 0.10, my = S * 0.06;
-    const Pt = pos.map(([u, v]) => [x0 + mx + (x1 - x0 - 2 * mx) * u, y0 + my + (y1 - y0 - 2 * my - S * 0.03) * v]);
+    // my was 6% of S held above the graph, but a node's label sits under it, so most of that
+    // was empty and showed as a gap under the headline (Otto, 28 Sep 2026).
+    const mx = S * 0.10, my = S * 0.025;
+    // The layout normalises each axis on its own, so mapping u and v straight onto the box
+    // stretches the graph to the box's shape: in a 16:9 frame that pulled the nodes apart
+    // sideways and left one hanging off the edge (Otto, 28 Sep 2026). One scale for both axes
+    // keeps the network the shape the force layout made, centred in whatever room there is.
+    const availW = x1 - x0 - 2 * mx, availH = y1 - y0 - 2 * my - S * 0.03;
+    const span = Math.min(availW, availH);
+    const ox = x0 + mx + (availW - span) / 2, oy = y0 + my + (availH - span) / 2;
+    const Pt = pos.map(([u, v]) => [ox + span * u, oy + span * v]);
     const links = g.append("g").attr("id", "links");
     for (const [a, b] of edges) {
       const hot = P.ins !== null && P.ins !== undefined && (a === P.ins || b === P.ins);
