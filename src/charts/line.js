@@ -23,10 +23,27 @@ function axes(g, rows, lo, hi, ticks, [x0, y0, x1, y1], ctx, { top, right }) {
     core.dottedLine(grid, [px0, Y(t)], [px1, Y(t)], mix(th.roles.neutral, th.ground, 0.45), S);
     core.text(grid, core.num(t, ctx, true), { x: px0 - S * 0.02, y: Y(t), face: "arvo", px: tp, fill: th.body, align: "r", valign: "mid" });
   }
-  const every = Math.max(1, Math.ceil(rows.length / 7));
+  // Thin the axis by WIDTH, not by count. It used to keep about seven labels whatever they said
+  // and whatever room there was, then force the last one as well — so on a narrow box the last
+  // two sat on top of each other ("Week 7" over "Week 8"). Measure the widest label, work out how
+  // many steps apart they have to be to clear each other, and drop any that would still collide
+  // with the last one, which is always kept (Otto, 28 Sep 2026).
+  const labels = rows.map((r) => String(r.label ?? ""));
+  const widest = Math.max(...labels.map((t) => core.measure(t, "arvo", tp).w), 1);
+  const step = (px1 - px0) / Math.max(1, rows.length - 1);
+  const every = Math.max(1, Math.ceil((widest + S * 0.020) / Math.max(1, step)));
+  const last = rows.length - 1;
+  const keep = new Set([last]);
+  for (let i = 0; i <= last; i += every) keep.add(i);
+  for (let i = 0; i <= last; i++) if (P.on(i)) keep.add(i);
+  // anything too close to the last label loses, because the last one is the one that must show
+  for (const i of [...keep]) {
+    if (i === last) continue;
+    if ((X(last) - X(i)) < (widest + S * 0.020) * 0.9) keep.delete(i);
+  }
   const xl = g.append("g").attr("id", "axis-x");
   rows.forEach((r, i) => {
-    if (i % every === 0 || i === rows.length - 1 || P.on(i))
+    if (keep.has(i))
       core.text(xl, r.label ?? "", { x: X(i), y: py1 + S * 0.030, face: "arvo", px: tp, fill: P.on(i) ? th.ink : th.body, align: "c", valign: "asc" });
   });
   return { X, Y, px0, px1, py0, py1 };
@@ -36,7 +53,15 @@ function single(g, rows, box, ctx) {
   const { S, th, paint: P } = ctx;
   const vals = rows.map((r) => r.value);
   const [lo, hi, ticks] = core.spanOf(vals);
-  const { X, Y, px0, px1 } = axes(g, rows, lo, hi, ticks, box, ctx, { top: S * 0.16, right: S * 0.02 });
+  // The top reserve is for the insight callout — a value in Depot and, sometimes, a note under
+  // it. It was a flat S * 0.16 whether or not there was a note to put there, so a chart whose
+  // insight is a bare number held back a sixth of the frame for nothing. Measured on a 16:9
+  // slide: 173px reserved, ~50px used, and the plot pushed that far from its own headline
+  // (Otto, 28 Sep 2026). Reserve what the callout actually needs.
+  const insIdx = P.ins ?? rows.length - 1;
+  const hasNote = Boolean(rows[insIdx] && rows[insIdx].note);
+  const { X, Y, px0, px1 } = axes(g, rows, lo, hi, ticks, box, ctx,
+    { top: S * (hasNote ? 0.16 : 0.072), right: S * 0.02 });
   const pts = vals.map((v, i) => [X(i), Y(v)]);
   const marks = g.append("g").attr("id", "marks");
   if (ctx.options.area !== false)

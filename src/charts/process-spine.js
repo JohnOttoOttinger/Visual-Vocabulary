@@ -50,7 +50,9 @@ export default {
     const ch = Math.min(S * 0.24, (y1 - y0) * 0.46);
     const total = n * w + (n - 1) * gaph + point, start = x0 + ((x1 - x0) - total) / 2;
     const labelBlock = (y1 - y0) * 0.30;
-    const cy0 = y0 + Math.max(0, ((y1 - y0) - ch - labelBlock) / 2), cy1 = cy0 + ch, ccy = (cy0 + cy1) / 2;
+    // sit the band near the top rather than centring it: centring split the spare height and
+    // put half of it between the headline and the first chevron
+    const cy0 = y0 + Math.round((y1 - y0) * 0.04), cy1 = cy0 + ch, ccy = (cy0 + cy1) / 2;
     const tones = [R.muted, mix(R.muted, R.neutral, 0.24)];
     // a little narrower than the chevron, so a clamped end column has somewhere to sit without
     // meeting the edge of the drawing and being cut mid-word

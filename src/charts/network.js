@@ -93,7 +93,9 @@ export default {
     const smax = Math.max(...size) || 1;
     const rad = size.map((s) => S * (0.014 + 0.026 * Math.sqrt(s / smax)));
     const pos = layout(names.length, edges);
-    const mx = S * 0.10, my = S * 0.06;
+    // my was 6% of S held above the graph, but a node's label sits under it, so most of that
+    // was empty and showed as a gap under the headline (Otto, 28 Sep 2026).
+    const mx = S * 0.10, my = S * 0.025;
     // The layout normalises each axis on its own, so mapping u and v straight onto the box
     // stretches the graph to the box's shape: in a 16:9 frame that pulled the nodes apart
     // sideways and left one hanging off the edge (Otto, 28 Sep 2026). One scale for both axes
