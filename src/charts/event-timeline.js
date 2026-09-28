@@ -45,8 +45,13 @@ export default {
   lying(g, rows, [x0, y0, x1, y1], ctx) {
     const { S, th, paint: P } = ctx, R = th.roles;
     const n = rows.length, cy = (y0 + y1) / 2;
-    const lp = S * 0.044, npx = S * 0.024, gap = S * 0.034;
-    const colw = Math.min(S * 0.30, (x1 - x0) / Math.max(1, n) - S * 0.02);
+    // Everything reaches out from the spine in proportion to the room there is, rather than at a
+    // fixed fraction of S: a lying timeline in a tall box used to draw a thin ribbon across the
+    // middle and leave the rest empty (Otto, 28 Sep 2026).
+    const half = (y1 - y0) / 2;
+    const lp = Math.min(S * 0.058, half * 0.24), npx = Math.min(S * 0.032, half * 0.135);
+    const gap = Math.min(S * 0.080, half * 0.30);
+    const colw = Math.min(S * 0.34, (x1 - x0) / Math.max(1, n) - S * 0.02);
     const cap = core.measure("H", "bebas", lp).asc;
     // time runs to an arrowhead, so the last entry stops short of the right edge
     const head = S * 0.075;
@@ -67,10 +72,12 @@ export default {
       const sgn = above ? -1 : 1, ty = cy + (gap + rad) * sgn;
       core.dottedLine(row, [x, cy + (rad + S * 0.010) * sgn], [x, ty - S * 0.010 * sgn], R.neutral, S);
       // above the spine the block is built upwards, so the note sits under its own label either way
-      const noteH = r.note ? S * 0.012 + core.paraHeight(r.note, npx, colw, 3) : 0;
+      // four lines, not three: a lying timeline's column is half the width an upright one's is,
+      // so the same sentence needs more of them and was being cut mid-clause
+      const noteH = r.note ? S * 0.012 + core.paraHeight(r.note, npx, colw, 4) : 0;
       const labY = above ? ty - noteH - cap * 0.5 : ty + cap * 0.5;
-      const lb = core.text(row, r.label || "", { x, y: labY, face: "bebas", px: lp, fill: P.words(i), align: "m", valign: "mid" });
-      const [bottom] = core.para(row, r.note || "", { x, y: lb[3] + S * 0.012 + npx * 0.4, px: npx, width: colw, fill: th.body, align: "m", maxLines: 3 });
+      const lb = core.text(row, r.label || "", { x, y: labY, face: "bebas", px: lp, fill: P.words(i), align: "c", valign: "mid" });
+      const [bottom] = core.para(row, r.note || "", { x, y: lb[3] + S * 0.012 + npx * 0.4, px: npx, width: colw, fill: th.body, align: "c", maxLines: 4 });
       if (P.on(i)) ib = core.union(lb, [x - colw / 2, lb[3], x + colw / 2, bottom], [x - rad, cy - rad, x + rad, cy + rad]);
     });
     return ib;
