@@ -153,7 +153,13 @@ export class Paint {
 
 export function num(v, ctx, short = false) {
   if (!isNum(v)) return "";
-  const s = Number.isInteger(v) ? d3.format(",")(v) : d3.format(",.1f")(v);
+  // `decimals` is for money and anything else where the count of places is the point: $2.59 is
+  // not $2.6 (Otto, 28 Sep 2026, the diesel slide). Without it, whole numbers stay whole and the
+  // rest get one place, which is right for counts and shares.
+  const dp = ctx.decimals;
+  const s = Number.isInteger(dp)
+    ? d3.format(`,.${dp}f`)(v)
+    : (Number.isInteger(v) ? d3.format(",")(v) : d3.format(",.1f")(v));
   return `${ctx.prefix || ""}${s}${short ? "" : ctx.unit || ""}`;
 }
 
