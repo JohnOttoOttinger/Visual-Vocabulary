@@ -14,8 +14,15 @@ const d3 = globalThis.d3;
 
 function axes(g, rows, lo, hi, ticks, [x0, y0, x1, y1], ctx, { top, right }) {
   const { S, th, paint: P } = ctx, tp = S * 0.022;
+  // Both axes' names, when the spec gives them as ["across", "up"]. axisNames has been here since
+  // 19 Sep 2026 but only the two-measure charts ever called it, so a line chart could not say what
+  // it was counting (Otto, 28 Sep 2026: "I don't see axis labels at all"). The room comes off the
+  // plot before anything is placed, so adding a name never lands it on the tick numbers.
+  const [across, up] = ctx.axes || [];
+  const upRoom = core.axisRoom(up, ctx), acrossRoom = core.axisRoom(across, ctx);
   const labW = Math.max(...ticks.map((t) => core.measure(core.num(t, ctx, true), "arvo", tp).w));
-  const px0 = x0 + labW + S * 0.03, px1 = x1 - right, py0 = y0 + top, py1 = y1 - S * 0.07;
+  const px0 = x0 + upRoom + labW + S * 0.03, px1 = x1 - right, py0 = y0 + top,
+    py1 = y1 - S * 0.07 - acrossRoom;
   const X = (i) => px0 + (px1 - px0) * (i / Math.max(1, rows.length - 1));
   const Y = (v) => py1 - (py1 - py0) * ((v - lo) / ((hi - lo) || 1));
   const grid = g.append("g").attr("id", "grid");
@@ -29,6 +36,8 @@ function axes(g, rows, lo, hi, ticks, [x0, y0, x1, y1], ctx, { top, right }) {
     if (i % every === 0 || i === rows.length - 1 || P.on(i))
       core.text(xl, r.label ?? "", { x: X(i), y: py1 + S * 0.030, face: "arvo", px: tp, fill: P.on(i) ? th.ink : th.body, align: "c", valign: "asc" });
   });
+  // under the tick labels, not over them
+  core.axisNames(g, [across, up], ctx, { x0, px0, px1, py0, py1, below: py1 + S * 0.030 + tp + S * 0.020 });
   return { X, Y, px0, px1, py0, py1 };
 }
 

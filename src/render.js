@@ -56,6 +56,7 @@ export function drawChart(spec) {
     const P = new core.Paint(spec.highlight || "hue", ins, th);
     const ctx = {
       S, th, paint: P, unit: spec.unit || "", prefix: spec.prefix || "", axes: spec.axes,
+      decimals: spec.decimals,
       series: spec.series, options: spec.options || {}, images: spec.images, warn: (m) => warnings.push(m),
     };
     insight = chart.draw(g, rows, box, ctx);
