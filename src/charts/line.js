@@ -12,10 +12,23 @@ import { mix } from "../theme.js";
 
 const d3 = globalThis.d3;
 
+// A baseline the slide can insist on: "options": {"zero": true}. spanOf starts at zero only when
+// the data sit in the bottom half of their range, so a count wobbling between 78 and 99 got an
+// axis from 75 and read as a cliff. Otto, 4 Oct 2026: "makes the chart lie." Opt-in, so no chart
+// drawn before this one moves.
+const span = (vals, ctx) => core.spanOf(ctx.options && ctx.options.zero ? [0, ...vals] : vals);
+
 function axes(g, rows, lo, hi, ticks, [x0, y0, x1, y1], ctx, { top, right }) {
   const { S, th, paint: P } = ctx, tp = S * 0.022;
+  // The axes can be named: "axes": [the value axis, the time axis]. A line chart showed bare
+  // numbers up the side, so a count of players and a score read the same (Otto, 4 Oct 2026).
+  // Both are optional and nothing is drawn without them, so every chart made before this one
+  // keeps the whole box and looks exactly as it did.
+  const [yName, xName] = ctx.axes || [];
+  const tiPx = S * 0.026, yHead = yName ? tiPx * 1.6 : 0, xFoot = xName ? tiPx * 1.7 : 0;
+  if (yName) core.text(g, yName, { x: x0, y: y0, face: "arvoBold", px: tiPx, fill: th.ink, valign: "asc" });
   const labW = Math.max(...ticks.map((t) => core.measure(core.num(t, ctx, true), "arvo", tp).w));
-  const px0 = x0 + labW + S * 0.03, px1 = x1 - right, py0 = y0 + top, py1 = y1 - S * 0.07;
+  const px0 = x0 + labW + S * 0.03, px1 = x1 - right, py0 = y0 + top + yHead, py1 = y1 - S * 0.07 - xFoot;
   const X = (i) => px0 + (px1 - px0) * (i / Math.max(1, rows.length - 1));
   const Y = (v) => py1 - (py1 - py0) * ((v - lo) / ((hi - lo) || 1));
   const grid = g.append("g").attr("id", "grid");
@@ -46,13 +59,15 @@ function axes(g, rows, lo, hi, ticks, [x0, y0, x1, y1], ctx, { top, right }) {
     if (keep.has(i))
       core.text(xl, r.label ?? "", { x: X(i), y: py1 + S * 0.030, face: "arvo", px: tp, fill: P.on(i) ? th.ink : th.body, align: "c", valign: "asc" });
   });
+  if (xName)
+    core.text(g, xName, { x: (px0 + px1) / 2, y: py1 + S * 0.030 + tp * 1.5, face: "arvoBold", px: tiPx, fill: th.ink, align: "c", valign: "asc" });
   return { X, Y, px0, px1, py0, py1 };
 }
 
 function single(g, rows, box, ctx) {
   const { S, th, paint: P } = ctx;
   const vals = rows.map((r) => r.value);
-  const [lo, hi, ticks] = core.spanOf(vals);
+  const [lo, hi, ticks] = span(vals, ctx);
   // The top reserve is for the insight callout — a value in Depot and, sometimes, a note under
   // it. It was a flat S * 0.16 whether or not there was a note to put there, so a chart whose
   // insight is a bare number held back a sixth of the frame for nothing. Measured on a 16:9
@@ -93,7 +108,7 @@ function several(g, rows, box, ctx) {
   const cols = names.map((_, k) => th.series[k % th.series.length]);
   if (names.length > th.series.length) ctx.warn(`${names.length} series; past ${th.series.length} fold the rest into "Other" or use small multiples`);
   const all = rows.flatMap((r) => names.map((n) => r[n])).filter(core.isNum);
-  const [lo, hi, ticks] = core.spanOf(all);
+  const [lo, hi, ticks] = span(all, ctx);
   const lpx = S * 0.026;
   const right = Math.max(...names.map((n) => core.measure(n, "arvoBold", lpx).w)) + S * 0.03;
   const { X, Y } = axes(g, rows, lo, hi, ticks, box, ctx, { top: S * 0.04, right });
