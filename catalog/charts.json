@@ -1083,6 +1083,23 @@
    "storyteller_line": "Every seat a dot, *coloured by its side*."
   },
   {
+   "id": "venn-words",
+   "name": "Venn, in words",
+   "group": "Part-to-whole",
+   "methods": [
+    "proportions",
+    "network"
+   ],
+   "reads": "sets, words",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": "proportions › venn-words",
+   "status": "built",
+   "note": "The Venn most people mean: no counts, a few words in each region. Same drawing as venn.",
+   "storyteller_line": "What each set is, *and what they share*."
+  },
+  {
    "id": "venn",
    "name": "Venn",
    "group": "Part-to-whole",

@@ -65,7 +65,7 @@ import waffle from "./waffle.js";
 import sunburst from "./sunburst.js";
 import voronoi from "./voronoi.js";
 import arc from "./arc.js";
-import venn from "./venn.js";
+import venn, { vennWords } from "./venn.js";
 import proportionalSymbol from "./proportional-symbol.js";
 import pictogram from "./pictogram.js";
 import radar from "./radar.js";
@@ -81,6 +81,6 @@ import dotDensityMap from "./dot-density-map.js";
 import heatmapMap from "./heatmap-map.js";
 import locatorMap from "./locator-map.js";
 
-const ALL = [barOrdered, bar, columnOrdered, column, lollipopH, lollipopV, slope, bump, proportionalSquares, line, area, columnTimeline, lineTwoPanel, lineInterday, lineMovingAverage, columnLine, eventTimeline, priestleyTimeline, circlesTimeline, calendarHeatmap, donut, pie, barStackedProportional, treemap, barStacked, columnStacked, waterfall, scatterplot, scatterplotConnected, bubble, heatmapCategory, heatmapQuantity, butterfly, dumbbell, windows, barGrouped, columnGrouped, spine, pyramid, bullet, barDiverging, barDivergingStacked, columnDivergingStacked, beeswarm, histogram, boxplot, processSpine, sankey, network, smallMultiplesLine, smallMultiplesArea, smallMultiplesColumn, smallMultiplesBar, lineSurplusDeficit, candlestick, fan, seismogram, proportionalSymbolOrdered, dotStrip, violin, barcode, cumulativeCurve, waffle, sunburst, voronoi, arc, venn, proportionalSymbol, pictogram, radar, parallelCoordinates, chord, choropleth, proportionalSymbolMap, flowMap, contourMap, cartogramEqual, cartogramScaled, dotDensityMap, heatmapMap, locatorMap];
+const ALL = [barOrdered, bar, columnOrdered, column, lollipopH, lollipopV, slope, bump, proportionalSquares, line, area, columnTimeline, lineTwoPanel, lineInterday, lineMovingAverage, columnLine, eventTimeline, priestleyTimeline, circlesTimeline, calendarHeatmap, donut, pie, barStackedProportional, treemap, barStacked, columnStacked, waterfall, scatterplot, scatterplotConnected, bubble, heatmapCategory, heatmapQuantity, butterfly, dumbbell, windows, barGrouped, columnGrouped, spine, pyramid, bullet, barDiverging, barDivergingStacked, columnDivergingStacked, beeswarm, histogram, boxplot, processSpine, sankey, network, smallMultiplesLine, smallMultiplesArea, smallMultiplesColumn, smallMultiplesBar, lineSurplusDeficit, candlestick, fan, seismogram, proportionalSymbolOrdered, dotStrip, violin, barcode, cumulativeCurve, waffle, sunburst, voronoi, arc, venn, vennWords, proportionalSymbol, pictogram, radar, parallelCoordinates, chord, choropleth, proportionalSymbolMap, flowMap, contourMap, cartogramEqual, cartogramScaled, dotDensityMap, heatmapMap, locatorMap];
 
 export const CHARTS = Object.fromEntries(ALL.map((c) => [c.id, c]));
