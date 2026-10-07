@@ -6,6 +6,8 @@ import * as core from "../core.js";
 import { mix } from "../theme.js";
 
 const d3 = globalThis.d3;
+// the three-way overlap is the darkest part of the diagram, so its words are cream (a paler cream than the accent cream, which was too close to the grey)
+const CREAM = "#F3EDE2";
 const keyOf = (sets) => [...sets].sort().join(" & ");
 
 const mostShared = (rows) => rows.reduce((m, r, i) => ((r.sets || []).length > (rows[m].sets || []).length ? i : m), 0);
@@ -56,7 +58,7 @@ function drawVenn(g, rows, [x0, y0, x1, y1], ctx, words) {
       const [x, y] = spot(ks), on = P.on(hit.i);
       let vb;
       if (words) {
-        const px = S * 0.019, fill = on ? P.words(hit.i) : th.ink, face = on ? "arvoBold" : "arvo", lh = px * 1.25;
+        const px = S * 0.020 * (ks.length === n ? 1.12 : 1), fill = ks.length === n ? CREAM : on ? P.words(hit.i) : th.ink, face = on ? "arvoBold" : "arvo", lh = px * 1.25;
         // Put the words where they clear every circle's line: inside the circles the region is in,
         // outside the rest. Tries a few line widths and a grid of places, and keeps the one whose
         // nearest point to a line is farthest away (capped, so it then stays near its home spot).
@@ -94,7 +96,7 @@ function drawVenn(g, rows, [x0, y0, x1, y1], ctx, words) {
       const lx = ex + ux * S * 0.05, ly = ey + uy * S * 0.05;
       g.append("line").attr("class", "set-line").attr("x1", ex).attr("y1", ey).attr("x2", lx).attr("y2", ly)
         .attr("stroke", th.ink).attr("stroke-width", 1);
-      core.text(g, words ? s : `${s} \u00b7 ${core.num(total(s), ctx)}`, { x: lx + (ux < 0 ? -1 : 1) * S * 0.01, y: ly, face: "arvoBold", px: S * 0.026, fill: th.ink, align: ux < 0 ? "r" : "l", valign: "mid" });
+      core.text(g, words ? s : `${s} \u00b7 ${core.num(total(s), ctx)}`, { x: lx + (ux < 0 ? -1 : 1) * S * 0.01, y: ly, face: "arvoBold", px: S * 0.027, fill: th.ink, align: ux < 0 ? "r" : "l", valign: "mid" });
     });
     return ib;
 }
