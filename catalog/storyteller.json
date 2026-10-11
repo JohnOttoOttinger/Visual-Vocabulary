@@ -602,6 +602,22 @@
       "to"
      ]
     },
+    "tree": {
+     "chart": "family-tree",
+     "line": "Each person beside the ones they came from, *the line to one of them marked*.",
+     "needs": [
+      "label",
+      "to"
+     ]
+    },
+    "descent": {
+     "chart": "family-tree-down",
+     "line": "Each person under the one they came from, *the line to one of them marked*.",
+     "needs": [
+      "label",
+      "to"
+     ]
+    },
     "chord": {
      "chart": "chord",
      "line": "What passes between them, *both ways*.",

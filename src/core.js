@@ -77,6 +77,16 @@ export function pickInsight(rows, want, fallback) {
   if (want === "none" || !rows.length) return null;
   const labels = rows.map((r) => r.label ?? "");
   if (typeof want === "string" && labels.includes(want)) return labels.indexOf(want);
+  // a name that is only ever someone's `to` (a leaf of a network or a tree with no row of its own)
+  // can be the insight too: its index follows the rows, in the order the charts list them
+  if (typeof want === "string" && want !== "none") {
+    const extra = [];
+    for (const r of rows) for (const t of Array.isArray(r.to) ? r.to : r.to ? [r.to] : []) {
+      const nm = String(t);
+      if (!labels.includes(nm) && !extra.includes(nm)) extra.push(nm);
+    }
+    if (extra.includes(want)) return labels.length + extra.indexOf(want);
+  }
   const how = want || fallback;
   if (!how || how === "none") return null;
   const vals = rows.map((r, i) => [i, r.value]).filter(([, v]) => isNum(v));

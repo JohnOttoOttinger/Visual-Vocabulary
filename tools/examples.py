@@ -190,6 +190,25 @@ put("process-spine", {"chart": "process-spine", "kicker": "From numbers to a sto
         ["Infographic story", "One insight per slide, in the right order."],
         ["The deck", "PowerPoint in the workshop; a carousel here."],
         ["Final presentation", "Context, insight, call-to-action."]]})
+# A family drawn as a tree. The Bachs because their line is in every reference book and the library
+# is public: dates are the standard ones (Grove; the Bach-Digital register). Otto's own family tree
+# is a Storyteller story and does not belong here.
+BACH = [
+    {"label": "Johann Ambrosius", "note": "1645 – 1695", "to": ["Johann Sebastian"]},
+    {"label": "Johann Sebastian", "note": "1685 – 1750", "to": ["Wilhelm Friedemann", "Carl Philipp Emanuel", "Johann Gottfried Bernhard", "Johann Christoph Friedrich", "Johann Christian"]},
+    {"label": "Wilhelm Friedemann", "note": "1710 – 1784"},
+    {"label": "Carl Philipp Emanuel", "note": "1714 – 1788"},
+    {"label": "Johann Gottfried Bernhard", "note": "1715 – 1739"},
+    {"label": "Johann Christoph Friedrich", "note": "1732 – 1795", "to": ["Wilhelm Friedrich Ernst"]},
+    {"label": "Johann Christian", "note": "1735 – 1782"},
+    {"label": "Wilhelm Friedrich Ernst", "note": "1759 – 1845"},
+]
+put("family-tree", {"chart": "family-tree", "kicker": "Who came from whom...", "title": "the BACH FAMILY",
+    "line": "Three generations, *the line to the last Bach*.", "source": "Grove Dictionary of Music; Bach-Digital register",
+    "insight": "Wilhelm Friedrich Ernst", "data": BACH})
+put("family-tree-down", {"chart": "family-tree-down", "kicker": "Who came from whom...", "title": "the BACH FAMILY",
+    "line": "Three generations, *the line to the last Bach*.", "source": "Grove Dictionary of Music; Bach-Digital register",
+    "insight": "Wilhelm Friedrich Ernst", "data": BACH})
 put("network", {"chart": "network", "kicker": "What calls what...", "title": "INSIDE the ENGINE",
     "line": "Each module, *linked to the ones it loads*.", "source": "the _load and lab() calls in the Storyteller's creative/*.py",
     "insight": "build_creative", "data": [
