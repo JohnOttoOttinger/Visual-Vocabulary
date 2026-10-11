@@ -19,7 +19,10 @@ export default {
     const heads = (ctx.axes || ["A", "B"]).slice(0, 2), imgs = (ctx.images || []).slice(0, 2);
     const W = x1 - x0, pad = S * 0.037, gut = pad, rad = S * 0.037, dia = S * 0.080, n = rows.length;
     const namesH = S * 0.085, rowMin = S * 0.095, ww = (W - 2 * pad - gut) / 2, top = y0 + dia / 2;
-    const bh = Math.max(Math.min(ww * 1.05 + 2 * pad, (y1 - top) - namesH - n * rowMin), S * 0.26);
+    // The rows get their room first and the windows take what is left. A floor of S*0.26 on the
+    // windows used to win instead, and at the Storyteller's 1.25x labels (5 Oct 2026) the rows were
+    // left a third of the height their numbers are, so 430 sat on top of 17.2.
+    const bh = Math.max(Math.min(ww * 1.05 + 2 * pad, (y1 - top) - namesH - n * rowMin), S * 0.22);
     const wh = bh - 2 * pad;
     const block = g.append("g").attr("id", "windows");
     block.append("rect").attr("x", x0).attr("y", top).attr("width", W).attr("height", bh).attr("rx", rad).attr("fill", BLOCK);
@@ -46,14 +49,16 @@ export default {
     const ry = ny + namesH - S * 0.01, rowH = Math.min((y1 - ry) / n, S * 0.12);
     const faint = mix(R.neutral, th.ground, 0.45), lw = centres[1] - centres[0] - S * 0.20;
     const lpx = Math.min(...rows.map((r) => core.shrinkTo(r.label || "", "arvoBold", S * 0.024, lw, S * 0.018)));
+    // and a number is never taller than its row, whatever room was left
+    const spx = Math.min(S * 0.058, rowH * 0.78);
     const marks = g.append("g").attr("id", "marks");
     let ib = null;
     rows.forEach((r, i) => {
       const row = core.rowGroup(marks, i, i, P), yc = ry + rowH * (i + 0.5);
       if (i) core.dottedLine(row, [x0, ry + rowH * i], [x1, ry + rowH * i], faint, S);
       const fill = P.on(i) ? P.words(i) : (P.ins === null || P.ins === undefined ? th.ink : th.body);
-      core.stat(row, core.num(r.value, ctx), { x: centres[0], y: yc, px: S * 0.058, fill, valign: "mid" });
-      core.stat(row, core.num(r.value2, ctx), { x: centres[1], y: yc, px: S * 0.058, fill, valign: "mid" });
+      core.stat(row, core.num(r.value, ctx), { x: centres[0], y: yc, px: spx, fill, valign: "mid" });
+      core.stat(row, core.num(r.value2, ctx), { x: centres[1], y: yc, px: spx, fill, valign: "mid" });
       core.text(row, r.label || "", { x: (x0 + x1) / 2, y: yc, face: "arvoBold", px: lpx, fill: P.on(i) ? th.ink : th.body, align: "c", valign: "fmid" });
       if (P.on(i)) ib = [x0 + S * 0.01, yc - rowH / 2 + S * 0.006, x1 - S * 0.01, yc + rowH / 2 - S * 0.006];
     });

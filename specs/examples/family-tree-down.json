@@ -1,0 +1,55 @@
+{
+ "chart": "family-tree-down",
+ "kicker": "Who came from whom...",
+ "title": "the BACH FAMILY",
+ "line": "Three generations, *the line to the last Bach*.",
+ "source": "Grove Dictionary of Music; Bach-Digital register",
+ "insight": "Wilhelm Friedrich Ernst",
+ "data": [
+  {
+   "label": "Johann Ambrosius",
+   "note": "1645 – 1695",
+   "to": [
+    "Johann Sebastian"
+   ]
+  },
+  {
+   "label": "Johann Sebastian",
+   "note": "1685 – 1750",
+   "to": [
+    "Wilhelm Friedemann",
+    "Carl Philipp Emanuel",
+    "Johann Gottfried Bernhard",
+    "Johann Christoph Friedrich",
+    "Johann Christian"
+   ]
+  },
+  {
+   "label": "Wilhelm Friedemann",
+   "note": "1710 – 1784"
+  },
+  {
+   "label": "Carl Philipp Emanuel",
+   "note": "1714 – 1788"
+  },
+  {
+   "label": "Johann Gottfried Bernhard",
+   "note": "1715 – 1739"
+  },
+  {
+   "label": "Johann Christoph Friedrich",
+   "note": "1732 – 1795",
+   "to": [
+    "Wilhelm Friedrich Ernst"
+   ]
+  },
+  {
+   "label": "Johann Christian",
+   "note": "1735 – 1782"
+  },
+  {
+   "label": "Wilhelm Friedrich Ernst",
+   "note": "1759 – 1845"
+  }
+ ]
+}

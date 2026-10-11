@@ -17,18 +17,40 @@ export default {
     lo -= padv; hi += padv;
     const ix0 = x0 + S * 0.02, ix1 = x1 - S * 0.02;
     const X = (v) => ix0 + (ix1 - ix0) * (v - lo) / ((hi - lo) || 1);
-    const n = rows.length, r0 = Math.max(S * 0.010, Math.min(S * 0.024, S * 0.024 * Math.sqrt(10 / n)));
-    const cy = y0 + (y1 - y0) * 0.60, placed = [], pos = {};
-    for (const i of rows.map((_, i) => i).sort((a, b) => vals[a] - vals[b])) {
-      const rr = r0 * (P.on(i) ? 1.5 : 1) * P.grow(i), x = X(vals[i]);
-      let y = cy;
-      for (let k = 0; k < 60; k++) {
-        y = cy + Math.floor((k + 1) / 2) * (2 * r0 + 3) * (k % 2 ? 1 : -1);
-        if (placed.every(([px, py, pr]) => Math.hypot(x - px, y - py) >= rr + pr + 3)) break;
+    const n = rows.length;
+    // The named one's value, name and note sit at the top of the box, so the swarm is packed into
+    // what is left under them (the name and note measured, a line or two each). It used to be centred at 60% of the box whatever its height, and
+    // when the Storyteller asked for everything 1.25x bigger (5 Oct 2026) the dots grew, the swarm
+    // grew with them, and its top rose through "17.2 Otto Ottinger". Now the label is measured
+    // first and the dots shrink until the swarm fits under it.
+    const named = P.ins !== null && P.ins !== undefined;
+    const vpx = S * 0.064, npx = S * 0.026, tpx = S * 0.023;
+    const rowsOf = (t, face, px) => (!t ? 0 : core.measure(t, face, px).w > S * 0.42 ? 2 : 1);
+    const roof = named
+      ? y0 + S * 0.01 + vpx * 0.95 + S * 0.014 + npx * 1.3 * rowsOf(rows[P.ins].label, "arvoBold", npx)
+        + (rows[P.ins].note ? S * 0.010 + tpx * 1.3 * rowsOf(rows[P.ins].note, "arvo", tpx) : 0) + S * 0.04
+      : y0;
+    const floor = y1 - S * 0.05 - S * 0.018 - S * 0.03;   // the axis and its numbers under the swarm
+    const pack = (r0) => {
+      const placed = [], pos = {};
+      for (const i of rows.map((_, i) => i).sort((a, b) => vals[a] - vals[b])) {
+        const rr = r0 * (P.on(i) ? 1.5 : 1) * P.grow(i), x = X(vals[i]);
+        let y = 0;
+        for (let k = 0; k < 60; k++) {
+          y = Math.floor((k + 1) / 2) * (2 * r0 + 3) * (k % 2 ? 1 : -1);
+          if (placed.every(([px, py, pr]) => Math.hypot(x - px, y - py) >= rr + pr + 3)) break;
+        }
+        placed.push([x, y, rr]); pos[i] = [x, y, rr];
       }
-      placed.push([x, y, rr]); pos[i] = [x, y, rr];
-    }
-    const ys = placed.map((p) => p[1]), top = Math.min(...ys) - r0 * 2.2, bot = Math.max(...ys) + r0 * 2.2;
+      const ys = placed.map((p) => p[1]);
+      return { placed, pos, r0, h: Math.max(...ys) - Math.min(...ys) + Math.max(r0 * 2.2, S * 0.045) + r0 * 2.2, mid: (Math.max(...ys) + Math.min(...ys)) / 2 };
+    };
+    let fit = pack(Math.max(S * 0.010, Math.min(S * 0.024, S * 0.024 * Math.sqrt(10 / n))));
+    for (let k = 0; k < 12 && fit.h > floor - roof; k++) fit = pack(fit.r0 * 0.9);
+    const cy = Math.max((roof + floor) / 2, roof + fit.h / 2) - fit.mid, r0 = fit.r0;
+    const placed = fit.placed.map(([x, y, rr]) => [x, y + cy, rr]), pos = {};
+    for (const [i, [x, y, rr]] of Object.entries(fit.pos)) pos[i] = [x, y + cy, rr];
+    const ys = placed.map((p) => p[1]), top = Math.min(...ys) - Math.max(r0 * 2.2, S * 0.045), bot = Math.max(...ys) + r0 * 2.2;
     const band = g.append("g").attr("id", "band");
     band.append("rect").attr("x", X(q1)).attr("y", top).attr("width", X(q3) - X(q1)).attr("height", bot - top)
       .attr("rx", S * 0.02).attr("fill", mix(R.muted, th.ground, 0.45));
