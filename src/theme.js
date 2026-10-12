@@ -100,7 +100,7 @@ export const FONTS = {
   qwigley: '"Qwigley"',
   depot: '"Numbers Depot"',
 };
-export const TRACK = -0.025;          // Bebas tracking, the Storyteller's s2.TRACK, in em
+export const TRACK = 0.005;           // the design system's --tracking-display-headline, in em
 
 export function theme(mode = "plaster") {
   const m = MODES[mode];
