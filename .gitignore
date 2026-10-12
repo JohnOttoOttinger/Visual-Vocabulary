@@ -1,4 +1,7 @@
-node_modules/
+# no trailing slash: with one, git ignores the DIRECTORY and happily commits a
+# symlink of the same name, which is how a link to one machine's absolute path
+# reached main on 12 Oct 2026
+node_modules
 out/
 .DS_Store
 *.otf
