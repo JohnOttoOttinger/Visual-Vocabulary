@@ -297,6 +297,14 @@
       "value"
      ]
     },
+    "venn-words": {
+     "chart": "venn-words",
+     "line": "What each set is, *and what they share*.",
+     "needs": [
+      "sets",
+      "label"
+     ]
+    },
     "venn": {
      "chart": "venn",
      "line": "What each set holds, *and what they share*.",
@@ -589,6 +597,22 @@
     "web": {
      "chart": "network",
      "line": null,
+     "needs": [
+      "label",
+      "to"
+     ]
+    },
+    "tree": {
+     "chart": "family-tree",
+     "line": "Each person beside the ones they came from, *the line to one of them marked*.",
+     "needs": [
+      "label",
+      "to"
+     ]
+    },
+    "descent": {
+     "chart": "family-tree-down",
+     "line": "Each person under the one they came from, *the line to one of them marked*.",
      "needs": [
       "label",
       "to"

@@ -77,6 +77,16 @@ export function pickInsight(rows, want, fallback) {
   if (want === "none" || !rows.length) return null;
   const labels = rows.map((r) => r.label ?? "");
   if (typeof want === "string" && labels.includes(want)) return labels.indexOf(want);
+  // a name that is only ever someone's `to` (a leaf of a network or a tree with no row of its own)
+  // can be the insight too: its index follows the rows, in the order the charts list them
+  if (typeof want === "string" && want !== "none") {
+    const extra = [];
+    for (const r of rows) for (const t of Array.isArray(r.to) ? r.to : r.to ? [r.to] : []) {
+      const nm = String(t);
+      if (!labels.includes(nm) && !extra.includes(nm)) extra.push(nm);
+    }
+    if (extra.includes(want)) return labels.length + extra.indexOf(want);
+  }
   const how = want || fallback;
   if (!how || how === "none") return null;
   const vals = rows.map((r, i) => [i, r.value]).filter(([, v]) => isNum(v));
@@ -153,7 +163,13 @@ export class Paint {
 
 export function num(v, ctx, short = false) {
   if (!isNum(v)) return "";
-  const s = Number.isInteger(v) ? d3.format(",")(v) : d3.format(",.1f")(v);
+  // `decimals` is for money and anything else where the count of places is the point: $2.59 is
+  // not $2.6 (Otto, 28 Sep 2026, the diesel slide). Without it, whole numbers stay whole and the
+  // rest get one place, which is right for counts and shares.
+  const dp = ctx.decimals;
+  const s = Number.isInteger(dp)
+    ? d3.format(`,.${dp}f`)(v)
+    : (Number.isInteger(v) ? d3.format(",")(v) : d3.format(",.1f")(v));
   return `${ctx.prefix || ""}${s}${short ? "" : ctx.unit || ""}`;
 }
 
@@ -183,6 +199,19 @@ export function spanOf(values, zeroOk = true) {
 
 const cv = document.createElement("canvas").getContext("2d");
 
+// Bebas ships one cut, and oddtoe.com has always asked the browser for 700 on its headings —
+// the browser dilates the outline, 25% more ink, and that heavier thing IS the Oddtoe headline
+// (Otto, 12 Oct 2026, having compared the site against a slide). Only at display size: the
+// site leaves its small Bebas labels at 400, and a thickened axis number clogs. 38px is where
+// the Storyteller's own rule crosses over, so the two agree on the same slide.
+export const BEBAS_BOLD_FROM = 38;
+
+export function weightOf(face, px) {
+  const f = FACE[face];
+  if (face === "bebas" && px >= BEBAS_BOLD_FROM) return 700;
+  return f.weight;
+}
+
 export const FACE = {
   bebas: { family: FONTS.bebas, weight: 400, track: TRACK },
   arvo: { family: FONTS.arvo, weight: 400, track: 0 },
@@ -194,7 +223,7 @@ export const FACE = {
 // Width by advance (tracking between letters, none after the last) and height by ink.
 export function measure(text, face, px) {
   const f = FACE[face];
-  cv.font = `${f.weight} ${px}px ${f.family}`;
+  cv.font = `${weightOf(face, px)} ${px}px ${f.family}`;
   cv.letterSpacing = `${f.track * px}px`;
   const m = cv.measureText(text);
   cv.letterSpacing = "0px";
@@ -225,7 +254,8 @@ export function text(g, str, { x, y, face = "arvo", px, fill, align = "l", valig
     const t = g.append("text").attr("x", x0).attr("y", base).text(str)
       .attr("font-family", f.family.replaceAll('"', "")).attr("font-size", px)
       .attr("fill", fill);
-    if (f.weight !== 400) t.attr("font-weight", f.weight);
+    const wt = weightOf(face, px);
+    if (wt !== 400) t.attr("font-weight", wt);
     if (f.track) t.attr("letter-spacing", f.track * px);
     if (cls) t.attr("class", cls);
     // a ring of the ground round the letters, so a label stays readable over a line or a dot

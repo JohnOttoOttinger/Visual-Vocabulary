@@ -1,0 +1,56 @@
+{
+ "chart": "venn-words",
+ "kicker": "A very scientific diagram...",
+ "title": "CATS, DOGS, BEARDS",
+ "line": "Who has what, *and who has all of it*.",
+ "source": "illustrative",
+ "data": [
+  {
+   "sets": [
+    "cats"
+   ],
+   "label": "sleep in boxes"
+  },
+  {
+   "sets": [
+    "dogs"
+   ],
+   "label": "wait by the door"
+  },
+  {
+   "sets": [
+    "beards"
+   ],
+   "label": "get called Gandalf"
+  },
+  {
+   "sets": [
+    "cats",
+    "dogs"
+   ],
+   "label": "fight over the sofa"
+  },
+  {
+   "sets": [
+    "dogs",
+    "beards"
+   ],
+   "label": "get the walks"
+  },
+  {
+   "sets": [
+    "cats",
+    "beards"
+   ],
+   "label": "work from home"
+  },
+  {
+   "sets": [
+    "cats",
+    "dogs",
+    "beards"
+   ],
+   "label": "a very full house"
+  }
+ ]
+}

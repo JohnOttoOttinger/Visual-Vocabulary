@@ -21,16 +21,17 @@ export default {
     const { S, th, paint: P } = ctx, R = th.roles;
     const heads = (ctx.axes || ["A", "B"]).slice(0, 2), imgs = (ctx.images || []).slice(0, 2);
     const W = x1 - x0, pad = S * 0.037, gut = pad, rad = S * 0.037, dia = S * 0.080, n = rows.length;
-    const namesH = S * 0.085, top = y0 + dia / 2, H = y1 - top;
-    // the table takes what its rows want, but never more than a share of the box — less of it
-    // lying down, where the height is what the pictures are short of
-    const share = W > (y1 - y0) * 1.2 ? 0.42 : 0.50;
-    const rowH = Math.max(Math.min(S * 0.105, (H - namesH) * share / n), S * 0.055);
-    const maxWH = H - (namesH + rowH * n) - 2 * pad;
+    const namesH = S * 0.085, rowMin = S * 0.095, top = y0 + dia / 2;
+    // The rows get their room first and the windows take what is left: a floor on the windows
+    // used to win instead, and at the Storyteller's 1.25x labels the rows were left a third of
+    // the height their numbers are, so 430 sat on top of 17.2 (5 Oct 2026).
+    // Then the windows are capped at 1.9:1, because lying down "what is left" was two letterbox
+    // slits — the block narrows and centres rather than stretching (30 Sep 2026).
     let ww = (W - 2 * pad - gut) / 2;
-    let wh = Math.max(Math.min(ww * 1.05, maxWH), S * 0.16);
+    const bh = Math.max(Math.min(ww * 1.05 + 2 * pad, (y1 - top) - namesH - n * rowMin), S * 0.22);
+    const wh = bh - 2 * pad;
     if (ww > wh * 1.9) ww = wh * 1.9;
-    const bw = 2 * ww + gut + 2 * pad, bx = x0 + (W - bw) / 2, bh = wh + 2 * pad;
+    const bw = 2 * ww + gut + 2 * pad, bx = x0 + (W - bw) / 2;
     const block = g.append("g").attr("id", "windows");
     block.append("rect").attr("x", bx).attr("y", top).attr("width", bw).attr("height", bh).attr("rx", rad).attr("fill", BLOCK);
     const centres = [];
@@ -53,11 +54,12 @@ export default {
     }
     const ny = top + bh + S * 0.026;
     centres.forEach((cx, k) => core.text(block, (heads[k] || "").toUpperCase(), { x: cx, y: ny, face: "bebas", px: Math.min(S * 0.044, ww * 0.20), fill: th.ink, align: "c" }));
-    // The table: three columns on the block's width, the rules under the names and under every
-    // row but the last, the type off the row rather than off the frame.
-    const ry = ny + namesH - S * 0.01;
+    // The table: three columns on the BLOCK's width, a rule under the column names as well as
+    // between the rows, and the label column measured off what the numbers actually take rather
+    // than a fixed guess.
+    const ry = ny + namesH - S * 0.01, rowH = Math.min((y1 - ry) / n, S * 0.12);
     const faint = mix(R.neutral, th.ground, 0.45);
-    const vpx = Math.min(S * 0.062, rowH * 0.74);
+    const vpx = Math.min(S * 0.058, rowH * 0.78);      // a number is never taller than its row
     const gap = centres[1] - centres[0];
     const valW = Math.max(...rows.map((r) => Math.max(core.measure(core.num(r.value, ctx), "bebas", vpx).w,
                                                       core.measure(core.num(r.value2, ctx), "bebas", vpx).w)));

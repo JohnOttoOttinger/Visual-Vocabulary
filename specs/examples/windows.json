@@ -1,33 +1,33 @@
 {
  "chart": "windows",
- "kicker": "Two stories, side by side...",
- "title": "BULLETIN against GALLERY",
- "line": "The same eight pictures in, *three fewer slides out*.",
- "source": "trump-balloon and inflatables drafts",
+ "kicker": "Two inflatables, side by side...",
+ "title": "ACORN against MONSTER",
+ "line": "Same build, *one twice the panels*.",
+ "source": "the inflatables story, eight pictures",
  "axes": [
-  "The bulletin",
-  "The gallery"
+  "The acorn",
+  "The monster"
  ],
- "insight": "Slides drafted",
+ "insight": "Panels cut",
  "images": [
-  "~/Documents/Oddtoe - iCloud Apple/Marketing/Stories/trump-balloon/02-balloon-field.jpg",
-  "~/Documents/Oddtoe - iCloud Apple/Marketing/Stories/inflatables/06-dome-installed.jpg"
+  "~/Documents/Oddtoe - iCloud Apple/Marketing/Stories/inflatables/01-acorn.jpg",
+  "~/Documents/Oddtoe - iCloud Apple/Marketing/Stories/inflatables/02-monster-entrance.jpg"
  ],
  "data": [
   {
-   "label": "Pictures dropped in",
-   "value": 8,
-   "value2": 8
+   "label": "Panels cut",
+   "value": 48,
+   "value2": 96
   },
   {
-   "label": "Slides drafted",
-   "value": 7,
-   "value2": 4
+   "label": "Metres of seam",
+   "value": 62,
+   "value2": 140
   },
   {
-   "label": "Slides per picture",
-   "value": 0.9,
-   "value2": 0.5
+   "label": "Days on the bench",
+   "value": 4,
+   "value2": 9
   }
  ]
 }

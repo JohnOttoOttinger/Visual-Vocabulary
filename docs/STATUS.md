@@ -1,5 +1,26 @@
 # Status
 
+## 11 October 2026 — a family tree
+
+Two charts in one file, `src/charts/family-tree.js` (the way `venn.js` holds the venn and the venn in
+words): `family-tree`, left to right, and `family-tree-down`, top to bottom. Offered to the Storyteller as
+`network › tree` and `network › descent`.
+
+- They read the network's own table: `label`, `to` for a person's children, and an optional `note`
+  (dates, a marriage) under the name. The same table draws as a web or as a tree.
+- The insight is a person; the line of descent from the root to them is drawn in olive. With none named
+  it is the first of the deepest generation.
+- Links start where a name ends, so no line runs through a word. In the top-down chart names wrap (up to
+  three lines) and are **never cut**; a parent has the width of everyone beneath it. In the across chart
+  a name wraps rather than shrink the type.
+- `core.pickInsight` now accepts a name that is only ever listed in someone's `to` (a leaf with no row of
+  its own). It used to throw "is not a label in the table".
+- The example is the Bach family, because this repo is public. `tools/examples.py` regenerated sixteen
+  unrelated examples on the way (their counts come from story folders that have moved on); those were
+  reverted, so only the two new example files are added.
+- Not fixed, and not new: `vv check` stops on the `trump-balloon` example, whose folder is now in the
+  Storyteller's `_Archive`.
+
 ## 20 September 2026 (evening) — a ten-second check, and sheets without hand-work
 
 The last two off Otto's list.

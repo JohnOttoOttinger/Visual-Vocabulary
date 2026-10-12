@@ -427,6 +427,38 @@
    "storyteller_default": true
   },
   {
+   "id": "family-tree",
+   "name": "Family tree, across",
+   "group": "Flow",
+   "methods": [
+    "network"
+   ],
+   "reads": "label, to",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": "network › tree",
+   "status": "built",
+   "note": "Who came from whom, a generation to a column, names beside their dots. The network's table (label, to) with an optional note under each name; the line of descent to the insight is drawn in olive.",
+   "storyteller_line": "Each person beside the ones they came from, *the line to one of them marked*."
+  },
+  {
+   "id": "family-tree-down",
+   "name": "Family tree, down",
+   "group": "Flow",
+   "methods": [
+    "network"
+   ],
+   "reads": "label, to",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": "network › descent",
+   "status": "built",
+   "note": "The same table as the family tree, the oldest at the top and each generation a row, names under their dots. Long names wrap to three lines and are never cut.",
+   "storyteller_line": "Each person under the one they came from, *the line to one of them marked*."
+  },
+  {
    "id": "bar",
    "name": "Bar",
    "group": "Magnitude",
@@ -1081,6 +1113,23 @@
    "status": "built",
    "note": "A hemicycle of seats.",
    "storyteller_line": "Every seat a dot, *coloured by its side*."
+  },
+  {
+   "id": "venn-words",
+   "name": "Venn, in words",
+   "group": "Part-to-whole",
+   "methods": [
+    "proportions",
+    "network"
+   ],
+   "reads": "sets, words",
+   "wave": 3,
+   "ft": null,
+   "replaces": null,
+   "storyteller": "proportions › venn-words",
+   "status": "built",
+   "note": "The Venn most people mean: no counts, a few words in each region. Same drawing as venn.",
+   "storyteller_line": "What each set is, *and what they share*."
   },
   {
    "id": "venn",
