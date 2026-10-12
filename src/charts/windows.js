@@ -3,6 +3,9 @@
 // the side's name under it, and the table's numbers set under each window — value under A, value2
 // under B. Without pictures the windows are cream, and it is a plain head-to-head card.
 // Pictures come as "images": [a, b] (file paths; the render tool reads them in).
+//
+// The block is sized from the room the table leaves, and the windows are never wider than 1.9:1,
+// so a landscape frame gets two pictures rather than two letterbox slots (Otto, 29 Sep 2026).
 import * as core from "../core.js";
 import { mix } from "../theme.js";
 
@@ -18,17 +21,22 @@ export default {
     const { S, th, paint: P } = ctx, R = th.roles;
     const heads = (ctx.axes || ["A", "B"]).slice(0, 2), imgs = (ctx.images || []).slice(0, 2);
     const W = x1 - x0, pad = S * 0.037, gut = pad, rad = S * 0.037, dia = S * 0.080, n = rows.length;
-    const namesH = S * 0.085, rowMin = S * 0.095, ww = (W - 2 * pad - gut) / 2, top = y0 + dia / 2;
-    // The rows get their room first and the windows take what is left. A floor of S*0.26 on the
-    // windows used to win instead, and at the Storyteller's 1.25x labels (5 Oct 2026) the rows were
-    // left a third of the height their numbers are, so 430 sat on top of 17.2.
+    const namesH = S * 0.085, rowMin = S * 0.095, top = y0 + dia / 2;
+    // The rows get their room first and the windows take what is left: a floor on the windows
+    // used to win instead, and at the Storyteller's 1.25x labels the rows were left a third of
+    // the height their numbers are, so 430 sat on top of 17.2 (5 Oct 2026).
+    // Then the windows are capped at 1.9:1, because lying down "what is left" was two letterbox
+    // slits — the block narrows and centres rather than stretching (30 Sep 2026).
+    let ww = (W - 2 * pad - gut) / 2;
     const bh = Math.max(Math.min(ww * 1.05 + 2 * pad, (y1 - top) - namesH - n * rowMin), S * 0.22);
     const wh = bh - 2 * pad;
+    if (ww > wh * 1.9) ww = wh * 1.9;
+    const bw = 2 * ww + gut + 2 * pad, bx = x0 + (W - bw) / 2;
     const block = g.append("g").attr("id", "windows");
-    block.append("rect").attr("x", x0).attr("y", top).attr("width", W).attr("height", bh).attr("rx", rad).attr("fill", BLOCK);
+    block.append("rect").attr("x", bx).attr("y", top).attr("width", bw).attr("height", bh).attr("rx", rad).attr("fill", BLOCK);
     const centres = [];
     for (let k = 0; k < 2; k++) {
-      const wx = x0 + pad + k * (ww + gut), wy = top + pad, id = `vv-window-${k}-${Math.round(wx)}`;
+      const wx = bx + pad + k * (ww + gut), wy = top + pad, id = `vv-window-${k}-${Math.round(wx)}`;
       block.append("clipPath").attr("id", id).append("rect").attr("x", wx).attr("y", wy).attr("width", ww).attr("height", wh).attr("rx", rad * 0.6);
       const im = imgs[k];
       if (im && im.href) {
@@ -45,22 +53,29 @@ export default {
       centres.push(cx);
     }
     const ny = top + bh + S * 0.026;
-    centres.forEach((cx, k) => core.text(block, (heads[k] || "").toUpperCase(), { x: cx, y: ny, face: "bebas", px: S * 0.044, fill: th.ink, align: "c" }));
+    centres.forEach((cx, k) => core.text(block, (heads[k] || "").toUpperCase(), { x: cx, y: ny, face: "bebas", px: Math.min(S * 0.044, ww * 0.20), fill: th.ink, align: "c" }));
+    // The table: three columns on the BLOCK's width, a rule under the column names as well as
+    // between the rows, and the label column measured off what the numbers actually take rather
+    // than a fixed guess.
     const ry = ny + namesH - S * 0.01, rowH = Math.min((y1 - ry) / n, S * 0.12);
-    const faint = mix(R.neutral, th.ground, 0.45), lw = centres[1] - centres[0] - S * 0.20;
-    const lpx = Math.min(...rows.map((r) => core.shrinkTo(r.label || "", "arvoBold", S * 0.024, lw, S * 0.018)));
-    // and a number is never taller than its row, whatever room was left
-    const spx = Math.min(S * 0.058, rowH * 0.78);
+    const faint = mix(R.neutral, th.ground, 0.45);
+    const vpx = Math.min(S * 0.058, rowH * 0.78);      // a number is never taller than its row
+    const gap = centres[1] - centres[0];
+    const valW = Math.max(...rows.map((r) => Math.max(core.measure(core.num(r.value, ctx), "bebas", vpx).w,
+                                                      core.measure(core.num(r.value2, ctx), "bebas", vpx).w)));
+    const lw = gap - valW - S * 0.085;
+    const lpx = Math.min(...rows.map((r) => core.shrinkTo(r.label || "", "arvoBold", Math.min(S * 0.030, rowH * 0.44), lw, S * 0.016)));
+    core.dottedLine(block, [bx, ry], [bx + bw, ry], faint, S);
     const marks = g.append("g").attr("id", "marks");
     let ib = null;
     rows.forEach((r, i) => {
       const row = core.rowGroup(marks, i, i, P), yc = ry + rowH * (i + 0.5);
-      if (i) core.dottedLine(row, [x0, ry + rowH * i], [x1, ry + rowH * i], faint, S);
+      if (i) core.dottedLine(row, [bx, ry + rowH * i], [bx + bw, ry + rowH * i], faint, S);
       const fill = P.on(i) ? P.words(i) : (P.ins === null || P.ins === undefined ? th.ink : th.body);
-      core.stat(row, core.num(r.value, ctx), { x: centres[0], y: yc, px: spx, fill, valign: "mid" });
-      core.stat(row, core.num(r.value2, ctx), { x: centres[1], y: yc, px: spx, fill, valign: "mid" });
-      core.text(row, r.label || "", { x: (x0 + x1) / 2, y: yc, face: "arvoBold", px: lpx, fill: P.on(i) ? th.ink : th.body, align: "c", valign: "fmid" });
-      if (P.on(i)) ib = [x0 + S * 0.01, yc - rowH / 2 + S * 0.006, x1 - S * 0.01, yc + rowH / 2 - S * 0.006];
+      core.stat(row, core.num(r.value, ctx), { x: centres[0], y: yc, px: vpx, fill, valign: "mid" });
+      core.stat(row, core.num(r.value2, ctx), { x: centres[1], y: yc, px: vpx, fill, valign: "mid" });
+      core.text(row, r.label || "", { x: bx + bw / 2, y: yc, face: "arvoBold", px: lpx, fill: P.on(i) ? th.ink : th.body, align: "c", valign: "fmid" });
+      if (P.on(i)) ib = [bx, yc - rowH / 2 + S * 0.006, bx + bw, yc + rowH / 2 - S * 0.006];
     });
     return ib;
   },
