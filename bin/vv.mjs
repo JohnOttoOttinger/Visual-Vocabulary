@@ -74,6 +74,14 @@ function inline(images, base) {
     if (!f) return null;
     const file = f.startsWith("~/") ? join(homedir(), f.slice(2)) : resolve(base, f), type = IMAGE_TYPES[extname(file).toLowerCase()];
     if (!type) throw new Error(`picture ${f}: use jpg, png or webp`);
+    // A picture that is not there is a window without a picture, which every chart that takes
+    // one already draws. It is NOT a reason to stop: an example spec pointing into Otto's own
+    // story folders took the whole of `vv check` down the day he reorganised them
+    // (12 Oct 2026). Say which one, and carry on.
+    if (!existsSync(file)) {
+      console.warn(`  ? picture missing, drawing without it: ${f}`);
+      return null;
+    }
     return `data:${type};base64,${readFileSync(file).toString("base64")}`;
   });
 }
