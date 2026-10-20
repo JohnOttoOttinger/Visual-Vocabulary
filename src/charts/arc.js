@@ -1,7 +1,9 @@
 // Parliament arc — FT Part-to-whole. Seats in a half circle: one dot per unit of each row's value,
-// laid in rows from the inside out and coloured by part in the fixed series order (a fifth part and
-// beyond share the neutral), the biggest part first from the left. The total sits in the middle in
-// Depot, a dotted line marks half, and a key names each part with its count.
+// laid in rows from the inside out, each part one wedge. Coloured by `party` when rows have one, else by part in the
+// fixed series order (a fifth part and beyond share the neutral). The total sits in the middle in Depot.
+// Redesigned 20 Oct 2026 after Otto's note, from how other parliament charts do it: a short tick at the seat that makes
+// a majority (instead of a dotted frame and a long line), and a key that flows as one line of "name count" pairs
+// instead of a two-column table.
 import * as core from "../core.js";
 import { mix, partyKey } from "../theme.js";
 
@@ -15,14 +17,30 @@ export default {
   ringOnHue: true,
   draw(g, rows, [x0, y0, x1, y1], ctx) {
     const { S, th, paint: P } = ctx;
-    const order = rows.map((_, i) => i).sort((a, b) => rows[b].value - rows[a].value);
-    // a row with a `party` is coloured by that party (Oddtoe's party colours); rows without keep the series order
     const byParty = rows.some((r) => r.party);
+    // with parties the data's own order is the chamber's order, left to right; without, the biggest part leads
+    const order = rows.map((_, i) => i);
+    if (!byParty) order.sort((a, b) => rows[b].value - rows[a].value);
     const colour = (k, i) => (byParty && rows[i] && rows[i].party ? th.parties[partyKey(rows[i].party)] : k < th.series.length ? th.series[k] : mix(th.roles.neutral, th.ground, 0.3));
     const seats = Math.round(d3.sum(rows, (r) => Math.max(0, r.value)));
     if (seats > 800) ctx.warn(`${seats} seats; past about 800 the dots are too small to count`);
-    const lrow = S * 0.058, keyH = Math.ceil(order.length / 2) * lrow + S * 0.04;
-    const R = Math.min((x1 - x0) / 2, (y1 - y0) - keyH - S * 0.02), cx = (x0 + x1) / 2, cy = y0 + R;
+    const majority = Math.floor(seats / 2) + 1;
+
+    // the key: one flowing line of "dot name count", centred, wrapping when it must. No columns.
+    const namePx = S * 0.022, numPx = S * 0.034, sw = S * 0.02, gapA = S * 0.012, gapB = S * 0.016, gapItem = S * 0.04, W = x1 - x0;
+    const items = order.map((i) => {
+      const num = core.num(rows[i].value, ctx), nw = core.measure(num, "bebas", numPx).w, name = String(rows[i].label || "");
+      const px = core.shrinkTo(name, "arvoBold", namePx, W - sw - gapA - gapB - nw, S * 0.017);
+      return { i, num, nw, name, px, w: sw + gapA + core.measure(name, "arvoBold", px).w + gapB + nw };
+    });
+    const lines = [];
+    let cur = [], cw = 0;
+    items.forEach((it) => { if (cur.length && cw + gapItem + it.w > W) { lines.push(cur); cur = []; cw = 0; } cw += (cur.length ? gapItem : 0) + it.w; cur.push(it); });
+    if (cur.length) lines.push(cur);
+    const lrow = S * 0.046, keyH = lines.length * lrow + S * 0.025;
+
+    const tickGap = S * 0.012, tickLen = S * 0.034, labelRoom = tickGap + tickLen + S * 0.036;
+    const R = Math.min((x1 - x0) / 2 - S * 0.03, (y1 - y0) - keyH - labelRoom - S * 0.02), cx = (x0 + x1) / 2, cy = y0 + labelRoom + R;
     const r0 = R * 0.38;
     // rows of seats from the inside out: pick the count that fills the band with round dots
     let nRows = 1;
@@ -40,26 +58,37 @@ export default {
     }
     spots.sort((p, q) => q.a - p.a);                       // left to right across every row, so each part is a wedge
     const used = spots.slice(0, seats), marks = g.append("g").attr("id", "marks");
-    let s = 0, ib = null;
+    let s = 0;
     order.forEach((i, k) => {
       const row = core.rowGroup(marks, i, k, P), n = Math.round(Math.max(0, rows[i].value)), pts = used.slice(s, s + n);
-      // every part keeps its own colour (the series order was validated as a set); the insight is
-      // named in bold in the key and ringed
       for (const p of pts) core.dot(row, p.x, p.y, dr * 0.40, colour(k, i));
       s += n;
-      if (P.on(i) && pts.length) ib = [Math.min(...pts.map((p) => p.x)) - dr / 2, Math.min(...pts.map((p) => p.y)) - dr / 2, Math.max(...pts.map((p) => p.x)) + dr / 2, Math.max(...pts.map((p) => p.y)) + dr / 2];
     });
-    core.dottedLine(g.append("g").attr("id", "half"), [cx, cy - R - S * 0.01], [cx, cy - r0 + S * 0.01], th.strong, S);
+
+    // the majority: a short tick just outside the rim, at the seat that makes it, with its number
+    if (seats >= 3 && used[majority - 1]) {
+      const a = (used[majority - 1].a + used[Math.min(majority, seats - 1)].a) / 2, c = Math.cos(a), sn = Math.sin(a);
+      const ra = R + tickGap, rb = R + tickGap + tickLen;
+      g.append("line").attr("id", "majority").attr("x1", cx + ra * c).attr("y1", cy - ra * sn).attr("x2", cx + rb * c).attr("y2", cy - rb * sn)
+        .attr("stroke", th.ink).attr("stroke-width", Math.max(2, S * 0.0045)).attr("stroke-linecap", "round");
+      const lx = cx + (rb + S * 0.012) * c, ly = cy - (rb + S * 0.012) * sn, side = Math.abs(c) < 0.4 ? "c" : c < 0 ? "r" : "l";
+      core.text(g, `${majority} for a majority`, { x: lx, y: ly, face: "arvo", px: S * 0.024, fill: th.body, align: side, valign: side === "c" ? "bottom" : "mid" });
+    }
     core.stat(g, core.num(seats, ctx), { x: cx, y: cy - S * 0.004, px: Math.min(S * 0.08, r0 * 0.6), fill: th.ink, valign: "bottom" });
-    const key = g.append("g").attr("id", "key"), colw = (x1 - x0) / 2, ky = cy + S * 0.05;
-    order.forEach((i, k) => {
-      const lx = x0 + (k % 2) * colw, ly = ky + Math.floor(k / 2) * lrow, sw = S * 0.026;
-      core.dot(key, lx + sw / 2, ly + sw / 2, sw / 2, colour(k, i));
-      const v = core.num(rows[i].value, ctx), vw = core.measure(v, "bebas", S * 0.036).w;
-      const px = core.shrinkTo(rows[i].label || "", "arvoBold", S * 0.025, colw - sw - S * 0.06 - vw, S * 0.017);
-      core.text(key, rows[i].label || "", { x: lx + sw + S * 0.018, y: ly + sw / 2, face: "arvoBold", px, fill: P.on(i) ? th.ink : th.body, valign: "fmid" });
-      core.text(key, v, { x: lx + colw - S * 0.03, y: ly + sw / 2, face: "bebas", px: S * 0.036, fill: th.ink, align: "r", valign: "mid" });
+
+    // the key
+    const key = g.append("g").attr("id", "key");
+    lines.forEach((ln, li) => {
+      const total = ln.reduce((t, it) => t + it.w, 0) + gapItem * (ln.length - 1);
+      let lx = x0 + (W - total) / 2;
+      const ly = cy + S * 0.05 + li * lrow;
+      ln.forEach((it) => {
+        core.dot(key, lx + sw / 2, ly + sw / 2, sw / 2, colour(order.indexOf(it.i), it.i));
+        const tx = lx + sw + gapA, nameBox = core.text(key, it.name, { x: tx, y: ly + sw / 2, face: "arvoBold", px: it.px, fill: P.on(it.i) ? th.ink : th.body, valign: "fmid" });
+        core.text(key, it.num, { x: nameBox[2] + gapB, y: ly + sw / 2, face: "bebas", px: numPx, fill: th.ink, valign: "mid" });
+        lx += it.w + gapItem;
+      });
     });
-    return ib;
+    return null;
   },
 };
