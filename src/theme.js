@@ -30,7 +30,9 @@ export const TOKENS = {
   mint: tok("accent", "sage-mint"),
   mauve: tok("accent", "mauve"),
   taupe: tok("accent", "taupe"),
+  sage: tok("accent", "sage-light"),
   mocha: tok("accent", "mocha"),
+  peach: tok("accent", "peach"),
 };
 
 // Measured in the Storyteller off the After Effects chapter divider (infographic_lab.py), not yet
@@ -63,16 +65,30 @@ const LIGHT_ROLES = {
   onMain: TOKENS.paperLight,
 };
 
+// Parties, for charts that colour a mark by who it belongs to (the parliament arc). Oddtoe's own tokens, not the party logos:
+// the blue-muted for the Liberals, mocha (the pink-brown) for Labor, moss for the Greens, and taupe for anyone else. A row says
+// which with a `party` column; the words are matched loosely ("Labor", "ALP", "Liberal-National Coalition" all find theirs).
+const PARTIES_LIGHT = { liberal: mix(TOKENS.blue, TOKENS.slate, 0.35), labor: TOKENS.mocha, greens: TOKENS.moss, nationals: TOKENS.mint, other: TOKENS.taupe };
+const PARTIES_DARK = { liberal: TOKENS.blue, labor: mix(TOKENS.mocha, TOKENS.peach, 0.25), greens: TOKENS.mint, nationals: TOKENS.sage, other: TOKENS.cream };
+export function partyKey(name) {
+  const n = String(name || "").toLowerCase();
+  if (/labor|labour|\balp\b/.test(n)) return "labor";
+  if (/green/.test(n)) return "greens";
+  if (/national/.test(n) && !/liberal|coalition/.test(n)) return "nationals";
+  if (/liberal|coalition|\bl-?np\b|conservative/.test(n)) return "liberal";
+  return "other";
+}
+
 export const MODES = {
   plaster: {
     ground: STORYTELLER.plaster, ink: STORYTELLER.ink, body: STORYTELLER.body,
     kicker: STORYTELLER.brown, strong: STORYTELLER.brown, dark: false,
-    roles: LIGHT_ROLES, series: SERIES_LIGHT, ramp: LIGHT_RAMP,
+    roles: LIGHT_ROLES, series: SERIES_LIGHT, ramp: LIGHT_RAMP, parties: PARTIES_LIGHT,
   },
   longform: {
     ground: TOKENS.paperLight, ink: TOKENS.paper, body: STORYTELLER.body,
     kicker: STORYTELLER.brown, strong: STORYTELLER.brown, dark: false,
-    roles: LIGHT_ROLES, series: SERIES_LIGHT, ramp: LIGHT_RAMP,
+    roles: LIGHT_ROLES, series: SERIES_LIGHT, ramp: LIGHT_RAMP, parties: PARTIES_LIGHT,
   },
   marquee: {
     ground: TOKENS.paper, ink: TOKENS.ink, body: TOKENS.cream,
@@ -88,6 +104,7 @@ export const MODES = {
       onMain: TOKENS.paperLight,
     },
     series: SERIES_DARK,
+    parties: PARTIES_DARK,
     ramp: [mix(TOKENS.slate, TOKENS.ink, 0.30), mix(TOKENS.slate, TOKENS.paper, 0.35)],
   },
 };

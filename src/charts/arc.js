@@ -3,7 +3,7 @@
 // beyond share the neutral), the biggest part first from the left. The total sits in the middle in
 // Depot, a dotted line marks half, and a key names each part with its count.
 import * as core from "../core.js";
-import { mix } from "../theme.js";
+import { mix, partyKey } from "../theme.js";
 
 const d3 = globalThis.d3;
 
@@ -16,7 +16,9 @@ export default {
   draw(g, rows, [x0, y0, x1, y1], ctx) {
     const { S, th, paint: P } = ctx;
     const order = rows.map((_, i) => i).sort((a, b) => rows[b].value - rows[a].value);
-    const colour = (k) => (k < th.series.length ? th.series[k] : mix(th.roles.neutral, th.ground, 0.3));
+    // a row with a `party` is coloured by that party (Oddtoe's party colours); rows without keep the series order
+    const byParty = rows.some((r) => r.party);
+    const colour = (k, i) => (byParty && rows[i] && rows[i].party ? th.parties[partyKey(rows[i].party)] : k < th.series.length ? th.series[k] : mix(th.roles.neutral, th.ground, 0.3));
     const seats = Math.round(d3.sum(rows, (r) => Math.max(0, r.value)));
     if (seats > 800) ctx.warn(`${seats} seats; past about 800 the dots are too small to count`);
     const lrow = S * 0.058, keyH = Math.ceil(order.length / 2) * lrow + S * 0.04;
@@ -43,7 +45,7 @@ export default {
       const row = core.rowGroup(marks, i, k, P), n = Math.round(Math.max(0, rows[i].value)), pts = used.slice(s, s + n);
       // every part keeps its own colour (the series order was validated as a set); the insight is
       // named in bold in the key and ringed
-      for (const p of pts) core.dot(row, p.x, p.y, dr * 0.40, colour(k));
+      for (const p of pts) core.dot(row, p.x, p.y, dr * 0.40, colour(k, i));
       s += n;
       if (P.on(i) && pts.length) ib = [Math.min(...pts.map((p) => p.x)) - dr / 2, Math.min(...pts.map((p) => p.y)) - dr / 2, Math.max(...pts.map((p) => p.x)) + dr / 2, Math.max(...pts.map((p) => p.y)) + dr / 2];
     });
@@ -52,7 +54,7 @@ export default {
     const key = g.append("g").attr("id", "key"), colw = (x1 - x0) / 2, ky = cy + S * 0.05;
     order.forEach((i, k) => {
       const lx = x0 + (k % 2) * colw, ly = ky + Math.floor(k / 2) * lrow, sw = S * 0.026;
-      core.dot(key, lx + sw / 2, ly + sw / 2, sw / 2, colour(k));
+      core.dot(key, lx + sw / 2, ly + sw / 2, sw / 2, colour(k, i));
       const v = core.num(rows[i].value, ctx), vw = core.measure(v, "bebas", S * 0.036).w;
       const px = core.shrinkTo(rows[i].label || "", "arvoBold", S * 0.025, colw - sw - S * 0.06 - vw, S * 0.017);
       core.text(key, rows[i].label || "", { x: lx + sw + S * 0.018, y: ly + sw / 2, face: "arvoBold", px, fill: P.on(i) ? th.ink : th.body, valign: "fmid" });
